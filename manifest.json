@@ -8,8 +8,7 @@
   },
   "permissions": [
     "notifications",
-    "storage",
-    "*://www.google*/*"
+    "storage"
   ],
   "content_scripts": [
     {

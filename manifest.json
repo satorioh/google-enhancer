@@ -2,7 +2,7 @@
   "name": "Google Enhancer",
   "version": "1.0.0",
   "manifest_version": 2,
-  "description": "google search enhancer",
+  "description": "enhance user experience for google search ",
   "background": {
     "scripts": ["libs/jquery-3.2.0.min.js","background.js"]
   },
@@ -209,11 +209,11 @@
         "https://encrypted.google.com/*",
         "https://ipv6.google.com/*"
       ],
-      "js": ["libs/jquery-3.2.0.min.js","global.js"]
+      "js": ["libs/jquery-3.2.0.min.js","background.js"]
     }
   ],
   "browser_action": {
-    "default_icon": "icon/icon128.png"
+    "default_icon": "icon/icon38.png"
   },
   "options_ui": {
     "page": "page/option/option.html",
@@ -221,6 +221,7 @@
   },
   "icons": {
     "16": "icon/icon16.png",
+    "38": "icon/icon38.png",
     "48": "icon/icon48.png",
     "128": "icon/icon128.png"
   },

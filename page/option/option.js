@@ -28,13 +28,17 @@ function getItem(obj, callback) {
 */
 const defaultSettings = {
     "flipPage": 1,
-    "dblclickToTop": 1
+    "dblclickToTop": 1,
+    "newTab": 1,
+    "siteSearch": 0
 };
 
 window.onload = function() {
     const settingButtons = {
         flipPage: document.querySelector(".flipPage"),
-        dblclickToTop: document.querySelector(".dblclickToTop")
+        dblclickToTop: document.querySelector(".dblclickToTop"),
+        newTab: document.querySelector(".newTab"),
+        siteSearch: document.querySelector(".siteSearch")
     };
 
     function resetAll() {

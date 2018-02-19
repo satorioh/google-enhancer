@@ -8,7 +8,9 @@
   },
   "permissions": [
     "notifications",
-    "storage"
+    "storage",
+    "contextMenus",
+    "tabs"
   ],
   "content_scripts": [
     {
@@ -209,7 +211,7 @@
         "https://encrypted.google.com/*",
         "https://ipv6.google.com/*"
       ],
-      "js": ["libs/jquery-3.2.0.min.js","background.js"]
+      "js": ["libs/jquery-3.2.0.min.js","global.js"]
     }
   ],
   "browser_action": {

@@ -1,72 +1,52 @@
 "use strict";
-const storageChange = [
-    {
-        "keyValue": "dblclickToTop",
-        "event": "dblclick.ge",
-        "method": dblclickToTopFun
-    },
-    {
-        "keyValue": "flipPage",
-        "event": "keyup.ge",
-        "method": flipPageFun
-    },
-];
+const storage = chrome.storage.sync;
+//———————————————————extension install & update————————————————————————
+chrome.runtime.onInstalled.addListener(function (e) {
+  // Open options page to initialize storage item
+  if (e.reason === 'install')
+    chrome.runtime.openOptionsPage()
+  if (e.reason === 'update') {
+    chrome.notifications.create({
+      type: 'basic',
+      iconUrl: 'icon/icon38.png',
+      title: 'Google Enhancer updated',
+      message: ''
+    })
+  }
+})
 
-function searchKeyValue(key) {
-    let result = {};
-    for(let i = 0, len = storageChange.length; i < len; i++){
-        let obj = storageChange[i];
-        if(obj.keyValue == key){
-            result.event = obj.event;
-            result.method = obj.method;
-            break;
-        }
-    }
-    return result;
+//——————————————————————————————————site search on context menu———————————————————————
+function siteSearchFun () {
+  chrome.contextMenus.create({
+    id: 'ge',
+    title: "search '%s' in current site",
+    contexts: ['selection']
+  });
 }
-
-function changeHandler(changes,key) {
-    let result = searchKeyValue(key);
-    if(changes[key].newValue){
-        $("body").on(result.event,result.method);
-    } else {
-        $("body").off(result.event,result.method);
-    }
-}
-
-chrome.storage.sync.get(function (response) {
-    for(let key in response){
-        if(response[key]){
-            let result = searchKeyValue(key);
-            $("body").on(result.event,result.method);
-        }
-    }
-});
+storage.get(function (response) {
+  if(response.siteSearch){
+    siteSearchFun();
+  }
+})
 
 chrome.storage.onChanged.addListener(function (changes,namespace) {
-    if(namespace !== "sync") return;
-    console.log(Object.keys(changes));
-    let key = Object.keys(changes)[0];
-    changeHandler(changes,key);
-});
+  if(namespace !== "sync") return;
+  if(!changes.siteSearch) return;
+  if(changes.siteSearch.oldValue == undefined) return;
+  if(changes.siteSearch.newValue){
+    siteSearchFun();
+  } else {
+    chrome.contextMenus.remove("ge");
+  }
+})
 
-//——————————————————————————————————Double click back to top——————————————————————————————————
-function dblclickToTopFun() {
-    window.getSelection().removeAllRanges();
-    $("html, body").animate({scrollTop: 0}, 300);
-}
-//——————————————————————————————————Double click back to top——————————————————————————————————
-
-//——————————————————————————————————use arrow keys to flip pages——————————————————————————————
-function flipPageFun(e) {
-    if ($("textarea").is(":focus") || $("input").is(":focus")) return;
-
-    if (e.keyCode == 37) {
-        // Press left key, previous page
-        $("#pnprev")[0].click();
-    } else if (e.keyCode == 39) {
-        // Press right right, next page
-        $("#pnnext")[0].click();
-    }
-}
-//——————————————————————————————————use arrow keys to flip pages———————————————————————————————
+chrome.contextMenus.onClicked.addListener(function (response) {
+  if(response.menuItemId === "ge"){
+    chrome.tabs.query({active:true, currentWindow:true}, function (tab) {
+      tab[0].url.replace(/\/\/(.*?)\//,function (match,p1) {
+        window.open(`https://www.google.com/search?q=site:${p1}%20${response.selectionText}`);
+      })
+    })
+  }
+})
+//——————————————————————————————————site search on context menu———————————————————————

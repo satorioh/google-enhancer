@@ -218,13 +218,13 @@ input[type="color"]{
     margin-top: -0.25rem;
 }
 
-#reply-opacity {
+#kw-opacity {
     width: auto;
     display: flex;
     align-items: center;
 }
 
-.reply-value {
+.kw-opacity-value {
     min-width: 3rem;
     display: inline-block;
     text-align: center;

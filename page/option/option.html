@@ -53,6 +53,37 @@
                     </div>
                 </label>
             </li>
+        </ul>
+    </div>
+    <!--------------Search-------------->
+    <div class="setting-section">
+        <h2 class="title">Search</h2>
+        <ul class="card">
+            <li>
+                <label class="item">
+                    <div class="item-content">Keywords color</div>
+                    <div class="item-secondary">
+                        <input disabled name="kwColor" class="kwColor" type="color">
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Keywords background color</div>
+                    <div class="item-secondary">
+                        <input disabled name="kwBgColor" class="kwBgColor" type="color">
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Keywords background color opacity</div>
+                    <div class="item-secondary" id="kw-opacity">
+                        <input disabled name="kwOpacity" class="kwOpacity" type="range" min="0.00" max="1.00" step="0.05">
+                        <span id="kwOpacityValue" class="kw-opacity-value"></span>
+                    </div>
+                </label>
+            </li>
             <li>
                 <label class="item">
                     <div class="item-content">Site search on context menu<div class="item-content-tip">use google to search selected words in current site</div></div>

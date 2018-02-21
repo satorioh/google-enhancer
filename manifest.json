@@ -211,6 +211,7 @@
         "https://encrypted.google.com/*",
         "https://ipv6.google.com/*"
       ],
+      "css": ["global.css"],
       "js": ["libs/jquery-3.2.0.min.js","global.js"]
     }
   ],

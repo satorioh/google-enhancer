@@ -1,0 +1,42 @@
+/*spritesheet*/
+.sprite {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.sprite-doc {
+  background-position: -5px -5px;
+}
+
+.sprite-file {
+  background-position: -5px -39px;
+}
+
+.sprite-pdf {
+  background-position: -5px -73px;
+}
+
+.sprite-ppt {
+  background-position: -5px -107px;
+}
+
+.sprite-xls {
+  background-position: -5px -141px;
+}
+
+/*file search list*/
+ul#file-search-list {
+  list-style: none;
+  display: inline-block;
+  padding: 0 6px;
+}
+ul#file-search-list > li {
+  display: inline-block;
+  opacity: 0;
+}
+ul#file-search-list > li:last-child {
+  opacity: 1;
+}

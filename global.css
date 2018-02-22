@@ -29,14 +29,16 @@
 
 /*file search list*/
 ul#file-search-list {
+  position: relative;
   list-style: none;
   display: inline-block;
   padding: 0 6px;
 }
 ul#file-search-list > li {
-  display: inline-block;
+  display: none;
   opacity: 0;
 }
 ul#file-search-list > li:last-child {
+  display: inline-block;
   opacity: 1;
 }

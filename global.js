@@ -40,6 +40,13 @@ function initialEvent (key, value) {
 		}
 		case "newTab": {
 			newTabFun(value);
+			break;
+		}
+		case "filetypeSearch": {
+			if (value) {
+				window.onload = filetypeSearchFun;
+			}
+			break;
 		}
 	}
 }
@@ -72,7 +79,6 @@ function flipPageFun (e) {
 		$("#pnnext")[0].click();
 	}
 }
-
 //——————————————————————————————————use arrow keys to flip pages——————————————————————
 
 //——————————————————————————————————open link in new tab——————————————————————————————
@@ -96,34 +102,50 @@ function kwColorAll (response) {
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————
 
 //————————————————————————filetype search—————————————————————————————————————————————
-window.onload = function () {
+function filetypeSearchFun() {
 	let sprite = chrome.runtime.getURL("img/spritesheet.png");
 	let html = $(`
 					<ul id="file-search-list">
-						<li><a href="javascript:void(0)" class="sprite sprite-pdf"></a></li>
-						<li><a href="javascript:void(0)" class="sprite sprite-doc"></a></li>
-						<li><a href="javascript:void(0)" class="sprite sprite-xls"></a></li>
-						<li><a href="javascript:void(0)" class="sprite sprite-ppt"></a></li>
+						<li data-type="pdf"><a href="javascript:void(0)" class="sprite sprite-pdf"></a></li>
+						<li data-type="doc"><a href="javascript:void(0)" class="sprite sprite-doc"></a></li>
+						<li data-type="xls"><a href="javascript:void(0)" class="sprite sprite-xls"></a></li>
+						<li data-type="ppt"><a href="javascript:void(0)" class="sprite sprite-ppt"></a></li>
 						<li><a href="javascript:void(0)" class="sprite sprite-file"></a></li>
 					</ul>
 				`);
 	$("#gs_st0").prepend(html);
 	$(".sprite").css("background-image",`url(${sprite})`);
+
+	let searchInput = $("#lst-ib");
 	let $lis = $(".sprite:lt(4)").parent();
-	$("body").on({
-		mouseenter: function(){
-			$lis.animate({
-				opacity:1,
-				marginRight:"+10px"
-			},500);
-		},
-		mouseleave: function () {
-			$lis.animate({
-				opacity:0,
-				marginRight:"0"
-			},500);
-		}},".sprite-file")
-};
-
-
+	$("body").on("mouseenter",".sprite-file",function(){
+		$lis.stop(true);
+		$lis.css("display","inline-block").animate({
+			opacity:"1",
+			marginRight:"+10px"
+		},500);
+	});
+	$("body").on("mouseleave","#file-search-list",function () {
+		$lis.stop(true);
+		$lis.animate({
+			opacity:"0",
+			marginRight:"0"
+		},500,function () {
+			$lis.css("display","none");
+		});
+	});
+	$lis.click(function () {
+		let type = $(this).data("type");
+		let inputValue = searchInput.val();
+		searchInput.removeAttr("placeholder");
+		if (!inputValue){
+			searchInput.attr("placeholder","Please input some value");
+			return;
+		}
+		if(inputValue.indexOf("filetype:") != -1){
+			inputValue = inputValue.slice(13);
+		};
+		window.open(`https://www.google.com/search?q=filetype:${type}%20${inputValue}`);
+	})
+}
 //————————————————————————filetype search—————————————————————————————————————————————

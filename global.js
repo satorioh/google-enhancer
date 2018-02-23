@@ -44,7 +44,7 @@ function initialEvent (key, value) {
 		}
 		case "filetypeSearch": {
 			if (value) {
-				window.onload = filetypeSearchFun;
+				filetypeSearchFun();
 			}
 			break;
 		}
@@ -52,7 +52,9 @@ function initialEvent (key, value) {
 }
 
 chrome.storage.sync.get(function (response) {
-	for (let key in response) {
+	let keys = Object.keys(response);
+	for (let i = 0,len = keys.length; i < len; i++) {
+		let key = keys[i];
 		let value = response[key];
 		initialEvent(key, value);
 	}
@@ -103,7 +105,6 @@ function kwColorAll (response) {
 
 //————————————————————————filetype search—————————————————————————————————————————————
 function filetypeSearchFun() {
-	let sprite = chrome.runtime.getURL("img/spritesheet.png");
 	let html = $(`
 					<ul id="file-search-list">
 						<li data-type="pdf"><a href="javascript:void(0)" class="sprite sprite-pdf"></a></li>
@@ -114,7 +115,6 @@ function filetypeSearchFun() {
 					</ul>
 				`);
 	$("#gs_st0").prepend(html);
-	$(".sprite").css("background-image",`url(${sprite})`);
 
 	let searchInput = $("#lst-ib");
 	let $lis = $(".sprite:lt(4)").parent();
@@ -149,3 +149,9 @@ function filetypeSearchFun() {
 	})
 }
 //————————————————————————filetype search—————————————————————————————————————————————
+window.onload = function(){
+	let $btn = $("#hdtb-tls");
+	if(!$btn.hasClass("hdtb-tl-sel")){
+		$btn[0].click();
+	}
+}

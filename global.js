@@ -44,7 +44,7 @@ function initialEvent (key, value) {
 		}
 		case "filetypeSearch": {
 			if (value) {
-				filetypeSearchFun();
+				// filetypeSearchFun();
 			}
 			break;
 		}
@@ -104,7 +104,7 @@ function kwColorAll (response) {
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————
 
 //————————————————————————filetype search—————————————————————————————————————————————
-function filetypeSearchFun() {
+function filetypeSearchFun() {//create fragment
 	let html = $(`
 					<ul id="file-search-list">
 						<li data-type="pdf"><a href="javascript:void(0)" class="sprite sprite-pdf"></a></li>
@@ -114,9 +114,8 @@ function filetypeSearchFun() {
 						<li><a href="javascript:void(0)" class="sprite sprite-file"></a></li>
 					</ul>
 				`);
-	$("#gs_st0").prepend(html);
 
-	let searchInput = $("#lst-ib");
+	let searchInput = $("#lst-ib");//google search box
 	let $lis = $(".sprite:lt(4)").parent();
 	$("body").on("mouseenter",".sprite-file",function(){
 		$lis.stop(true);
@@ -149,9 +148,3 @@ function filetypeSearchFun() {
 	})
 }
 //————————————————————————filetype search—————————————————————————————————————————————
-window.onload = function(){
-	let $btn = $("#hdtb-tls");
-	if(!$btn.hasClass("hdtb-tl-sel")){
-		$btn[0].click();
-	}
-}

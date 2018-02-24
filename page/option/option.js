@@ -27,18 +27,20 @@ function getItem (obj, callback) {
     * Use arrow keys to flip pages : default true
     * Double click back to top : default true
     * Open link in new tab : default true
-    * Site search on context menu : default false
-    * Filetype search : default false
+    * Site search on context menu : default true
+    * Filetype search on context menu: default true
+    * Time range search on context menu: default true
 */
 const defaultSettings = {
 	"flipPage": 1,
 	"dblclickToTop": 1,
 	"newTab": 1,
-	"siteSearch": 0,
+	"siteSearch": 1,
 	"kwColor": "#dd4b39",
 	"kwBgColor": "#ffffff",
 	"kwOpacity": 0.4,
-	"filetypeSearch": 0
+	"filetypeSearch": 1,
+	"timeRangeSearch": 1
 };
 
 window.onload = function () {
@@ -51,7 +53,8 @@ window.onload = function () {
 		kwBgColor: document.querySelector(".kwBgColor"),
 		kwOpacity: document.querySelector(".kwOpacity"),
 		kwOpacityValue: document.getElementById("kwOpacityValue"),
-		filetypeSearch: document.querySelector(".filetypeSearch")
+		filetypeSearch: document.querySelector(".filetypeSearch"),
+		timeRangeSearch: document.querySelector(".timeRangeSearch")
 	};
 
 	function resetAll () {

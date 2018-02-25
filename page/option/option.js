@@ -27,20 +27,20 @@ function getItem (obj, callback) {
     * Use arrow keys to flip pages : default true
     * Double click back to top : default true
     * Open link in new tab : default true
-    * Site search on context menu : default true
-    * Filetype search on context menu: default true
-    * Time range search on context menu: default true
+    * Site search on context menu : default false
+    * Filetype search on context menu: default false
+    * Time range search on context menu: default false
 */
 const defaultSettings = {
 	"flipPage": 1,
 	"dblclickToTop": 1,
 	"newTab": 1,
-	"siteSearch": 1,
+	"siteSearch": 0,
 	"kwColor": "#dd4b39",
 	"kwBgColor": "#ffffff",
 	"kwOpacity": 0.4,
-	"filetypeSearch": 1,
-	"timeRangeSearch": 1
+	"filetypeSearch": 0,
+	"timeRangeSearch": 0
 };
 
 window.onload = function () {

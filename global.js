@@ -85,7 +85,7 @@ function flipPageFun (e) {
 
 //——————————————————————————————————open link in new tab——————————————————————————————
 function newTabFun (value) {
-	let $links = $("h3.r > a:first-child");
+	let $links = $("h3.r > a");
 	$links.attr("target", value ? "_blank" : "");
 }
 //——————————————————————————————————open link in new tab——————————————————————————————
@@ -103,48 +103,14 @@ function kwColorAll (response) {
 }
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————
 
-//————————————————————————filetype search—————————————————————————————————————————————
-function filetypeSearchFun() {//create fragment
-	let html = $(`
-					<ul id="file-search-list">
-						<li data-type="pdf"><a href="javascript:void(0)" class="sprite sprite-pdf"></a></li>
-						<li data-type="doc"><a href="javascript:void(0)" class="sprite sprite-doc"></a></li>
-						<li data-type="xls"><a href="javascript:void(0)" class="sprite sprite-xls"></a></li>
-						<li data-type="ppt"><a href="javascript:void(0)" class="sprite sprite-ppt"></a></li>
-						<li><a href="javascript:void(0)" class="sprite sprite-file"></a></li>
-					</ul>
-				`);
+//————————————————————————————————time range search———————————————————————————————————
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+	timeRangeSearchFun(request);
+});
 
-	let searchInput = $("#lst-ib");//google search box
-	let $lis = $(".sprite:lt(4)").parent();
-	$("body").on("mouseenter",".sprite-file",function(){
-		$lis.stop(true);
-		$lis.css("display","inline-block").animate({
-			opacity:"1",
-			marginRight:"+10px"
-		},500);
-	});
-	$("body").on("mouseleave","#file-search-list",function () {
-		$lis.stop(true);
-		$lis.animate({
-			opacity:"0",
-			marginRight:"0"
-		},500,function () {
-			$lis.css("display","none");
-		});
-	});
-	$lis.click(function () {
-		let type = $(this).data("type");
-		let inputValue = searchInput.val();
-		searchInput.removeAttr("placeholder");
-		if (!inputValue){
-			searchInput.attr("placeholder","Please input some value");
-			return;
-		}
-		if(inputValue.indexOf("filetype:") != -1){
-			inputValue = inputValue.slice(13);
-		};
-		window.open(`https://www.google.com/search?q=filetype:${type}%20${inputValue}`);
-	})
+function timeRangeSearchFun (request) {
+	let key = Object.keys(request)[0];
+	let id = request[key].slice(19);
+	$("#"+id+" > a")[0].click();
 }
-//————————————————————————filetype search—————————————————————————————————————————————
+//————————————————————————————————time range search———————————————————————————————————

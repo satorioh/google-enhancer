@@ -228,7 +228,10 @@
     "48": "icon/icon48.png",
     "128": "icon/icon128.png"
   },
-  "web_accessible_resources": ["img/*"],
+  "web_accessible_resources": [
+    "img/*",
+    "css/*"
+  ],
   "commands": {
     "newMsg": {
       "suggested_key": {

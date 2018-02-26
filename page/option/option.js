@@ -1,3 +1,10 @@
+/*
+* refer to v2ex-plus
+* @author sciooga
+* @link: https://github.com/sciooga/v2ex-plus
+* and made some changes
+*/
+
 "use strict";
 
 function saveChoice (e) {
@@ -30,6 +37,7 @@ function getItem (obj, callback) {
     * Site search on context menu : default false
     * Filetype search on context menu: default false
     * Time range search on context menu: default false
+    * Night mode: default false
 */
 const defaultSettings = {
 	"flipPage": 1,
@@ -40,7 +48,8 @@ const defaultSettings = {
 	"kwBgColor": "#ffffff",
 	"kwOpacity": 0.4,
 	"filetypeSearch": 0,
-	"timeRangeSearch": 0
+	"timeRangeSearch": 0,
+	"nightMode": 0
 };
 
 window.onload = function () {
@@ -54,7 +63,8 @@ window.onload = function () {
 		kwOpacity: document.querySelector(".kwOpacity"),
 		kwOpacityValue: document.getElementById("kwOpacityValue"),
 		filetypeSearch: document.querySelector(".filetypeSearch"),
-		timeRangeSearch: document.querySelector(".timeRangeSearch")
+		timeRangeSearch: document.querySelector(".timeRangeSearch"),
+		nightMode: document.querySelector(".nightMode")
 	};
 
 	function resetAll () {

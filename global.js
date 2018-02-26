@@ -75,10 +75,21 @@ function flipPageFun (e) {
 
 	if (e.keyCode == 37) {
 		// Press left key, previous page
-		$("#pnprev")[0].click();
+		if(!$("#pnprev")[0]){
+			alert("You've reached the first page.");
+			return;
+		} else {
+			$("#pnprev")[0].click();
+		}
 	} else if (e.keyCode == 39) {
 		// Press right right, next page
-		$("#pnnext")[0].click();
+		if(!$("#pnnext")[0]){
+			alert("You've reached the last page.");
+			return;
+		} else {
+			$("#pnnext")[0].click();
+		}
+
 	}
 }
 //——————————————————————————————————use arrow keys to flip pages——————————————————————
@@ -114,3 +125,9 @@ function timeRangeSearchFun (request) {
 	$("#"+id+" > a")[0].click();
 }
 //————————————————————————————————time range search———————————————————————————————————
+
+//————————————————————————————————night mode——————————————————————————————————————————
+let nightModeUrl = chrome.extension.getURL("css/nightmode.css");
+let link = $(`<link rel="stylesheet" href=${nightModeUrl} id="geNightMode">`);
+$("head").append(link);
+//————————————————————————————————night mode——————————————————————————————————————————

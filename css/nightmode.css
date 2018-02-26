@@ -1,0 +1,59 @@
+/*
+* refer to Google Night Mode
+* @author VapeHorization
+* @link: https://greasyfork.org/zh-CN/scripts/35252-google-night-mode
+* and made some changes
+*/
+
+/**************************common style******************************/
+*:visited { color: #f2f2f2 !important; }
+a:link { color: #e6e6e6 !important; }
+/**************************main page******************************/
+div#viewport {
+    background: #333 !important;
+}
+
+/*search box*/
+#gs_st0,
+.sbib_b {
+    background: #1C1C1C !important;
+}
+
+/*search input*/
+#lst-ib {
+    color: white; !important;
+}
+
+/*voice search button*/
+#gs_st0 {
+    margin-top: 0 !important;
+}
+
+/*gmail,images,about,store button*/
+a.gb_P {
+    color: white !important;
+}
+
+/*google search & i am feeling lucky button*/
+.jsb input[type="submit"],
+.gbqfba {
+    background: #333 !important;
+    color: white !important;
+}
+
+.gbqfba:hover {
+    background: #333 !important;
+}
+
+/*bottom bar*/
+#fbar { border: solid 1px #333 !important; }
+.fbar { background: #333 !important; }
+
+/*setting button on right bottom corner*/
+#fsett { background: #333 !important; }
+
+/*profile*/
+.gb_fa { background: #333 !important; }
+.gb_Bb { color: white !important;  }
+.gb_Fb { background: #6e6e6e !important; }
+/**************************main page******************************/

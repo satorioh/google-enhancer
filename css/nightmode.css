@@ -9,6 +9,7 @@
 *:visited { color: #f2f2f2 !important; }
 a:link { color: #e6e6e6 !important; }
 /**************************main page******************************/
+body,
 div#viewport {
     background: #333 !important;
 }
@@ -29,6 +30,28 @@ div#viewport {
     margin-top: 0 !important;
 }
 
+/*result list*/
+.sbsb_a,
+.sbsb_c,
+.lsb,
+#sbfblt,
+li[role=option] {
+    background: #333 !important;
+    color: white !important;
+}
+
+li[role=presentation] {
+    color: #f2f2f2 !important;
+    background: #5f5f5f;
+    cursor: pointer;
+}
+li[role=presentation]:hover { background: #5f5f5f !important; }
+
+.sbpqs_a {
+    color: #e6e6e6 !important;
+    font-weight: bold !important;
+}
+
 /*gmail,images,about,store button*/
 a.gb_P {
     color: white !important;
@@ -46,7 +69,10 @@ a.gb_P {
 }
 
 /*bottom bar*/
-#fbar { border: solid 1px #333 !important; }
+#fbar {
+    border: solid 1px #333 !important;
+    background: #333 !important;
+}
 .fbar { background: #333 !important; }
 
 /*setting button on right bottom corner*/
@@ -54,6 +80,98 @@ a.gb_P {
 
 /*profile*/
 .gb_fa { background: #333 !important; }
-.gb_Bb { color: white !important;  }
-.gb_Fb { background: #6e6e6e !important; }
-/**************************main page******************************/
+.gb_Bb,
+.gb_Db { color: white !important;  }
+.gb_Fb,
+.gb_Fb a { background: #6e6e6e !important; }
+
+/*google products*/
+.gb_rb,
+.gb_qb { border-color: #333 !important; }
+.gb_ia,
+.gb_ja { background: #333 !important; }
+.gb_ia li.gb_Z:hover span.gb_3 { background: #333 !important; }
+/**************************search result page******************************/
+/*head section*/
+div.sfbg,
+div.sfbgg,
+#hdtbSum { background: #6e6e6e !important; }
+
+/*search button*/
+.sbico-c {
+    background: #1c1c1c !important;
+    border: none !important;
+    top: 0;
+    margin-top: 0;
+}
+
+#hdtb-msb .hdtb-mitem.hdtb-msel, #hdtb-msb .hdtb-mitem.hdtb-msel-pre {
+    color: lightblue !important;
+    border-bottom-color: lightblue !important;
+}
+#hdtb-msb #hdtb-more, #hdtb-msb #hdtb-tls { color: white !important; }
+#hdtb.notl a, #hdtb.notl div, #hdtb.notl li { color: white !important; }
+
+/*tools button*/
+#hdtb-msb #hdtb-tls:hover { background: #333 !important; }
+#hdtb-msb .hdtb-tl-sel { background: #333 !important; }
+
+#appbar,
+.hdtb-mn-o,
+.hdtbItm { background: #333 !important; }
+.hdtb-mn-hd .mn-hd-txt { color: white !important; }
+.hdtb-mn-hd .mn-dwn-arw { border-color: white transparent !important; }
+
+/*any time & any result list*/
+#hdtb .hdtbItm a:hover {
+    background: #5f5f5f !important;
+}
+
+/*custome range*/
+.cdr_dlg .cdr_ttl,
+.cdr_mml,
+#cdrlnk { color: white !important; }
+.cdr_dlg,
+#cdrlnk:hover { background: #333 !important; }
+
+/*settings button*/
+._dMq { background: #333 !important; }
+._dMq a:hover { background: #5f5f5f !important; }
+
+/*result item text*/
+.st { color: gray !important; }
+
+#res a { color: #f2f2f2 !important; }
+#res h3 { color: white !important; }
+._Jvo ,
+._VSv ,
+._USv{ background: #6e6e6e !important; }
+.f { color: #f2f2f2 !important; }
+a._Fmb { background: #333 !important; }
+
+._zF,
+.ab_button {
+    background: #333 !important;
+    color: white !important;
+}
+._Iqg { color: lightblue !important; }
+._wtf {
+    color: lightblue !important;
+    fill: lightblue !important;
+}
+g-inner-card {
+    background: #333 !important;
+    color: gray !important;
+}
+#brs .med,
+.kno-ecr-pt,
+._W5e { color: white !important; }
+
+.knowledge-panel.kp-blk .mod,
+._kTi .mod,
+._RBg ._xdb .fl,
+a.fl,
+#res a._Lgi { color: gray !important; }
+
+/*images search page*/
+#hdtb.notl div { background: #6e6e6e !important; }

@@ -116,8 +116,11 @@ div.sfbgg,
 #hdtb-msb #hdtb-tls:hover { background: #333 !important; }
 #hdtb-msb .hdtb-tl-sel { background: #333 !important; }
 
+/*tools bar item*/
 #appbar,
 .hdtb-mn-o,
+.hdtb-td-o,
+.hdtb-mn-cont,
 .hdtbItm { background: #333 !important; }
 .hdtb-mn-hd .mn-hd-txt { color: white !important; }
 .hdtb-mn-hd .mn-dwn-arw { border-color: white transparent !important; }
@@ -159,6 +162,8 @@ a._Fmb { background: #333 !important; }
     color: lightblue !important;
     fill: lightblue !important;
 }
+
+/*top stories*/
 g-inner-card {
     background: #333 !important;
     color: gray !important;
@@ -173,5 +178,21 @@ g-inner-card {
 a.fl,
 #res a._Lgi { color: gray !important; }
 
-/*images search page*/
-#hdtb.notl div { background: #6e6e6e !important; }
+/*other*/
+._Tgc { color: gray !important; }
+
+/*people also ask*/
+._qgo {
+    background: #333 !important;
+    border: none !important;
+}
+
+.rl_item .title,
+._Rsi,
+._qhf { color: gray !important; }
+._SWb a.fl,
+._Kjf,
+._bfj { background: #333 !important; }
+
+/*see results about*/
+#rhs ._wD.rhsvw:hover { background: #333 !important; }

@@ -42,9 +42,9 @@ function initialEvent (key, value) {
 			newTabFun(value);
 			break;
 		}
-		case "filetypeSearch": {
+		case "nightMode": {
 			if (value) {
-				// filetypeSearchFun();
+				nightModeFun();
 			}
 			break;
 		}
@@ -96,7 +96,12 @@ function flipPageFun (e) {
 
 //——————————————————————————————————open link in new tab——————————————————————————————
 function newTabFun (value) {
-	let $links = $("h3.r > a");
+	let $links = $(`
+		h3.r > a,
+		h3._DM > a,
+		a._shr,
+		a.bia.uh_rl
+`);
 	$links.attr("target", value ? "_blank" : "");
 }
 //——————————————————————————————————open link in new tab——————————————————————————————
@@ -127,7 +132,14 @@ function timeRangeSearchFun (request) {
 //————————————————————————————————time range search———————————————————————————————————
 
 //————————————————————————————————night mode——————————————————————————————————————————
-let nightModeUrl = chrome.extension.getURL("css/nightmode.css");
-let link = $(`<link rel="stylesheet" href=${nightModeUrl} id="geNightMode">`);
-$("head").append(link);
+function nightModeFun() {
+	let nightModeUrl = chrome.extension.getURL("css/nightmode.css");
+	let link = $(`<link rel="stylesheet" href=${nightModeUrl} id="geNightMode">`);
+	$("head").append(link);
+}
 //————————————————————————————————night mode——————————————————————————————————————————
+//————————————————————————————————card style UI——————————————————————————————————————————
+let cardStyleUrl = chrome.extension.getURL("css/cardstyle.css");
+let link = $(`<link rel="stylesheet" href=${cardStyleUrl} id="geCardStyle">`);
+$("head").append(link);
+//————————————————————————————————card style UI——————————————————————————————————————————

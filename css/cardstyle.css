@@ -5,6 +5,14 @@
 * and made some changes
 */
 
+body {
+    background: #f9f9f9;
+}
+
+* {
+    font-family: 'Segoe UI', 'Microsoft YaHei' !important;
+}
+
 div.col,
 div.col *,
 div.g {
@@ -12,7 +20,7 @@ div.g {
 }
 
 .g {
-    /*background: white;*/
+    background: white;
     padding: 25px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     margin-bottom: 15px !important;
@@ -23,4 +31,262 @@ div.g {
 
 .g:hover {
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+}
+
+.appbar {
+    margin-top: 40px;
+    border-bottom: none;
+}
+
+#appbar {
+    background: #fafafa;
+}
+
+body.vasq #hdtbMenus.hdtb-td-o {
+    height: 44px;
+    top: 59px !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+#cnt {
+    width: 100%;
+}
+
+.mw {
+    width: 100%;
+    max-width: 100% !important;
+}
+
+#rcnt {
+    width: 100% !important;
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+#rcnt .col:nth-of-type(2) {
+    width: 65% !important;
+    min-width: 582px;
+    margin-left: 6%;
+}
+
+#rcnt .col:nth-of-type(3) {
+    width: 23% !important;
+    float: left;
+    padding-top: 6px;
+}
+
+#rhs .rhsvw {
+    width: 100%;
+}
+
+.kp-blk {
+    box-shadow: none;
+}
+
+#center_col {
+    width: 100% !important;
+    min-width: 0px !important;
+    margin-left: 0px !important;
+    padding-top: 0px !important;
+}
+
+#rhscol {
+    width: 20% !important;
+    min-width: 200px;
+    float: right;
+}
+
+#rhs {
+    margin-left: 0 !important;
+}
+
+.kp-blk._Jw._Rqb._RJe {
+    margin: 0 !important;
+}
+
+.s {
+    max-width: 100%;
+}
+
+h3.r:after {
+    content: '';
+    display: block;
+    border-top: 1px solid #ebebeb;
+    height: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#center_col .kp-blk {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.kno-ftr {
+    margin: 0 -35px 0 -8px;
+    padding: 4px 40px 0;
+}
+
+.related-question-pair > div > div > div > div {
+    padding-top: 10px !important;
+}
+
+._U7g._grf {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#extrares {
+    background: transparent;
+    padding: 0 15px !important;
+}
+
+#botstuff {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+    position: relative;
+}
+
+#botstuff:hover {
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+}
+
+._Ugf {
+    overflow: hidden;
+}
+
+a._Eu._H2 {
+    display: block;
+    width: 100% !important;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+    position: relative;
+}
+
+a._Eu._H2:hover {
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+}
+
+div#bcenter {
+    display: none;
+}
+
+/*remove ads*/
+div#tads {
+    display: none;
+}
+
+div#bottomads {
+    display: none;
+}
+
+img#hplogo {
+    box-sizing: content-box;
+}
+
+ol#ab_ctls * {
+    box-sizing: content-box !important;
+}
+
+g-snapping-carousel {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+#foot {
+    width: calc(100% - 16px) !important;
+    margin-left: 8px;
+    box-sizing: border-box;
+    padding: 1px;
+}
+
+#rhs .kp-blk {
+    margin: 0 !important;
+}
+
+div#subform_ctrl {
+    margin-top: 0 !important;
+}
+
+#slim_appbar {
+    height: 44px;
+}
+
+#resultStats {
+    line-height: 44px !important;
+}
+
+#res a:link,
+#extrares a:link {
+    color: #222 !important;
+}
+
+#res a:visited,
+#extrares a:visited {
+    color: #999 !important;
+}
+
+#res {
+    padding: 0 15px;
+}
+
+div._M6k.vk_c {
+    width: 100%;
+    margin-left: 0 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+div._M6k.vk_c:hover {
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+}
+
+g-card-grid {
+    margin: 0;
+}
+
+.hdtb-mn-cont {
+    margin-top: 8px;
+}
+
+.kno-ftr.rhsvw {
+    padding-bottom: 4px;
+}
+
+._KBh {
+    /*background: white;*/
+    padding: 25px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px !important;
+    margin-right: 0;
+    transition: box-shadow 0.5s;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+}
+
+._KBh:hover {
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+}
+
+g-more-link * {
+    color: #222 !important;
+}
+
+._Bfp {
+    width: 100%;
+    margin: 0;
+}
+
+._wCh {
+    padding: 0;
+}
+
+._Ncr {
+    margin: 0 !important;
 }

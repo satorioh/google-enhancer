@@ -27,7 +27,7 @@ function searchPair (key) {
 	return result;
 }
 
-//initial event
+//initial dom & event
 function initialEvent (key, value) {
 	switch (key) {
 		case "dblclickToTop":
@@ -42,9 +42,21 @@ function initialEvent (key, value) {
 			newTabFun(value);
 			break;
 		}
+		case "sformPinned": {
+			if (value) {
+				sformPinnedFun();
+			}
+			break;
+		}
 		case "nightMode": {
 			if (value) {
 				nightModeFun();
+			}
+			break;
+		}
+		case "cardStyle": {
+			if (value) {
+				cardStyleFun();
 			}
 			break;
 		}
@@ -97,14 +109,20 @@ function flipPageFun (e) {
 //——————————————————————————————————open link in new tab——————————————————————————————
 function newTabFun (value) {
 	let $links = $(`
-		h3.r > a,
-		h3._DM > a,
-		a._shr,
-		a.bia.uh_rl
+		#res a,
+		#extrares a
 `);
 	$links.attr("target", value ? "_blank" : "");
 }
 //——————————————————————————————————open link in new tab——————————————————————————————
+
+//——————————————————————————————————search form pinned on top——————————————————————————————
+function sformPinnedFun() {
+	let sformPinnedUrl = chrome.extension.getURL("css/sformpinned.css");
+	let link = $(`<link rel="stylesheet" href=${sformPinnedUrl} id="geSformPinned">`);
+	$("head").append(link);
+}
+//——————————————————————————————————search form pinned on top——————————————————————————————
 
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————
 function kwColorAll (response) {
@@ -138,8 +156,17 @@ function nightModeFun() {
 	$("head").append(link);
 }
 //————————————————————————————————night mode——————————————————————————————————————————
-//————————————————————————————————card style UI——————————————————————————————————————————
-let cardStyleUrl = chrome.extension.getURL("css/cardstyle.css");
-let link = $(`<link rel="stylesheet" href=${cardStyleUrl} id="geCardStyle">`);
-$("head").append(link);
-//————————————————————————————————card style UI——————————————————————————————————————————
+//————————————————————————————————card style UI———————————————————————————————————————
+function cardStyleFun() {
+	let cardStyleUrl = chrome.extension.getURL("css/cardstyle.css");
+	let link = $(`<link rel="stylesheet" href=${cardStyleUrl} id="geCardStyle">`);
+	$("head").append(link);
+
+	document.getElementById("lst-ib").addEventListener("blur",function () {
+		document.querySelector("div.gstl_0.sbdd_a").style.cssText='display:none';
+	});
+	document.getElementById("lst-ib").addEventListener("focus",function () {
+		document.querySelector("div.gstl_0.sbdd_a").style.cssText='display:block';
+	});
+}
+//————————————————————————————————card style UI———————————————————————————————————————

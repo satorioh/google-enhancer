@@ -38,6 +38,8 @@ function getItem (obj, callback) {
     * Filetype search on context menu: default false
     * Time range search on context menu: default false
     * Night mode: default false
+    * Card style UI: default false
+    * Search form pinned: default false
 */
 const defaultSettings = {
 	"flipPage": 1,
@@ -49,7 +51,9 @@ const defaultSettings = {
 	"kwOpacity": 0.4,
 	"filetypeSearch": 0,
 	"timeRangeSearch": 0,
-	"nightMode": 0
+	"nightMode": 0,
+	"cardStyle": 0,
+	"sformPinned": 0
 };
 
 window.onload = function () {
@@ -64,7 +68,9 @@ window.onload = function () {
 		kwOpacityValue: document.getElementById("kwOpacityValue"),
 		filetypeSearch: document.querySelector(".filetypeSearch"),
 		timeRangeSearch: document.querySelector(".timeRangeSearch"),
-		nightMode: document.querySelector(".nightMode")
+		nightMode: document.querySelector(".nightMode"),
+		cardStyle: document.querySelector(".cardStyle"),
+		sformPinned: document.querySelector(".sformPinned")
 	};
 
 	function resetAll () {

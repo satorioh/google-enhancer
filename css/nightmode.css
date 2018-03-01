@@ -196,3 +196,8 @@ a.fl,
 
 /*see results about*/
 #rhs ._wD.rhsvw:hover { background: #333 !important; }
+
+#res a:visited,
+#extrares a:visited {
+    color: #999 !important;
+}

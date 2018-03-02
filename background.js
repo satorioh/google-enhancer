@@ -16,6 +16,11 @@ chrome.runtime.onInstalled.addListener(function (e) {
 });
 //———————————————————extension install & update————————————————————————
 
+//open option page when click icon
+chrome.browserAction.onClicked.addListener(function () {
+	chrome.runtime.openOptionsPage();
+});
+
 //———————————————————define obj & array————————————————————————
 const contextMenuParents = {
 	siteSearch:{

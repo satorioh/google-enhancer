@@ -144,7 +144,8 @@ div.sfbgg,
 /*result item text*/
 .st { color: gray !important; }
 
-#res a { color: #f2f2f2 !important; }
+#res a:link,
+#extrares a:link { color: #f2f2f2 !important; }
 #res h3 { color: white !important; }
 ._Jvo ,
 ._VSv ,
@@ -201,3 +202,7 @@ a.fl,
 #extrares a:visited {
     color: #999 !important;
 }
+
+/*compatibility with cardstyle UI*/
+.g,
+#botstuff { background: #333 !important; }

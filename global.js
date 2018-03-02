@@ -110,6 +110,7 @@ function flipPageFun (e) {
 function newTabFun (value) {
 	let $links = $(`
 		#res a,
+		#rhs a,
 		#extrares a
 `);
 	$links.attr("target", value ? "_blank" : "");
@@ -120,7 +121,9 @@ function newTabFun (value) {
 function sformPinnedFun() {
 	let sformPinnedUrl = chrome.extension.getURL("css/sformpinned.css");
 	let link = $(`<link rel="stylesheet" href=${sformPinnedUrl} id="geSformPinned">`);
-	$("head").append(link);
+	if (window.location.href.search('tbm=isch')==-1){
+		$("head").append(link);
+	}
 }
 //——————————————————————————————————search form pinned on top——————————————————————————————
 
@@ -145,7 +148,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 function timeRangeSearchFun (request) {
 	let key = Object.keys(request)[0];
 	let id = request[key].slice(19);
-	$("#"+id+" > a")[0].click();
+	if (id == "cdr_opt") {//custom range ...
+		$("#cdr_opt span")[0].click();
+	} else {
+		$("#"+id+" > a")[0].click();
+	}
 }
 //————————————————————————————————time range search———————————————————————————————————
 
@@ -160,13 +167,8 @@ function nightModeFun() {
 function cardStyleFun() {
 	let cardStyleUrl = chrome.extension.getURL("css/cardstyle.css");
 	let link = $(`<link rel="stylesheet" href=${cardStyleUrl} id="geCardStyle">`);
-	$("head").append(link);
-
-	document.getElementById("lst-ib").addEventListener("blur",function () {
-		document.querySelector("div.gstl_0.sbdd_a").style.cssText='display:none';
-	});
-	document.getElementById("lst-ib").addEventListener("focus",function () {
-		document.querySelector("div.gstl_0.sbdd_a").style.cssText='display:block';
-	});
+	if (window.location.href.search('tbm=isch')==-1){
+		$("head").append(link);
+	}
 }
 //————————————————————————————————card style UI———————————————————————————————————————

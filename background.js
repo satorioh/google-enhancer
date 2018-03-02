@@ -496,7 +496,7 @@ const timeRangeArr = [
 	},
 	{
 		title:"Custom range",
-		id:"qdr_opt"
+		id:"cdr_opt"
 	}
 ];
 //——————————————————————————————————site/file/time search on context menu———————————————————————

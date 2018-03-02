@@ -8,7 +8,7 @@ div#top_nav {
     z-index: 100;
 }
 
-#appbar {
+.appbar {
     margin-top: 40px;
 }
 

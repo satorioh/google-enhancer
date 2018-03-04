@@ -195,6 +195,10 @@ function endlessFun () {
 
 				if (!rcnt || cols.length === 1) rcnt = document.getElementById("rcnt");
 				rcnt.appendChild(next_col);
+				$("em").css({
+					"color" : kwColor,
+					"backgroundColor" : `rgba(${bgColor})`
+				});
 				stop_events = false;
 				$(window).on("scroll.ge",onScroll);
 			}
@@ -220,25 +224,20 @@ function endlessFun () {
 		old_scrollY = y;
 		scroll_events += 1;
 	}
-
-	let $loading = $('<div id="loading">Loading…</div>')
-	  	.insertBefore('#navcnt');
-	$(document).ajaxStart(function() {
-		$loading.show();
-	}).ajaxStop(function() {
-		$loading.hide();
-	});
 }
 //——————————————————————————————————endless google————————————————————————————————————
 
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————
+let kwColor,bgColor;
+
 function kwColorAll (response) {
 	let r = parseInt((response.kwBgColor).substring(1,3),16);
 	let g = parseInt((response.kwBgColor).substring(3,5),16);
 	let b = parseInt((response.kwBgColor).substring(5,7),16);
-	let bgColor = `${r},${g},${b},${response.kwOpacity}`;
+	bgColor = `${r},${g},${b},${response.kwOpacity}`;
+	kwColor = response.kwColor;
 	$("em").css({
-		"color" : response.kwColor,
+		"color" : kwColor,
 		"backgroundColor" : `rgba(${bgColor})`
 	});
 }

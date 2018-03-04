@@ -2,6 +2,7 @@
 * refer to Google Card-Style UI
 * @author Fei Sun
 * @link: https://openuserjs.org/scripts/Thesunfei/Google_Card-Style_UI
+* @version 1.2.4
 * and made some changes
 */
 
@@ -64,7 +65,8 @@ body.vasq #hdtbMenus.hdtb-td-o {
     margin-top: 0;
 }
 
-#rcnt .col:nth-of-type(2) {
+#rcnt .col:nth-of-type(2),
+.EG_col {
     width: 65% !important;
     min-width: 582px;
     margin-left: 6%;

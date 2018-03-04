@@ -48,6 +48,12 @@ function initialEvent (key, value) {
 			}
 			break;
 		}
+		case "endless": {
+			if (value) {
+				endlessFun();
+			}
+			break;
+		}
 		case "nightMode": {
 			if (value) {
 				nightModeFun();
@@ -117,7 +123,7 @@ function newTabFun (value) {
 }
 //——————————————————————————————————open link in new tab——————————————————————————————
 
-//——————————————————————————————————search form pinned on top——————————————————————————————
+//——————————————————————————————————search form pinned on top—————————————————————————
 function sformPinnedFun() {
 	let sformPinnedUrl = chrome.extension.getURL("css/sformpinned.css");
 	let link = $(`<link rel="stylesheet" href=${sformPinnedUrl} id="geSformPinned">`);
@@ -125,7 +131,105 @@ function sformPinnedFun() {
 		$("head").append(link);
 	}
 }
-//——————————————————————————————————search form pinned on top——————————————————————————————
+//——————————————————————————————————search form pinned on top—————————————————————————
+
+//——————————————————————————————————endless google————————————————————————————————————
+/*
+* refer to Endless Google
+* @author tumpio
+* @link: https://openuserjs.org/scripts/tumpio/tumpiosci.fi/Endless_Google
+* @version 0.0.4
+* and made some changes
+*/
+
+function endlessFun () {
+	if (location.href.indexOf("tbm=isch") !== -1)
+		return;
+	if (window.top !== window.self)
+		return;
+
+	let request_pct = 0.05;
+	let on_page_refresh = 1;
+	let main = $("#main");
+	let rcnt = $("#rcnt");
+	let input = $("#lst-ib");
+	let input_value = input.val();
+	let old_scrollY = 0;
+	let scroll_events = 0;
+	let next_link = null;
+	let cols = [];
+	let request_offsetHeight = 0;
+	let stop_events = false;
+
+	$(window).on("scroll.ge",onScroll);
+	$(window).on("beforeunload.ge",function () {window.scrollTo(0, 0);});
+
+	function requestNextPage(link) {
+		console.log("request next");
+		console.log(link);
+		$.ajax({
+			method: "GET",
+			url: link,
+			success: function (response) {
+				let el = document.getElementById('navcnt');
+				el.parentNode.removeChild(el);
+
+				let holder = document.createElement("div");
+				holder.innerHTML = response;
+				next_link = holder.querySelector("#pnnext").href;
+
+				let next_col = document.createElement("div");
+				next_col.className = "EG_col";
+				next_col.appendChild(holder.querySelector("#center_col"));
+
+				let rel_search = next_col.querySelector("#extrares");
+				let rel_images = next_col.querySelector("#imagebox_bigimages");
+				let rel_ads = next_col.querySelector("#tads");
+				if (rel_search) rel_search.style.display = "none";
+				if (rel_images) rel_images.style.display = "none";
+				if (rel_ads) rel_ads.style.display = "none";
+
+				cols.push(next_col);
+				console.log("Page no: " + cols.length);
+				next_col.id = next_col.className + "_" + (cols.length - 1);
+
+				if (!rcnt || cols.length === 1) rcnt = document.getElementById("rcnt");
+				rcnt.appendChild(next_col);
+				stop_events = false;
+				$(window).on("scroll.ge",onScroll);
+			}
+		});
+	}
+
+	function onScroll(e) {
+		let y = window.scrollY;
+		let delta = e.deltaY || y - old_scrollY;
+		if (delta > 0 && (window.innerHeight + y) >= (document.body.clientHeight - (window.innerHeight * request_pct))) {
+			console.log("scroll end");
+			$(window).off("scroll.ge",onScroll);
+
+			try {
+				if(!stop_events){
+					stop_events = true;
+					requestNextPage(next_link || $("#pnnext").attr("href"));
+				}
+			} catch (err) {
+				console.error(err.name + ": " + err.message);
+			}
+		}
+		old_scrollY = y;
+		scroll_events += 1;
+	}
+
+	let $loading = $('<div id="loading">Loading…</div>')
+	  	.insertBefore('#navcnt');
+	$(document).ajaxStart(function() {
+		$loading.show();
+	}).ajaxStop(function() {
+		$loading.hide();
+	});
+}
+//——————————————————————————————————endless google————————————————————————————————————
 
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————
 function kwColorAll (response) {
@@ -163,6 +267,7 @@ function nightModeFun() {
 	$("head").append(link);
 }
 //————————————————————————————————night mode——————————————————————————————————————————
+
 //————————————————————————————————card style UI———————————————————————————————————————
 function cardStyleFun() {
 	let cardStyleUrl = chrome.extension.getURL("css/cardstyle.css");

@@ -34,12 +34,13 @@ function getItem (obj, callback) {
     * Use arrow keys to flip pages : default true
     * Double click back to top : default true
     * Open link in new tab : default true
+    * Search form pinned: default false
+    * Endless Google: default false
     * Site search on context menu : default false
     * Filetype search on context menu: default false
     * Time range search on context menu: default false
     * Night mode: default false
     * Card style UI: default false
-    * Search form pinned: default false
 */
 const defaultSettings = {
 	"flipPage": 1,
@@ -53,7 +54,8 @@ const defaultSettings = {
 	"timeRangeSearch": 0,
 	"nightMode": 0,
 	"cardStyle": 0,
-	"sformPinned": 0
+	"sformPinned": 0,
+	"endless": 0
 };
 
 window.onload = function () {
@@ -70,7 +72,8 @@ window.onload = function () {
 		timeRangeSearch: document.querySelector(".timeRangeSearch"),
 		nightMode: document.querySelector(".nightMode"),
 		cardStyle: document.querySelector(".cardStyle"),
-		sformPinned: document.querySelector(".sformPinned")
+		sformPinned: document.querySelector(".sformPinned"),
+		endless: document.querySelector(".endless")
 	};
 
 	function resetAll () {

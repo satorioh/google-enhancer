@@ -124,5 +124,6 @@ window.onload = function () {
 		});
 	}
 
+	document.getElementById("allDefault").onclick = resetAll;
 	restoreSetting();
 };

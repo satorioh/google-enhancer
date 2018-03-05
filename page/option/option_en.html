@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Google Enhencer Settings</title>
+    <link type="text/css" href="option.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <div id="header-left">
+        <h1>Settings</h1>
+    </div>
+    <div id="header-center"></div>
+    <div id="header-right"></div>
+</header>
+<section>
+    <!--------------global-------------->
+    <div class="setting-section">
+        <h2 class="title">Global</h2>
+        <ul class="card">
+            <li>
+                <label class="item">
+                    <div class="item-content">Use arrow keys to flip pages<div class="item-content-tip">Previous(&larr;) or next(&rarr;)</div></div>
+                    <div class="item-secondary">
+                        <span class="toggle">
+                            <input disabled name="flipPage" class="flipPage" type="checkbox">
+                            <div></div>
+                        </span>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Double click back to top</div>
+                    <div class="item-secondary">
+                        <span class="toggle">
+                            <input disabled name="dblclickToTop" class="dblclickToTop" type="checkbox">
+                            <div></div>
+                        </span>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Open link in new tab</div>
+                    <div class="item-secondary">
+                        <span class="toggle">
+                            <input disabled name="newTab" class="newTab" type="checkbox">
+                            <div></div>
+                        </span>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Search form pinned on top<div class="item-content-tip">(Temporarily unavailable for image search)</div></div>
+                    <div class="item-secondary">
+                        <span class="toggle">
+                            <input disabled name="sformPinned" class="sformPinned" type="checkbox">
+                            <div></div>
+                        </span>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Endless google<div class="item-content-tip">Load more results automatically and endlessly</div></div>
+                    <div class="item-secondary">
+                        <span class="toggle">
+                            <input disabled name="endless" class="endless" type="checkbox">
+                            <div></div>
+                        </span>
+                    </div>
+                </label>
+            </li>
+        </ul>
+    </div>
+    <!--------------Search------------------>
+    <div class="setting-section">
+        <h2 class="title">Search</h2>
+        <ul class="card">
+            <li>
+                <label class="item">
+                    <div class="item-content">Keywords color<div class="item-content-tip">Highlight keywords</div></div>
+                    <div class="item-secondary">
+                        <input disabled name="kwColor" class="kwColor" type="color">
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Keywords background color</div>
+                    <div class="item-secondary">
+                        <input disabled name="kwBgColor" class="kwBgColor" type="color">
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Keywords background color opacity</div>
+                    <div class="item-secondary" id="kw-opacity">
+                        <input disabled name="kwOpacity" class="kwOpacity" type="range" min="0.00" max="1.00" step="0.05">
+                        <span id="kwOpacityValue" class="kw-opacity-value"></span>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Site search (context menu)<div class="item-content-tip">Use google to search selected words in current site</div></div>
+                    <div class="item-secondary">
+                        <span class="toggle">
+                            <input disabled name="siteSearch" class="siteSearch" type="checkbox">
+                            <div></div>
+                        </span>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Filetype search (context menu)<div class="item-content-tip">Find pages in the format you prefer</div></div>
+                    <div class="item-secondary">
+                        <span class="toggle">
+                            <input disabled name="filetypeSearch" class="filetypeSearch" type="checkbox">
+                            <div></div>
+                        </span>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Time Range search (context menu)<div class="item-content-tip">Find pages updated within the time you specify</div></div>
+                    <div class="item-secondary">
+                        <span class="toggle">
+                            <input disabled name="timeRangeSearch" class="timeRangeSearch" type="checkbox">
+                            <div></div>
+                        </span>
+                    </div>
+                </label>
+            </li>
+        </ul>
+    </div>
+    <!--------------Appearance-------------->
+    <div class="setting-section">
+        <h2 class="title">Appearance</h2>
+        <ul class="card">
+            <li>
+                <label class="item">
+                    <div class="item-content">Night mode<div class="item-content-tip">A night mode for google</div></div>
+                    <div class="item-secondary">
+                        <span class="toggle">
+                            <input disabled name="nightMode" class="nightMode" type="checkbox">
+                            <div></div>
+                        </span>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="item">
+                    <div class="item-content">Card style UI<div class="item-content-tip">Greatly beautify google UI</div></div>
+                    <div class="item-secondary">
+                        <span class="toggle">
+                            <input disabled name="cardStyle" class="cardStyle" type="checkbox">
+                            <div></div>
+                        </span>
+                    </div>
+                </label>
+            </li>
+        </ul>
+    </div>
+    <!--------------Reset------------------->
+    <div class="setting-section">
+        <h2 class="title">Reset</h2>
+        <ul class="card">
+            <li>
+                <label class="item">
+                    <div class="item-content">Reset settings</div>
+                    <button class="button reset" id="allDefault">Reset</button>
+                </label>
+            </li>
+        </ul>
+    </div>
+    <!--------------帮助--------------------->
+    <div class="setting-section">
+        <h2 class="title">Help</h2>
+        <ul class="card">
+            <li>
+                <a class="item link" href="https://github.com/satorioh/google-enhancer" title="go to help page" target="_blank">
+                    <div class="item-content">Help</div>
+                    <div class="next">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <title>navigate_next</title>
+                            <path d="M 10 9 L 10 15 L13 12 Z" fill="#757575"></path>
+                        </svg>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<script src="option.js"></script>
+</body>
+
+</html>

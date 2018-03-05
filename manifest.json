@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "manifest_version": 2,
   "description": "enhance user experience for google search ",
+  "default_locale": "en",
   "background": {
     "scripts": ["libs/jquery-3.2.0.min.js","background.js"]
   },
@@ -219,7 +220,7 @@
     "default_icon": "icon/icon38.png"
   },
   "options_ui": {
-    "page": "page/option/option.html",
+    "page": "__MSG_optionPage__",
     "open_in_tab": true
   },
   "icons": {
@@ -231,13 +232,5 @@
   "web_accessible_resources": [
     "img/*",
     "css/*"
-  ],
-  "commands": {
-    "newMsg": {
-      "suggested_key": {
-        "default": "Ctrl+B"
-      },
-      "description": "open google search"
-    }
-  }
+  ]
 }

@@ -1,5 +1,101 @@
 {
-  "optionPage": {
-    "message": "page/option/option_en.html"
+  "optionTitle": {
+    "message": "Google Enhencer Settings",
+    "description": "option page title"
+  },
+  "optionHeader": {
+    "message": "Settings",
+    "description": "option header-left h1"
+  },
+  "globalSectionTitle": {
+    "message": "Global",
+    "description": "global section h2 title"
+  },
+  "flipPageName": {
+    "message": "Use arrow keys to flip pages"
+  },
+  "flipPageTip": {
+    "message": "Previous(&larr;) or next(&rarr;)"
+  },
+  "dblclickToTopName": {
+    "message": "Double click back to top"
+  },
+  "newTabName": {
+    "message": "Open link in new tab"
+  },
+  "sformPinnedName": {
+    "message": "Search form pinned on top"
+  },
+  "sformPinnedTip": {
+    "message": "(Temporarily unavailable for image search)"
+  },
+  "endlessName": {
+    "message": "Endless google"
+  },
+  "endlessTip": {
+    "message": "Load more results automatically and endlessly"
+  },
+  "searchSectionTitle": {
+    "message": "Search"
+  },
+  "kwColorName": {
+    "message": "Keywords color"
+  },
+  "kwColorTip": {
+    "message": "Highlight keywords"
+  },
+  "kwBgColorName": {
+    "message": "Keywords background color"
+  },
+  "kwOpacityName": {
+    "message": "Keywords background color opacity"
+  },
+  "siteSearchName": {
+    "message": "Site search (context menu)"
+  },
+  "siteSearchTip": {
+    "message": "Use google to search selected words in current site"
+  },
+  "filetypeSearchName": {
+    "message": "Filetype search (context menu)"
+  },
+  "filetypeSearchTip": {
+    "message": "Find pages in the format you prefer"
+  },
+  "timeRangeSearchName": {
+    "message": "Time Range search (context menu)"
+  },
+  "timeRangeSearchTip": {
+    "message": "Find pages updated within the time you specify"
+  },
+  "appearanceSectionTitle": {
+    "message": "Appearance"
+  },
+  "nightModeName": {
+    "message": "Night mode"
+  },
+  "nightModeTip": {
+    "message": "A night mode for google"
+  },
+  "cardStyleName": {
+    "message": "Card style UI"
+  },
+  "cardStyleTip": {
+    "message": "Greatly beautify google UI"
+  },
+  "resetSectionTitle": {
+    "message": "Reset"
+  },
+  "resetName": {
+    "message": "Reset settings"
+  },
+  "resetBtn": {
+    "message": "Reset"
+  },
+  "helpSectionTitle": {
+    "message": "Help"
+  },
+  "helpName": {
+    "message": "Help"
   }
 }

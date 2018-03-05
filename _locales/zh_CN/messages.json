@@ -1,5 +1,101 @@
 {
-  "optionPage": {
-    "message": "page/option/option_zh_CN.html"
+  "optionTitle": {
+    "message": "Google Enhencer 设置",
+    "description": "option page title"
+  },
+  "optionHeader": {
+    "message": "设置",
+    "description": "option header-left h1"
+  },
+  "globalSectionTitle": {
+    "message": "全局",
+    "description": "global section h2 title"
+  },
+  "flipPageName": {
+    "message": "方向键翻页"
+  },
+  "flipPageTip": {
+    "message": "上一页(&larr;) 或 下一页(&rarr;)"
+  },
+  "dblclickToTopName": {
+    "message": "双击返回顶部"
+  },
+  "newTabName": {
+    "message": "新标签页开启链接"
+  },
+  "sformPinnedName": {
+    "message": "搜索栏随页面滚动"
+  },
+  "sformPinnedTip": {
+    "message": "(图片搜索下暂时不可用)"
+  },
+  "endlessName": {
+    "message": "无尽模式"
+  },
+  "endlessTip": {
+    "message": "自动加载下一页结果"
+  },
+  "searchSectionTitle": {
+    "message": "搜索"
+  },
+  "kwColorName": {
+    "message": "关键词颜色"
+  },
+  "kwColorTip": {
+    "message": "高亮内容文本中的关键词"
+  },
+  "kwBgColorName": {
+    "message": "关键词背景颜色"
+  },
+  "kwOpacityName": {
+    "message": "关键词背景色透明度"
+  },
+  "siteSearchName": {
+    "message": "站内搜索（右键菜单）"
+  },
+  "siteSearchTip": {
+    "message": "在当前站点内搜索选择的词汇"
+  },
+  "filetypeSearchName": {
+    "message": "按文件类型搜索（右键菜单）"
+  },
+  "filetypeSearchTip": {
+    "message": "按特定文件后缀进行搜索"
+  },
+  "timeRangeSearchName": {
+    "message": "按时间范围搜索"
+  },
+  "timeRangeSearchTip": {
+    "message": "在特定时间范围内进行搜索"
+  },
+  "appearanceSectionTitle": {
+    "message": "外观"
+  },
+  "nightModeName": {
+    "message": "夜晚模式"
+  },
+  "nightModeTip": {
+    "message": ""
+  },
+  "cardStyleName": {
+    "message": "卡片式UI"
+  },
+  "cardStyleTip": {
+    "message": "耳目一新的Google"
+  },
+  "resetSectionTitle": {
+    "message": "重置"
+  },
+  "resetName": {
+    "message": "重置"
+  },
+  "resetBtn": {
+    "message": "重置"
+  },
+  "helpSectionTitle": {
+    "message": "帮助"
+  },
+  "helpName": {
+    "message": "帮助"
   }
 }

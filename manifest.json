@@ -220,7 +220,7 @@
     "default_icon": "icon/icon38.png"
   },
   "options_ui": {
-    "page": "__MSG_optionPage__",
+    "page": "page/option/option.html",
     "open_in_tab": true
   },
   "icons": {

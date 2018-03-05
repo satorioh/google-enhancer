@@ -123,7 +123,19 @@ window.onload = function () {
 			}
 		});
 	}
+	
+	function i18n () {
+		let objects = document.getElementsByTagName('*');
+		console.log(objects);
+		for(let i = 0; i < objects.length; i++) {
+			// console.log(objects[i]);
+			if (objects[i].dataset && objects[i].dataset.message) {
+				objects[i].textContent = chrome.i18n.getMessage(objects[i].dataset.message);
+			}
+		}
+	}
 
 	document.getElementById("allDefault").onclick = resetAll;
+	// i18n();
 	restoreSetting();
 };

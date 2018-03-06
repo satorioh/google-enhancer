@@ -25,12 +25,12 @@ chrome.browserAction.onClicked.addListener(function () {
 const contextMenuParents = {
 	siteSearch:{
 		id: "ge.siteSearch",
-		title: "Search '%s' in current site",
+		title: chrome.i18n.getMessage("siteSearch"),
 		contexts: ["selection"]
 	},
 	filetypeSearch:{
 		id: "ge.filetypeSearch",
-	  	title: "File Type Search",
+	  	title: chrome.i18n.getMessage("filetypeSearch"),
 	  	documentUrlPatterns: [
 		"*://www.google.com/*",
 		"*://www.google.ad/*",
@@ -231,7 +231,7 @@ const contextMenuParents = {
 	},
 	timeRangeSearch:{
 		id: "ge.timeRangeSearch",
-		title: "Time Range Search",
+		title: chrome.i18n.getMessage("timeRangeSearch"),
 		documentUrlPatterns: [
 			"*://www.google.com/*",
 			"*://www.google.ad/*",
@@ -476,31 +476,31 @@ const fileTypeArr = [
 ];
 const timeRangeArr = [
 	{
-		title:"Any time",
+		title:chrome.i18n.getMessage("timeAnyTime"),
 		id:"qdr_"
 	},
 	{
-		title:"Past hour",
+		title:chrome.i18n.getMessage("timePastHour"),
 		id:"qdr_h"
 	},
 	{
-		title:"Past 24 hour",
+		title:chrome.i18n.getMessage("timePastDay"),
 		id:"qdr_d"
 	},
 	{
-		title:"Past week",
+		title:chrome.i18n.getMessage("timePastWeek"),
 		id:"qdr_w"
 	},
 	{
-		title:"Past month",
+		title:chrome.i18n.getMessage("timePastMonth"),
 		id:"qdr_m"
 	},
 	{
-		title:"Past year",
+		title:chrome.i18n.getMessage("timePastYear"),
 		id:"qdr_y"
 	},
 	{
-		title:"Custom range",
+		title:chrome.i18n.getMessage("timeCustom"),
 		id:"cdr_opt"
 	}
 ];

@@ -1,4 +1,8 @@
 {
+  "extDesc": {
+    "message": "make google search more beautiful and convenient",
+    "description": "extension description"
+  },
   "optionTitle": {
     "message": "Google Enhencer Settings",
     "description": "option page title"
@@ -15,7 +19,7 @@
     "message": "Use arrow keys to flip pages"
   },
   "flipPageTip": {
-    "message": "Previous(&larr;) or next(&rarr;)"
+    "message": "← / → (Previous / next)"
   },
   "dblclickToTopName": {
     "message": "Double click back to top"
@@ -42,7 +46,7 @@
     "message": "Keywords color"
   },
   "kwColorTip": {
-    "message": "Highlight keywords"
+    "message": "Highlight keywords in text area"
   },
   "kwBgColorName": {
     "message": "Keywords background color"
@@ -97,5 +101,47 @@
   },
   "helpName": {
     "message": "Help"
+  },
+  "flipPageToFirst": {
+    "message": "Sorry,you've reached the first page.",
+    "description": "reach first page"
+  },
+  "flipPageToLast": {
+    "message": "Sorry,you've reached the last page.",
+    "description": "reach last page"
+  },
+  "timeAnyTime": {
+    "message": "Any time",
+    "description": "time range search item:any time"
+  },
+  "timePastHour": {
+    "message": "Past hour"
+  },
+  "timePastDay": {
+    "message": "Past 24 hour"
+  },
+  "timePastWeek": {
+    "message": "Past week"
+  },
+  "timePastMonth": {
+    "message": "Past month"
+  },
+  "timePastYear": {
+    "message": "Past year"
+  },
+  "timeCustom": {
+    "message": "Custom range"
+  },
+  "siteSearch": {
+    "message": "Search '%s' in current site",
+    "description": "site search parent menu"
+  },
+  "filetypeSearch": {
+    "message": "File Type Search",
+    "description": "filetype search parent menu"
+  },
+  "timeRangeSearch": {
+    "message": "Time Range Search",
+    "description": "time range search parent menu"
   }
 }

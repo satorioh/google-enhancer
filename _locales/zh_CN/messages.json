@@ -1,4 +1,8 @@
 {
+  "extDesc": {
+    "message": "让Google搜索更美观易用",
+    "description": "extension description"
+  },
   "optionTitle": {
     "message": "Google Enhencer 设置",
     "description": "option page title"
@@ -15,19 +19,19 @@
     "message": "方向键翻页"
   },
   "flipPageTip": {
-    "message": "上一页(&larr;) 或 下一页(&rarr;)"
+    "message": "← / → (上 / 下一页)"
   },
   "dblclickToTopName": {
     "message": "双击返回顶部"
   },
   "newTabName": {
-    "message": "新标签页开启链接"
+    "message": "在新标签页开启链接"
   },
   "sformPinnedName": {
     "message": "搜索栏随页面滚动"
   },
   "sformPinnedTip": {
-    "message": "(图片搜索下暂时不可用)"
+    "message": "(图片搜索下不可用)"
   },
   "endlessName": {
     "message": "无尽模式"
@@ -54,13 +58,13 @@
     "message": "站内搜索（右键菜单）"
   },
   "siteSearchTip": {
-    "message": "在当前站点内搜索选择的词汇"
+    "message": "在当前站点内搜索选中的词汇"
   },
   "filetypeSearchName": {
     "message": "按文件类型搜索（右键菜单）"
   },
   "filetypeSearchTip": {
-    "message": "按特定文件后缀进行搜索"
+    "message": "按特定文件后缀名进行搜索"
   },
   "timeRangeSearchName": {
     "message": "按时间范围搜索"
@@ -72,16 +76,16 @@
     "message": "外观"
   },
   "nightModeName": {
-    "message": "夜晚模式"
+    "message": "夜间模式"
   },
   "nightModeTip": {
     "message": ""
   },
   "cardStyleName": {
-    "message": "卡片式UI"
+    "message": "卡片式 UI"
   },
   "cardStyleTip": {
-    "message": "耳目一新的Google"
+    "message": "清晰美观的Google搜索界面"
   },
   "resetSectionTitle": {
     "message": "重置"
@@ -97,5 +101,47 @@
   },
   "helpName": {
     "message": "帮助"
+  },
+  "flipPageToFirst": {
+    "message": "抱歉，已经是第一页了。",
+    "description": "reach first page"
+  },
+  "flipPageToLast": {
+    "message": "抱歉，已经是最后一页了。",
+    "description": "reach last page"
+  },
+  "timeAnyTime": {
+    "message": "时间不限",
+    "description": "time range search item:any time"
+  },
+  "timePastHour": {
+    "message": "过去 1 小时内"
+  },
+  "timePastDay": {
+    "message": "过去 24 小时内"
+  },
+  "timePastWeek": {
+    "message": "过去 1 周内"
+  },
+  "timePastMonth": {
+    "message": "过去 1 个月内"
+  },
+  "timePastYear": {
+    "message": "过去 1 年内"
+  },
+  "timeCustom": {
+    "message": "自定日期范围"
+  },
+  "siteSearch": {
+    "message": "站内搜索 '%s' ",
+    "description": "site search parent menu"
+  },
+  "filetypeSearch": {
+    "message": "按文件类型搜索",
+    "description": "filetype search parent menu"
+  },
+  "timeRangeSearch": {
+    "message": "按时间范围搜索",
+    "description": "time range search parent menu"
   }
 }

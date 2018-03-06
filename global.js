@@ -94,7 +94,7 @@ function flipPageFun (e) {
 	if (e.keyCode == 37) {
 		// Press left key, previous page
 		if(!$("#pnprev")[0]){
-			alert("You've reached the first page.");
+			alert(chrome.i18n.getMessage("flipPageToFirst"));
 			return;
 		} else {
 			$("#pnprev")[0].click();
@@ -102,7 +102,7 @@ function flipPageFun (e) {
 	} else if (e.keyCode == 39) {
 		// Press right right, next page
 		if(!$("#pnnext")[0]){
-			alert("You've reached the last page.");
+			alert(chrome.i18n.getMessage("flipPageToLast"));
 			return;
 		} else {
 			$("#pnnext")[0].click();

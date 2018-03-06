@@ -1,7 +1,15 @@
 {
   "extDesc": {
-    "message": "make google search more beautiful and convenient",
+    "message": "Make Google Search more beautiful and convenient",
     "description": "extension description"
+  },
+  "extUpdateTitle": {
+    "message": "Google Enhancer updated",
+    "description": "extension update info title"
+  },
+  "extUpdateMsg": {
+    "message": "",
+    "description": "extension update info message"
   },
   "optionTitle": {
     "message": "Google Enhencer Settings",
@@ -103,11 +111,11 @@
     "message": "Help"
   },
   "flipPageToFirst": {
-    "message": "Sorry,you've reached the first page.",
+    "message": "Sorry, it's already the first page.",
     "description": "reach first page"
   },
   "flipPageToLast": {
-    "message": "Sorry,you've reached the last page.",
+    "message": "Sorry, it's already the last page.",
     "description": "reach last page"
   },
   "timeAnyTime": {

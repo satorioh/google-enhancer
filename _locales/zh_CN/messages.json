@@ -3,6 +3,14 @@
     "message": "让Google搜索更美观易用",
     "description": "extension description"
   },
+  "extUpdateTitle": {
+    "message": "Google Enhancer 已更新",
+    "description": "extension update info title"
+  },
+  "extUpdateMsg": {
+    "message": "",
+    "description": "extension update info message"
+  },
   "optionTitle": {
     "message": "Google Enhencer 设置",
     "description": "option page title"
@@ -67,7 +75,7 @@
     "message": "按特定文件后缀名进行搜索"
   },
   "timeRangeSearchName": {
-    "message": "按时间范围搜索"
+    "message": "按时间范围搜索（右键菜单）"
   },
   "timeRangeSearchTip": {
     "message": "在特定时间范围内进行搜索"
@@ -133,7 +141,7 @@
     "message": "自定日期范围"
   },
   "siteSearch": {
-    "message": "站内搜索 '%s' ",
+    "message": "在本站内搜索 '%s' ",
     "description": "site search parent menu"
   },
   "filetypeSearch": {

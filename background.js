@@ -9,8 +9,8 @@ chrome.runtime.onInstalled.addListener(function (e) {
 		chrome.notifications.create({
 			type: "basic",
 			iconUrl: "icon/icon38.png",
-			title: "Google Enhancer updated",
-			message: ""
+			title: chrome.i18n.getMessage("extUpdateTitle"),
+			message: chrome.i18n.getMessage("extUpdateMsg")
 		});
 	}
 });
@@ -537,7 +537,9 @@ function onChangedHandler (changes,key) {
 		case "timeRangeSearch":
 		{
 			if (changes[key].newValue) {
-				createParentMenu(contextMenuParents[key]);
+				let obj = contextMenuParents[key];
+				delete obj.generatedId;
+				createParentMenu(obj);
 			} else {
 				chrome.contextMenus.remove(contextMenuParents[key].id);
 			}

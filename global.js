@@ -113,10 +113,14 @@ function flipPageFun (e) {
 //——————————————————————————————————use arrow keys to flip pages——————————————————————
 
 //——————————————————————————————————open link in new tab——————————————————————————————
+let _newTabValue;
 function newTabFun (value) {
+	_newTabValue = value;
 	let $links = $(`
+		#tads a,
 		#res a,
 		#rhs a,
+		#bottomads a,
 		#extrares a
 `);
 	$links.attr("target", value ? "_blank" : "");
@@ -195,10 +199,13 @@ function endlessFun () {
 
 				if (!rcnt || cols.length === 1) rcnt = document.getElementById("rcnt");
 				rcnt.appendChild(next_col);
+				//highlight keywords
 				$("em").css({
-					"color" : kwColor,
-					"backgroundColor" : `rgba(${bgColor})`
+					"color" : _kwColor,
+					"backgroundColor" : `rgba(${_bgColor})`
 				});
+				//add target attribute for newtab function
+				$("#res a").attr("target", _newTabValue ? "_blank" : "");
 				stop_events = false;
 				$(window).on("scroll.ge",onScroll);
 			}
@@ -228,17 +235,17 @@ function endlessFun () {
 //——————————————————————————————————endless google————————————————————————————————————
 
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————
-let kwColor,bgColor;
+let _kwColor,_bgColor;
 
 function kwColorAll (response) {
 	let r = parseInt((response.kwBgColor).substring(1,3),16);
 	let g = parseInt((response.kwBgColor).substring(3,5),16);
 	let b = parseInt((response.kwBgColor).substring(5,7),16);
-	bgColor = `${r},${g},${b},${response.kwOpacity}`;
-	kwColor = response.kwColor;
+	_bgColor = `${r},${g},${b},${response.kwOpacity}`;
+	_kwColor = response.kwColor;
 	$("em").css({
-		"color" : kwColor,
-		"backgroundColor" : `rgba(${bgColor})`
+		"color" : _kwColor,
+		"backgroundColor" : `rgba(${_bgColor})`
 	});
 }
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————

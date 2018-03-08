@@ -76,7 +76,7 @@ A function transplanted from [Google Card-Style UI][Google Card-Style UI] which 
 
 ## Download
 
-You can download and install from [Chrome Webstore](https://chrome.google.com/webstore/category/extensions).
+You can download and install from [Chrome Webstore](https://chrome.google.com/webstore/detail/google-enhancer/ikbcccnfbfobgioefgaodgmnnnbjbbfn).
 
 ## FAQ
 * **Q: Does google-enhancer have i18n support ?**

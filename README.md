@@ -106,7 +106,7 @@ As one of the contributors for [v2ex-plus], I really learnt a lot from seniors, 
 
 ## Feedback
 
-Find a bug or have a feature request? Please file an <a href="https://github.com/satorioh/google-enhancer/issues" targe="_blank">issue</a>, or send mail to [wangbinxp@gmail.com](wangbinxp@gmail.com)
+Find a bug or have a feature request? Please file an <a href="https://github.com/satorioh/google-enhancer/issues" targe="_blank">issue</a>, or send mail to wangbinxp@gmail.com
 
 It would be great if you could read our [FAQ](#faq) first or search in the issues before you post, to avoid duplicates.
 
@@ -114,12 +114,12 @@ All requested features have been summarized [here](https://github.com/satorioh/g
 
 ## Donate
 
-Currently I'm looking for a front-end job, if you're interested in me, please send mail to [wangbinxp@gmail.com](wangbinxp@gmail.com).
+Currently I'm looking for a front-end job, if you're interested in me, please send mail to wangbinxp@gmail.com.
 
 If you enjoy my works, please consider making a donation, thank you!
 
-[![alipay](https://img.shields.io/badge/捐赠-支付宝-00aaee.svg)](img/alipay.png)
-[![paypal](https://img.shields.io/badge/donate-Paypal-fd8200.svg)](paypal.me/wangbinxp)
+[![alipay](https://img.shields.io/badge/捐赠-支付宝-00aaee.svg)](https://github.com/satorioh/google-enhancer/blob/master/img/alipay.jpg)
+[![paypal](https://img.shields.io/badge/donate-Paypal-fd8200.svg)](https://www.paypal.me/wangbinxp)
 
 
 ## LICENSE

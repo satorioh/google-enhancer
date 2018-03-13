@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "",
+    "message": "1. 完善夜间模式\n2. 修复linux下字体问题\n3. 修改部分文字面",
     "description": "extension update info message"
   },
   "optionTitle": {

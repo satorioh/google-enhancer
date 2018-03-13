@@ -530,22 +530,26 @@ function createSubMenu(arr,parentId) {
 	}
 }
 
-function onChangedHandler (changes,key) {
-	switch (key){
-		case "siteSearch":
-		case "filetypeSearch":
-		case "timeRangeSearch":
-		{
-			if (changes[key].newValue) {
-				let obj = contextMenuParents[key];
-				delete obj.generatedId;
-				createParentMenu(obj);
-			} else {
-				chrome.contextMenus.remove(contextMenuParents[key].id);
+function onChangedHandler (changes) {
+	let keys = Object.keys(changes);
+	for (let i = 0,len = keys.length; i < len; i++){
+		let index = keys[i];
+		let item = changes[index];
+		switch (index){
+			case "siteSearch":
+			case "filetypeSearch":
+			case "timeRangeSearch":
+			{
+				if (item.newValue) {
+					let obj = contextMenuParents[index];
+					delete obj.generatedId;
+					createParentMenu(obj);
+				} else {
+					chrome.contextMenus.remove(contextMenuParents[index].id);
+				}
+				break;
 			}
-			break;
 		}
-
 	}
 }
 
@@ -598,9 +602,12 @@ storage.get(function (response) {
 //onchanged operation
 chrome.storage.onChanged.addListener(function (changes, namespace) {
 	if (namespace !== "sync") return;
-	let key = Object.keys(changes)[0];
-	if (changes[key].oldValue == undefined) return;//new install no operation
-	onChangedHandler(changes,key);
+	for(let key in changes){
+		if (changes[key].oldValue == undefined){//new install no operation
+			delete changes[key];
+		}
+	}
+	onChangedHandler(changes);
 });
 
 //onclicked operation

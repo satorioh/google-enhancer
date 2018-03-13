@@ -16,7 +16,7 @@
     "description": "option page title"
   },
   "optionHeader": {
-    "message": "设置",
+    "message": "Google Enhencer 设置",
     "description": "option header-left h1"
   },
   "globalSectionTitle": {
@@ -36,10 +36,10 @@
     "message": "在新标签页开启链接"
   },
   "sformPinnedName": {
-    "message": "搜索栏随页面滚动"
+    "message": "浮动搜索框"
   },
   "sformPinnedTip": {
-    "message": "(图片搜索下不可用)"
+    "message": "搜索框随页面滚动(图片搜索下不可用)"
   },
   "endlessName": {
     "message": "无尽模式"

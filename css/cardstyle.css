@@ -11,7 +11,7 @@ body {
 }
 
 * {
-    font-family: 'Segoe UI', 'Microsoft YaHei' !important;
+    font-family: 'Segoe UI', 'Microsoft YaHei', arial, sans-serif !important;
 }
 
 div.col,

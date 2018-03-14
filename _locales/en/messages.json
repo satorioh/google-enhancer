@@ -80,6 +80,15 @@
   "timeRangeSearchTip": {
     "message": "Find pages updated within the time you specify"
   },
+  "customSectionTitle": {
+    "message": "Custom"
+  },
+  "shortcutName": {
+    "message": "My shortcut Site (context menu)"
+  },
+  "shortcutTip": {
+    "message": "Custom shortcut site for site search"
+  },
   "appearanceSectionTitle": {
     "message": "Appearance"
   },
@@ -151,5 +160,9 @@
   "timeRangeSearch": {
     "message": "Time Range Search",
     "description": "time range search parent menu"
+  },
+  "shortcut": {
+    "message": "Add shortcut site",
+    "description": "shortcut site parent menu"
   }
 }

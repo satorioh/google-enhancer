@@ -80,6 +80,15 @@
   "timeRangeSearchTip": {
     "message": "在特定时间范围内进行搜索"
   },
+  "customSectionTitle": {
+    "message": "自定义"
+  },
+  "shortcutName": {
+    "message": "我的快捷站点（右键菜单）"
+  },
+  "shortcutTip": {
+    "message": "为站内搜索自定义站点"
+  },
   "appearanceSectionTitle": {
     "message": "外观"
   },
@@ -151,5 +160,9 @@
   "timeRangeSearch": {
     "message": "按时间范围搜索",
     "description": "time range search parent menu"
+  },
+  "shortcut": {
+    "message": "添加快捷站点",
+    "description": "shortcut site parent menu"
   }
 }

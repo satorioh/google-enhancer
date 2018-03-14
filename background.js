@@ -429,6 +429,10 @@ const contextMenuParents = {
 			"https://encrypted.google.com/*",
 			"https://ipv6.google.com/*"
 		]
+	},
+	shortcut:{
+		id: "ge.shortcut",
+		title: chrome.i18n.getMessage("shortcut")
 	}
 };
 
@@ -539,6 +543,7 @@ function onChangedHandler (changes) {
 			case "siteSearch":
 			case "filetypeSearch":
 			case "timeRangeSearch":
+			case "shortcut":
 			{
 				if (item.newValue) {
 					let obj = contextMenuParents[index];
@@ -574,20 +579,34 @@ function timeRangeSearchClicked (response) {
 	});
 }
 
+function shortcutClicked (response) {
+
+}
+
 function onClickedHandler (response) {
-	switch (response.parentMenuItemId){
-		case "ge.filetypeSearch":
-		{
-			filetypeSearchClicked(response);
-			break;
+	if(response.parentMenuItemId){
+		switch (response.parentMenuItemId) {
+			case "ge.filetypeSearch": {
+				filetypeSearchClicked(response);
+				break;
+			}
+			case "ge.timeRangeSearch": {
+				timeRangeSearchClicked(response);
+				break;
+			}
 		}
-		case "ge.timeRangeSearch":
-		{
-			timeRangeSearchClicked(response);
-			break;
-		}
-		default:{
-			siteSearchClicked(response);
+	} else {
+		switch (response.menuItemId) {
+			case "ge.shortcut":
+			{
+				shortcutClicked(response);
+				break;
+			}
+			case "ge.siteSearch":
+				{
+				siteSearchClicked(response);
+				break;
+			}
 		}
 	}
 }
@@ -597,6 +616,7 @@ storage.get(function (response) {
 	if (response.siteSearch) {createParentMenu(contextMenuParents.siteSearch);}
 	if (response.filetypeSearch) {createParentMenu(contextMenuParents.filetypeSearch);}
 	if (response.timeRangeSearch) {createParentMenu(contextMenuParents.timeRangeSearch);}
+	if (response.shortcut) {createParentMenu(contextMenuParents.shortcut);}
 });
 
 //onchanged operation
@@ -612,6 +632,7 @@ chrome.storage.onChanged.addListener(function (changes, namespace) {
 
 //onclicked operation
 chrome.contextMenus.onClicked.addListener(function (response) {
+	console.log(response);
 	onClickedHandler(response);
 });
 //——————————————————————————————————site/file/time search on context menu———————————————————————

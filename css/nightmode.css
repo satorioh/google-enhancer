@@ -199,9 +199,13 @@ a.fl,
 .rl_item .title,
 ._Rsi,
 ._qhf { color: gray !important; }
+
 ._SWb a.fl,
 ._Kjf,
+.ktf,
 ._bfj { background: #333 !important; }
+
+.ktf { color: #fff; }
 
 /*see results about*/
 #rhs ._wD.rhsvw:hover { background: #333 !important; }

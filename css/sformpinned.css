@@ -23,10 +23,11 @@ body.vasq #hdtbMenus.hdtb-td-o {
 .hdtb-mn-cont {
     margin-top: 8px;
 }
+
+/*fix conflict with searchEngineJump*/
 #sej-container {
     position: fixed;
     margin-top: 45px !important;
-    margin-bottom: -40px;
     background: #fff;
     z-index: 200 !important;
 }

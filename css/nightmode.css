@@ -218,3 +218,10 @@ a.fl,
 /*compatibility with cardstyle UI*/
 .g,
 #botstuff { background: #333 !important; }
+
+/*fix conflict with searchEngineJump*/
+#sej-container,
+#sej-container a,
+.sej-engine:hover {
+    background: #333 !important;
+}

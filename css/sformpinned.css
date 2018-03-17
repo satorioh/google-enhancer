@@ -12,7 +12,7 @@ div#top_nav {
     margin-top: 40px;
 }
 
-body #hdtbMenus.hdtb-td-o {
+body.vasq #hdtbMenus.hdtb-td-o {
     height: 44px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -22,4 +22,12 @@ body #hdtbMenus.hdtb-td-o {
 
 .hdtb-mn-cont {
     margin-top: 8px;
+}
+
+/*fix conflict with searchEngineJump*/
+#sej-container {
+    position: fixed;
+    margin-top: 45px !important;
+    background: #fff;
+    z-index: 200 !important;
 }

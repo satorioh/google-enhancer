@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1. Improve Night mode\n2. Fix font issue on linux\n3. Change some texts",
+    "message": "1. Improve Night mode\n2. Fix compatibility with searchEngineJump",
     "description": "extension update info message"
   },
   "optionTitle": {

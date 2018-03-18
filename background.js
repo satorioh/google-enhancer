@@ -508,7 +508,7 @@ const timeRangeArr = [
 		id:"cdr_opt"
 	}
 ];
-//——————————————————————————————————site/file/time search on context menu———————————————————————
+//—————————————————————————site/file/time search on context menu—————————————————
 function errorHandler () {
 		if (chrome.runtime.lastError) {
 			console.log("Got expected error: " + chrome.runtime.lastError.message);
@@ -571,16 +571,12 @@ function filetypeSearchClicked (response) {
 	});
 }
 
-function timeRangeSearchClicked (response) {
+function sendToFront (response) {
 	chrome.tabs.query({active:true, currentWindow:true}, function (tab) {
 		chrome.tabs.sendMessage(tab[0].id, {
 			filetype:response.menuItemId
 		});
 	});
-}
-
-function shortcutClicked (response) {
-
 }
 
 function onClickedHandler (response) {
@@ -591,7 +587,7 @@ function onClickedHandler (response) {
 				break;
 			}
 			case "ge.timeRangeSearch": {
-				timeRangeSearchClicked(response);
+				sendToFront(response);
 				break;
 			}
 		}
@@ -599,7 +595,7 @@ function onClickedHandler (response) {
 		switch (response.menuItemId) {
 			case "ge.shortcut":
 			{
-				shortcutClicked(response);
+				sendToFront(response);
 				break;
 			}
 			case "ge.siteSearch":
@@ -635,4 +631,4 @@ chrome.contextMenus.onClicked.addListener(function (response) {
 	console.log(response);
 	onClickedHandler(response);
 });
-//——————————————————————————————————site/file/time search on context menu———————————————————————
+//———————————————————————site/file/time search on context menu———————————————

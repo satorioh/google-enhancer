@@ -66,6 +66,12 @@ function initialEvent (key, value) {
 			}
 			break;
 		}
+		case "shortcut": {
+			if (value) {
+				shortcutFun();
+			}
+			break;
+		}
 	}
 }
 
@@ -250,11 +256,14 @@ function kwColorAll (response) {
 }
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————
 
-//————————————————————————————————time range search———————————————————————————————————
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-	timeRangeSearchFun(request);
+	if(request.filetype.indexOf("timeRangeSearch") !== -1) timeRangeSearchFun(request);
+	if(request.filetype === "ge.shortcut"){
+		$("#popUpLayerMask").css("display","flex");
+	};
 });
 
+//————————————————————————————————time range search———————————————————————————————————
 function timeRangeSearchFun (request) {
 	let key = Object.keys(request)[0];
 	let id = request[key].slice(19);
@@ -283,3 +292,107 @@ function cardStyleFun() {
 	}
 }
 //————————————————————————————————card style UI———————————————————————————————————————
+
+//————————————————————————————————my shortcut sites———————————————————————————————————
+function GePopUp () {
+	this.ele =
+	  $(`
+		<div>
+			<div class="popup-title-container">
+				<div class="top-title">Add shortcut</div>
+				<span id="popupCloseBtn" class="close"></span>
+			</div>
+			<div class="popup-content-container"></div>
+			<div class="popup-foot-container"></div>
+		</div>
+		`);
+	this.mask = $("<div></div>");
+	this.init();
+}
+
+GePopUp.prototype = {
+	init: function () {
+		let $ele = $(this.ele);
+		let $mask = $(this.mask);
+
+		$ele.attr("id","popUpLayer");
+		$mask.attr("id","popUpLayerMask");
+		
+		this.addContent();
+		this.addPopUpStyle();
+		$ele.on("click",function(e){
+			e.stopPropagation();
+		});
+		$ele.on("click",this.domClick);
+		$mask.append($ele);
+		$("body").append($mask);
+	},
+	addPopUpStyle: function () {
+		let head, style;
+		let css = `
+		  #popUpLayerMask {
+		  	box-sizing: border-box;
+			display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            background-color: rgba(0,0,0,.5);
+            z-index: 10000;
+            overflow: auto;
+            min-height: 100%;
+            transition:0.5s;
+            /*opacity:0;*/
+		}
+		#popUpLayer {
+			display: flex;
+			flex-direction: column;
+            flex-wrap: wrap;
+            margin: auto;
+            padding: 1em;
+            background-color: #fff;
+            border-radius: 2px;
+            position: absolute;
+            min-width: 500px;
+            transition:0.5s;
+		}
+		.popup-title-container {
+			display: flex;
+			align-items: center;
+		}
+		.popup-title-container .top-title {
+			flex: 1;
+		}
+		#popupCloseBtn {
+			color: #757575;
+			cursor: pointer;
+		}
+		#popupCloseBtn::before {
+			content: "\\2716";
+		}
+		`;
+		head = document.getElementsByTagName('head')[0];
+		style = document.createElement('style');
+		style.type = 'text/css';
+		style.innerHTML = css;
+		head.appendChild(style);
+	},
+	addContent: function () {
+		
+	},
+	domClick: function (e) {
+		let $target = $(e.target);
+		if($target.hasClass("close")){
+			$(this).parent().hide();
+		}
+	}
+};
+
+function shortcutFun () {
+	//initial popup obj
+	let shortcutPopUp = new GePopUp();
+}
+//————————————————————————————————my shortcut sites———————————————————————————————————

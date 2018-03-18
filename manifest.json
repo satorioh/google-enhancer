@@ -214,6 +214,11 @@
       ],
       "css": ["global.css"],
       "js": ["libs/jquery-3.2.0.min.js","global.js"]
+    },
+    {
+      "matches": ["<all_urls>"],
+      "css": ["shortcut.css"],
+      "js": ["libs/jquery-3.2.0.min.js","shortcut.js"]
     }
   ],
   "browser_action": {

@@ -1,0 +1,53 @@
+#popUpLayerMask {
+  box-sizing: border-box;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 10000;
+  overflow: auto;
+  min-height: 100%;
+  transition: 0.5s;
+  /*opacity:0;*/
+}
+
+#popUpLayer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 2px;
+  position: absolute;
+  min-width: 500px;
+  transition: 0.5s;
+}
+
+.popup-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.popup-title-container .top-title {
+  flex: 1;
+}
+
+.popup-title-container .top-title > span {
+  color: red;
+  font-weight: bold;
+}
+
+#popupCloseBtn {
+  color: #757575;
+  cursor: pointer;
+}
+
+#popupCloseBtn::before {
+  content: "\2716";
+}

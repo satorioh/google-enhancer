@@ -13,6 +13,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 			$("#gePopUpLayer #shortcutId").val(p1);
 		});
 		$("#gePopUpLayerMask").css("display","flex");
+		$('body').css("overflow","hidden");
 		$("#gePopUpLayer #shortcutId").focus();
 	};
 });
@@ -27,7 +28,7 @@ function GePopUp () {
 			</div>
 			<div class="popup-content-container">
 				<div class="content-label">${chrome.i18n.getMessage("popUpContentLabel")}</div>
-				<input type="text" id="shortcutId" autofocus>
+				<input type="text" id="shortcutId" autofocus spellcheck="false">
 			</div>
 			<div class="popup-foot-container">
 				<button class="close">${chrome.i18n.getMessage("popUpCloseBtn")}</button>
@@ -47,22 +48,22 @@ GePopUp.prototype = {
 		$ele.attr("id","gePopUpLayer");
 		$mask.attr("id","gePopUpLayerMask");
 
-		$ele.on("click",function(e){
-			e.stopPropagation();
-		})
-			.on("click",this.domClick)
+		$ele.on("click",function(e){ e.stopPropagation(); })
+			.on("click",this.domClick.bind(this))
 			.keyup(function (e) {
-				if(e.which == 27){
-					$(this).parent().hide();
-				}
-			});
+				if(e.which == 27){ this.hidePopUp(); }
+			}.bind(this));
 		$mask.append($ele);
 		$("body").append($mask);
+	},
+	hidePopUp: function () {
+		$(this.mask).hide();
+		$('body').css("overflow","visible");
 	},
 	domClick: function (e) {
 		let $target = $(e.target);
 		if($target.hasClass("close")){
-			$(this).parent().hide();
+			this.hidePopUp();
 		} else if($target.hasClass("action")){
 			addContent();
 		}

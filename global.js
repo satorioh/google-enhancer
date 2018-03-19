@@ -66,12 +66,6 @@ function initialEvent (key, value) {
 			}
 			break;
 		}
-		case "shortcut": {
-			if (value) {
-				shortcutFun();
-			}
-			break;
-		}
 	}
 }
 

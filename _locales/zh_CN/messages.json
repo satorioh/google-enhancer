@@ -164,5 +164,21 @@
   "shortcut": {
     "message": "添加快捷站点",
     "description": "shortcut site parent menu"
+  },
+  "popUpTopTitle": {
+    "message": "添加快捷站点：<span></span>",
+    "description": "popup page title"
+  },
+  "popUpContentLabel": {
+    "message": "网站名称",
+    "description": "popup content label"
+  },
+  "popUpCloseBtn": {
+    "message": "取消",
+    "description": "popup close button"
+  },
+  "popUpActionBtn": {
+    "message": "添加",
+    "description": "popup action button"
   }
 }

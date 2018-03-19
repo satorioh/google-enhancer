@@ -1,5 +1,6 @@
-console.log("shortcut.js");
-chrome.storage.sync.get(function (response) {
+let shortcutUrl = "";
+let storage = chrome.storage.sync;
+storage.get(function (response) {
 	if(response.shortcut) shortcutFun();
 });
 
@@ -7,9 +8,12 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	console.log(request);
 	if(request.filetype === "ge.shortcut"){
 		request.pageUrl.replace(/\/\/(.*?)\//, function (match, p1) {
-			$("#popUpLayer .top-title > span ").text(p1);
+			shortcutUrl = p1;
+			$("#gePopUpLayer .top-title > span ").text(p1);
+			$("#gePopUpLayer #shortcutId").val(p1);
 		});
-		$("#popUpLayerMask").css("display","flex");
+		$("#gePopUpLayerMask").css("display","flex");
+		$("#gePopUpLayer #shortcutId").focus();
 	};
 });
 //————————————————————————————————my shortcut sites———————————————————————————————————
@@ -18,14 +22,17 @@ function GePopUp () {
 	  $(`
 		<div>
 			<div class="popup-title-container">
-				<div class="top-title">Add <span></span> to my shortcut site</div>
+				<div class="top-title">${chrome.i18n.getMessage("popUpTopTitle")}</div>
 				<span id="popupCloseBtn" class="close"></span>
 			</div>
 			<div class="popup-content-container">
-				<div class="content-label">Title</div>
-				<input type="text">
+				<div class="content-label">${chrome.i18n.getMessage("popUpContentLabel")}</div>
+				<input type="text" id="shortcutId" autofocus>
 			</div>
-			<div class="popup-foot-container"></div>
+			<div class="popup-foot-container">
+				<button class="close">${chrome.i18n.getMessage("popUpCloseBtn")}</button>
+				<button class="action">${chrome.i18n.getMessage("popUpActionBtn")}</button>
+			</div>
 		</div>
 		`);
 	this.mask = $("<div></div>");
@@ -37,24 +44,27 @@ GePopUp.prototype = {
 		let $ele = $(this.ele);
 		let $mask = $(this.mask);
 
-		$ele.attr("id","popUpLayer");
-		$mask.attr("id","popUpLayerMask");
+		$ele.attr("id","gePopUpLayer");
+		$mask.attr("id","gePopUpLayerMask");
 
-		this.addContent();
 		$ele.on("click",function(e){
 			e.stopPropagation();
-		});
-		$ele.on("click",this.domClick);
+		})
+			.on("click",this.domClick)
+			.keyup(function (e) {
+				if(e.which == 27){
+					$(this).parent().hide();
+				}
+			});
 		$mask.append($ele);
 		$("body").append($mask);
-	},
-	addContent: function () {
-
 	},
 	domClick: function (e) {
 		let $target = $(e.target);
 		if($target.hasClass("close")){
 			$(this).parent().hide();
+		} else if($target.hasClass("action")){
+			addContent();
 		}
 	}
 };
@@ -62,5 +72,20 @@ GePopUp.prototype = {
 function shortcutFun () {
 	//initial popup obj
 	let shortcutPopUp = new GePopUp();
+}
+
+function addContent() {
+	// console.log(shortcutUrl);
+	// console.log($("#shortcutId").val());
+	let obj = {
+		id: $("#shortcutId").val(),
+		url: shortcutUrl
+	};
+	console.log(obj);
+	storage.get("shortcutSite",function (result) {
+		result.shortcutSite.push(JSON.stringify(obj));
+		console.log(result);
+		storage.set(result);
+	})
 }
 //————————————————————————————————my shortcut sites———————————————————————————————————

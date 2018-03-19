@@ -1,4 +1,4 @@
-#popUpLayerMask {
+#gePopUpLayerMask {
   box-sizing: border-box;
   display: none;
   justify-content: center;
@@ -13,41 +13,101 @@
   overflow: auto;
   min-height: 100%;
   transition: 0.5s;
-  /*opacity:0;*/
 }
 
-#popUpLayer {
+#gePopUpLayer {
+  font-family: arial,sans-serif;
+  font-size: 14px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   margin: auto;
-  padding: 1em;
+  padding: 12px 16px;
   background-color: #fff;
   border-radius: 2px;
   position: absolute;
   min-width: 500px;
   transition: 0.5s;
+  text-align: left;
 }
 
-.popup-title-container {
+#gePopUpLayer .popup-title-container {
   display: flex;
   align-items: center;
+  min-height: 40px;
 }
 
-.popup-title-container .top-title {
-  flex: 1;
-}
-
-.popup-title-container .top-title > span {
-  color: red;
-  font-weight: bold;
-}
-
-#popupCloseBtn {
+#gePopUpLayer #popupCloseBtn {
   color: #757575;
   cursor: pointer;
 }
 
-#popupCloseBtn::before {
+#gePopUpLayer #popupCloseBtn::before {
   content: "\2716";
+}
+
+#gePopUpLayer .popup-title-container .top-title {
+  flex: 1;
+  font-family: inherit;
+  font-size: 1.2em;
+  color: black;
+}
+
+#gePopUpLayer .popup-title-container .top-title > span {
+  font-weight: bold;
+}
+
+#gePopUpLayer .popup-content-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 40px;
+  overflow: auto;
+  margin: 12px 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#gePopUpLayer .popup-content-container > .content-label {
+  color: #4285F4;
+}
+
+#gePopUpLayer .popup-content-container > input {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #4285F4;
+  box-shadow: none;
+  padding: 5px 0;
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: black;
+  background: #fff;
+}
+
+#gePopUpLayer .popup-foot-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 0;
+}
+
+#gePopUpLayer .popup-foot-container > button {
+  outline: 0;
+  border: 0;
+  text-align: center;
+  box-shadow: none;
+  cursor: pointer;
+  background: transparent;
+  color: #757575;
+  cursor: pointer;
+  -webkit-margin-start: 8px;
+  padding: 10px 16px;
+  font-weight: 500;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#gePopUpLayer .popup-foot-container > button.action {
+  background: #4285F4;
+  color: #fff;
 }

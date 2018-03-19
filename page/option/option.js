@@ -48,6 +48,7 @@ const defaultSettings = {
 	"newTab": 1,
 	"siteSearch": 0,
 	"shortcut": 0,
+	"shortcutSite": [],
 	"kwColor": "#dd4b39",
 	"kwBgColor": "#ffffff",
 	"kwOpacity": 0.4,
@@ -111,6 +112,10 @@ window.onload = function () {
 							setItemByKey(name, this.value);
 						};
 						button.disabled = false;
+						break;
+					}
+					case "shortcutSite": {
+						setItemByKey(name, value);
 						break;
 					}
 					default: {

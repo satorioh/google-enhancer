@@ -84,7 +84,7 @@
     "message": "Custom"
   },
   "shortcutName": {
-    "message": "My shortcut Site (context menu)"
+    "message": "My Shortcut Site (context menu)"
   },
   "shortcutTip": {
     "message": "Custom shortcut site for site search"
@@ -162,7 +162,23 @@
     "description": "time range search parent menu"
   },
   "shortcut": {
-    "message": "Add shortcut site",
+    "message": "Add Shortcut Site",
     "description": "shortcut site parent menu"
+  },
+  "popUpTopTitle": {
+    "message": "Add Shortcut Site: <span></span> ",
+    "description": "popup page title"
+  },
+  "popUpContentLabel": {
+    "message": "Site ID",
+    "description": "popup content label"
+  },
+  "popUpCloseBtn": {
+    "message": "CANCEL",
+    "description": "popup close button"
+  },
+  "popUpActionBtn": {
+    "message": "ADD",
+    "description": "popup action button"
   }
 }

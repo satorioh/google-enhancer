@@ -7,11 +7,16 @@
 
 "use strict";
 
+let shortcutList = document.getElementById("shortcutList");//list frame
+
 function saveChoice (e) {
 	let name = e.target.name;
 	let checked = e.target.checked;
 	let value = checked ? 1 : 0;
 	setItemByKey(name, value);
+	if(name == "shortcut"){
+		shortcutList.style.display = checked ? "block" : "none";
+	}
 }
 
 function setItem (obj) {
@@ -118,6 +123,15 @@ window.onload = function () {
 						setItemByKey(name, value);
 						break;
 					}
+					case "shortcut": {
+						checked = !!parseInt(value);
+						setItemByKey(name, parseInt(value));
+						button.checked = checked;
+						shortcutList.style.display = checked ? "block" : "none";
+						button.onchange = saveChoice;
+						button.disabled = false;
+						break;
+					}
 					default: {
 						checked = !!parseInt(value);
 						setItemByKey(name, parseInt(value));
@@ -140,7 +154,40 @@ window.onload = function () {
 		}
 	}
 
+	function GeListItem(title,url) {
+		this.title = title;
+		this.url = url;
+		this.ele =
+			$(`
+				<li data-index="${url}">
+                    <label class="item">
+                        <div class="item-content">${title}<div class="shortcut-site-url">${url}</div></div>
+                        <div class="item-secondary">
+                            <span class="close"></span>
+                        </div>
+                    </label>
+                </li>
+			`);
+	}
+
+	function shortcutDel() {
+		shortcutList.addEventListener("click",function (e) {
+			e.stopPropagation();
+			let parent = e.target;
+			if(e.target && e.target.className == "close"){
+				while (parent = parent.parentElement || parent.parentNode){
+					if (parent.nodeName == "LI"){
+						console.log(parent);
+						break;
+					}
+				}
+			}
+			this.removeChild(parent);
+		})
+	}
+
 	document.getElementById("allDefault").onclick = resetAll;
+	shortcutDel();
 	i18n();
 	restoreSetting();
 };

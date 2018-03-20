@@ -180,5 +180,9 @@
   "popUpActionBtn": {
     "message": "ADD",
     "description": "popup action button"
+  },
+  "storageShortcutFull": {
+    "message": "The storage is full !\nPlease delete some shortcut sites in option page, and try again",
+    "description": "storage check for shortcut site"
   }
 }

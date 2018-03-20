@@ -180,5 +180,9 @@
   "popUpActionBtn": {
     "message": "添加",
     "description": "popup action button"
+  },
+  "storageShortcutFull": {
+    "message": "存储已满！\n请在设置页删除一些快捷站点，然后再试",
+    "description": "storage check for shortcut site"
   }
 }

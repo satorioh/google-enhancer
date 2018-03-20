@@ -283,3 +283,21 @@ input[type="color"]{
 .reset:active {
     box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 5px 1px rgba(0,0,0,.14),0 3px 10px 2px rgba(0,0,0,.12);
 }
+
+ul.list-frame {
+    -webkit-padding-start: 1.6rem;
+    background: #fff;
+}
+
+ul.list-frame div.shortcut-site-url {
+    color: #757575;
+}
+
+ul.list-frame span.close {
+    color: #757575;
+    cursor: pointer;
+}
+
+ul.list-frame span.close::before {
+    content: "\2716";
+}

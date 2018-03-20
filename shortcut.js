@@ -1,22 +1,10 @@
 let shortcutUrl = "";
 let storage = chrome.storage.sync;
+
 storage.get(function (response) {
 	if(response.shortcut) shortcutFun();
 });
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-	console.log(request);
-	if(request.filetype === "ge.shortcut"){
-		request.pageUrl.replace(/\/\/(.*?)\//, function (match, p1) {
-			shortcutUrl = p1;
-			$("#gePopUpLayer .top-title > span ").text(p1);
-			$("#gePopUpLayer #shortcutId").val(p1);
-		});
-		$("#gePopUpLayerMask").css("display","flex");
-		$('body').css("overflow","hidden");
-		$("#gePopUpLayer #shortcutId").focus();
-	};
-});
 //————————————————————————————————my shortcut sites———————————————————————————————————
 function GePopUp () {
 	this.ele =
@@ -55,6 +43,7 @@ GePopUp.prototype = {
 			}.bind(this));
 		$mask.append($ele);
 		$("body").append($mask);
+		this.onMessage();
 	},
 	hidePopUp: function () {
 		$(this.mask).hide();
@@ -65,28 +54,62 @@ GePopUp.prototype = {
 		if($target.hasClass("close")){
 			this.hidePopUp();
 		} else if($target.hasClass("action")){
-			addContent();
+			this.addStorage();
 		}
+	},
+	setTopTitle: function (selector,txt) {
+		$(selector).text(txt);
+	},
+	setInputVal: function (selector,txt) {
+		$(selector).val(txt);
+	},
+	onMessage: function () {
+		let that = this;
+		chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+			console.log(request);
+			if(request.filetype === "ge.shortcut"){
+				request.pageUrl.replace(/\/\/(.*?)\//, function (match, p1) {
+					shortcutUrl = p1;
+					that.setTopTitle("#gePopUpLayer .top-title > span", p1);
+					that.setInputVal("#gePopUpLayer #shortcutId", p1);
+				});
+				$("#gePopUpLayerMask").css("display","flex");
+				$('body').css("overflow","hidden");
+				$("#gePopUpLayer #shortcutId").focus();
+			};
+		});
+	},
+	addStorage: function () {
+		let that = this;
+		let obj = {
+			title: $("#shortcutId").val(),
+			url: shortcutUrl
+		};
+		storage.get("shortcutSite",function (result) {
+			that.storageCheck("shortcutSite");
+			result.shortcutSite.push(JSON.stringify(obj));
+			console.log(result);
+			storage.set(result,function () {
+				if (chrome.runtime.lastError) {
+					alert("Got error: " + chrome.runtime.lastError.message);
+				} else {
+					that.hidePopUp();
+				}
+			});
+		})
+	},
+	storageCheck: function (key) {
+		storage.getBytesInUse(key,function (bytesInUse) {
+			if(bytesInUse >= 400){
+				alert(chrome.i18n.getMessage("storageShortcutFull"));
+				return false;
+			};
+		})
 	}
 };
 
 function shortcutFun () {
 	//initial popup obj
 	let shortcutPopUp = new GePopUp();
-}
-
-function addContent() {
-	// console.log(shortcutUrl);
-	// console.log($("#shortcutId").val());
-	let obj = {
-		id: $("#shortcutId").val(),
-		url: shortcutUrl
-	};
-	console.log(obj);
-	storage.get("shortcutSite",function (result) {
-		result.shortcutSite.push(JSON.stringify(obj));
-		console.log(result);
-		storage.set(result);
-	})
 }
 //————————————————————————————————my shortcut sites———————————————————————————————————

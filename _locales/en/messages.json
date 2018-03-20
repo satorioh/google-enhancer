@@ -166,20 +166,26 @@
     "description": "shortcut site parent menu"
   },
   "popUpTopTitle": {
-    "message": "Add Shortcut Site: <span></span> ",
-    "description": "popup page title"
+    "message": "Add Shortcut Site: <span></span> "
   },
   "popUpContentLabel": {
-    "message": "Site ID",
+    "message": "Site Name",
     "description": "popup content label"
   },
   "popUpCloseBtn": {
-    "message": "CANCEL",
-    "description": "popup close button"
+    "message": "CANCEL"
   },
   "popUpActionBtn": {
     "message": "ADD",
     "description": "popup action button"
+  },
+  "shortcutAddSuccess": {
+    "message": "Add success !",
+    "description": "add shortcut site success"
+  },
+  "shortcutAddRepeat": {
+    "message": "You've added the same site: ",
+    "description": "add repeat site"
   },
   "storageShortcutFull": {
     "message": "The storage is full !\nPlease delete some shortcut sites in option page, and try again",

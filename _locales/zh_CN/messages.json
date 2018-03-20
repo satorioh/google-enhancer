@@ -174,12 +174,19 @@
     "description": "popup content label"
   },
   "popUpCloseBtn": {
-    "message": "取消",
-    "description": "popup close button"
+    "message": "取消"
   },
   "popUpActionBtn": {
     "message": "添加",
     "description": "popup action button"
+  },
+  "shortcutAddSuccess": {
+    "message": "添加成功！",
+    "description": "add shortcut site success"
+  },
+  "shortcutAddRepeat": {
+    "message": "您已添加过相同站点：",
+    "description": "add repeat site"
   },
   "storageShortcutFull": {
     "message": "存储已满！\n请在设置页删除一些快捷站点，然后再试",

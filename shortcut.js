@@ -1,3 +1,5 @@
+"use strict";
+
 let shortcutUrl = "";
 let storage = chrome.storage.sync;
 
@@ -86,25 +88,40 @@ GePopUp.prototype = {
 			url: shortcutUrl
 		};
 		storage.get("shortcutSite",function (result) {
-			that.storageCheck("shortcutSite");
-			result.shortcutSite.push(JSON.stringify(obj));
-			console.log(result);
-			storage.set(result,function () {
-				if (chrome.runtime.lastError) {
-					alert("Got error: " + chrome.runtime.lastError.message);
-				} else {
-					that.hidePopUp();
-				}
-			});
+			let check = that.storageCheck(obj,"shortcutSite",result);
+			if(check){
+				result.shortcutSite.push(JSON.stringify(obj));
+				console.log(result);
+				storage.set(result,function () {
+					if (chrome.runtime.lastError) {
+						alert("Got error: " + chrome.runtime.lastError.message);
+					} else {
+						that.hidePopUp();
+						alert(chrome.i18n.getMessage("shortcutAddSuccess"));
+					}
+				});
+			}
+
 		})
 	},
-	storageCheck: function (key) {
+	storageCheck: function (obj,key,result) {
+		let check = true;
+		let arr = result[key];
 		storage.getBytesInUse(key,function (bytesInUse) {
-			if(bytesInUse >= 400){
+			if(bytesInUse >= 8000){
 				alert(chrome.i18n.getMessage("storageShortcutFull"));
-				return false;
-			};
-		})
+				check = false;
+			}
+		});
+		for(let i = 0,len = arr.length; i < len; i++){
+			let item = JSON.parse(arr[i]);
+			if(item.url == obj.url){
+				alert(chrome.i18n.getMessage("shortcutAddRepeat") +item.title);
+				check = false;
+				break;
+			}
+		}
+		return check;
 	}
 };
 

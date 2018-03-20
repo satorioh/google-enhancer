@@ -157,18 +157,24 @@ window.onload = function () {
 	function GeListItem(title,url) {
 		this.title = title;
 		this.url = url;
-		this.ele =
-			$(`
-				<li data-index="${url}">
+		this.ele =	document.createElement("li");
+		this.ele.dataset.index = `${url}`;
+		this.ele.innerHTML = `
                     <label class="item">
                         <div class="item-content">${title}<div class="shortcut-site-url">${url}</div></div>
                         <div class="item-secondary">
                             <span class="close"></span>
                         </div>
-                    </label>
-                </li>
-			`);
+                    </label>`;
+		this.init();
 	}
+
+	GeListItem.prototype = {
+		init: function () {
+			let that = this;
+			document.getElementById("shortcutList").appendChild(that.ele);
+		}
+	};
 
 	function shortcutDel() {
 		shortcutList.addEventListener("click",function (e) {
@@ -186,8 +192,19 @@ window.onload = function () {
 		})
 	}
 
+	function setListItem (result,key) {
+		let arr = result[key];
+		for(let i = 0,len = arr.length; i < len; i++){
+			let obj = JSON.parse(arr[i]);
+			let item = new GeListItem(obj.title,obj.url);
+		}
+	}
+
 	document.getElementById("allDefault").onclick = resetAll;
-	shortcutDel();
+	// shortcutDel();
 	i18n();
+	chrome.storage.sync.get("shortcutSite",function (result) {
+		setListItem(result,"shortcutSite");
+	});
 	restoreSetting();
 };

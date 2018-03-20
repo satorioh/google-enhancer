@@ -619,7 +619,6 @@ storage.get(function (response) {
 //onchanged operation
 chrome.storage.onChanged.addListener(function (changes, namespace) {
 	if (namespace !== "sync") return;
-	console.log(changes);
 	for(let key in changes){
 		if (changes[key].oldValue == undefined){//new install no operation
 			delete changes[key];

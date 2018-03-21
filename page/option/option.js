@@ -7,7 +7,7 @@
 
 "use strict";
 
-let shortcutList = document.getElementById("shortcutList");//list frame
+let shortcutList = document.getElementById("shortcutList");//list frame for wrap list items
 
 function saveChoice (e) {
 	let name = e.target.name;
@@ -46,6 +46,7 @@ function getItem (obj, callback) {
     * Time range search on context menu: default false
     * Night mode: default false
     * Card style UI: default false
+    * shortcutSite: array, always generate
 */
 const defaultSettings = {
 	"flipPage": 1,
@@ -154,14 +155,14 @@ window.onload = function () {
 		}
 	}
 
-	function GeListItem(title,url) {
+	function GeListItem(title,id) {
 		this.title = title;
-		this.url = url;
+		this.id = id;
 		this.ele =	document.createElement("li");
-		this.ele.dataset.index = `${url}`;
+		this.ele.dataset.index = `${id}`;
 		this.ele.innerHTML = `
                     <label class="item">
-                        <div class="item-content">${title}<div class="shortcut-site-url">${url}</div></div>
+                        <div class="item-content">${title}<div class="shortcut-site-url">${id}</div></div>
                         <div class="item-secondary">
                             <span class="close"></span>
                         </div>
@@ -173,37 +174,45 @@ window.onload = function () {
 		init: function () {
 			let that = this;
 			document.getElementById("shortcutList").appendChild(that.ele);
-		}
-	};
-
-	function shortcutDel() {
-		shortcutList.addEventListener("click",function (e) {
+			that.ele.addEventListener("click",that.delItem);
+		},
+		delItem: function (e) {
 			e.stopPropagation();
 			let parent = e.target;
 			if(e.target && e.target.className == "close"){
 				while (parent = parent.parentElement || parent.parentNode){
-					if (parent.nodeName == "LI"){
-						console.log(parent);
+					if (parent.nodeName == "LI") break;
+				}
+			}
+			parent.parentNode.removeChild(parent);
+
+			let index = parent.dataset.index;
+			getItem("shortcutSite",function (result) {
+				let arr = result.shortcutSite;
+				for(let i = 0,len = arr.length; i < len; i++){
+					let item = JSON.parse(arr[i]);
+					if(item.id == index){
+						arr.splice(i, 1);
 						break;
 					}
 				}
-			}
-			this.removeChild(parent);
-		})
-	}
+				setItem({"shortcutSite": arr});
+			});
+		}
+	};
 
 	function setListItem (result,key) {
 		let arr = result[key];
+		if(arr == undefined) return; //for first install, storage may not generate
 		for(let i = 0,len = arr.length; i < len; i++){
 			let obj = JSON.parse(arr[i]);
-			let item = new GeListItem(obj.title,obj.url);
+			let item = new GeListItem(obj.title,obj.id);
 		}
 	}
 
 	document.getElementById("allDefault").onclick = resetAll;
-	// shortcutDel();
 	i18n();
-	chrome.storage.sync.get("shortcutSite",function (result) {
+	getItem("shortcutSite",function (result) {
 		setListItem(result,"shortcutSite");
 	});
 	restoreSetting();

@@ -31,6 +31,7 @@ const contextMenuParents = {
 	filetypeSearch:{
 		id: "ge.filetypeSearch",
 	  	title: chrome.i18n.getMessage("filetypeSearch"),
+		contexts: ["page"],
 	  	documentUrlPatterns: [
 		"*://www.google.com/*",
 		"*://www.google.ad/*",
@@ -232,6 +233,7 @@ const contextMenuParents = {
 	timeRangeSearch:{
 		id: "ge.timeRangeSearch",
 		title: chrome.i18n.getMessage("timeRangeSearch"),
+		contexts: ["page"],
 		documentUrlPatterns: [
 			"*://www.google.com/*",
 			"*://www.google.ad/*",
@@ -432,7 +434,8 @@ const contextMenuParents = {
 	},
 	shortcut:{
 		id: "ge.shortcut",
-		title: chrome.i18n.getMessage("shortcut")
+		title: chrome.i18n.getMessage("shortcut"),
+		contexts: ["page"]
 	}
 };
 
@@ -508,6 +511,12 @@ const timeRangeArr = [
 		id:"cdr_opt"
 	}
 ];
+const siteSearchCurrent = {
+	id: "current",
+	title: chrome.i18n.getMessage("siteSearchCurrent"),
+	contexts: ["selection"]
+};
+
 //—————————————————————————site/file/time search on context menu—————————————————
 function errorHandler () {
 		if (chrome.runtime.lastError) {
@@ -517,19 +526,33 @@ function errorHandler () {
 
 function createParentMenu (obj) {
 		chrome.contextMenus.create(obj,errorHandler());
-		if(obj.id == "ge.filetypeSearch"){createSubMenu(fileTypeArr,obj.id);}
-		if(obj.id == "ge.timeRangeSearch"){createSubMenu(timeRangeArr,obj.id);}
+		if(obj.id == "ge.filetypeSearch"){createSubMenu(fileTypeArr,obj);}
+		if(obj.id == "ge.timeRangeSearch"){createSubMenu(timeRangeArr,obj);}
+		if(obj.id == "ge.siteSearch"){
+			storage.get("shortcutSite",function (result) {
+				let shortcutArr = result.shortcutSite;
+				createSubMenu(shortcutArr,obj);
+			})
+		}
 }
 
-function createSubMenu(arr,parentId) {
+function createSubMenu(arr,parent) {
+	if(parent.id == "ge.siteSearch"){
+		arr.unshift(siteSearchCurrent);
+	}
 	for (let i = 0; i < arr.length; i++){
 		let obj = arr[i];
-		let id = parentId + "." + obj.id;
+		if(typeof obj == "string"){
+			obj = JSON.parse(obj);
+		}
+		let id = parent.id + "_" + obj.id;
 		let title = obj.title;
+		let contexts = parent.contexts;
 		chrome.contextMenus.create({
 			"id": id,
-			"parentId": parentId,
-			"title": title
+			"parentId": parent.id,
+			"title": title,
+			"contexts": contexts
 		},errorHandler())
 	}
 }
@@ -554,14 +577,27 @@ function onChangedHandler (changes) {
 				}
 				break;
 			}
+			case "shortcutSite":
+				{
+					let obj = contextMenuParents.siteSearch;
+					delete obj.generatedId;
+					chrome.contextMenus.remove(contextMenuParents.siteSearch.id);
+					createParentMenu(obj);
+			}
 		}
 	}
 }
 
 function siteSearchClicked (response) {
-	response.pageUrl.replace(/\/\/(.*?)\//, function (match, p1) {
-		window.open(`https://www.google.com/search?q=site:${p1}%20${response.selectionText}`);
-	});
+	let url = response.menuItemId.slice(14);
+	if(url == "current"){
+		response.pageUrl.replace(/\/\/(.*?)\//, function (match, p1) {
+			window.open(`https://www.google.com/search?q=site:${p1}%20${response.selectionText}`);
+		});
+	} else {
+		window.open(`https://www.google.com/search?q=site:${url}%20${response.selectionText}`);
+	}
+
 }
 
 function filetypeSearchClicked (response) {
@@ -591,17 +627,17 @@ function onClickedHandler (response) {
 				sendToFront(response);
 				break;
 			}
+			case "ge.siteSearch":
+			{
+				siteSearchClicked(response);
+				break;
+			}
 		}
 	} else {
 		switch (response.menuItemId) {
 			case "ge.shortcut":
 			{
 				sendToFront(response);
-				break;
-			}
-			case "ge.siteSearch":
-				{
-				siteSearchClicked(response);
 				break;
 			}
 		}

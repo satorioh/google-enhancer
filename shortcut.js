@@ -85,7 +85,7 @@ GePopUp.prototype = {
 		let that = this;
 		let obj = {
 			title: $("#shortcutId").val(),
-			url: shortcutUrl
+			id: shortcutUrl
 		};
 		storage.get("shortcutSite",function (result) {
 			let check = that.storageCheck(obj,"shortcutSite",result);
@@ -115,7 +115,7 @@ GePopUp.prototype = {
 		});
 		for(let i = 0,len = arr.length; i < len; i++){
 			let item = JSON.parse(arr[i]);
-			if(item.url == obj.url){
+			if(item.id == obj.id){
 				alert(chrome.i18n.getMessage("shortcutAddRepeat") +item.title);
 				check = false;
 				break;

@@ -150,8 +150,12 @@
     "message": "自定日期范围"
   },
   "siteSearch": {
-    "message": "在本站内搜索 '%s' ",
+    "message": "站内搜索",
     "description": "site search parent menu"
+  },
+  "siteSearchCurrent": {
+    "message": "在本站内搜索 '%s'",
+    "description": "site search child menu first item"
   },
   "filetypeSearch": {
     "message": "按文件类型搜索",

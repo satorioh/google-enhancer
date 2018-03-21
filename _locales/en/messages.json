@@ -150,8 +150,12 @@
     "message": "Custom range"
   },
   "siteSearch": {
-    "message": "Search '%s' in current site",
+    "message": "Site Search",
     "description": "site search parent menu"
+  },
+  "siteSearchCurrent": {
+    "message": "Search '%s' in current site",
+    "description": "site search child menu first item"
   },
   "filetypeSearch": {
     "message": "File Type Search",

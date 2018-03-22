@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1. 完善夜间模式\n2. 修复与searchEngineJump的兼容问题",
+    "message": "1. 新增：”我的快捷站点“功能，可以为站内搜索添加自定义站点\n2. 完善夜间模式",
     "description": "extension update info message"
   },
   "optionTitle": {
@@ -87,7 +87,7 @@
     "message": "我的快捷站点（右键菜单）"
   },
   "shortcutTip": {
-    "message": "为站内搜索自定义站点"
+    "message": "为站内搜索添加自定义站点"
   },
   "appearanceSectionTitle": {
     "message": "外观"

@@ -6,6 +6,7 @@
 
 <p align="center">
   <a href="#features">Features</a> •
+  <a href="#update">Update</a> •
   <a href="#instruction">Instruction</a> •
   <a href="#download">Download</a> •
   <a href="#faq">FAQ</a> •
@@ -19,11 +20,24 @@
 
 * **Shortcut operation**
 * **Easy access for site/filetype/time search**
+* **Custom shortcut site**
 * **Keywords highlight**
 * **Load results endlessly**
 * **Night mode**
 * **Card-style UI**
 * **Sync settings via Chrome**
+
+## Update
+
+> ### v1.1.0 (2018/03/22)
+>
+> #### New:
+>
+> - [My Shortcut Site](#my-shortcut-site)
+>
+> #### Improve:
+>
+> - improve Night mode
 
 ## Instruction
 _Notice: changes will not take effect until you refresh page.(Press F5)_
@@ -74,6 +88,16 @@ A function transplanted from [Google Card-Style UI][Google Card-Style UI] which 
 <p align="center"><img src="img/youtubecard2.PNG" with="200"></p>
 <p align="center"><img src="img/youtubecard.PNG" with="200"></p>
 
+14. ##### My Shortcut Site
+This function will allow you to add custom site in Site Search.  
+After enabled, you can add any site into Site Search menu.(see image below)
+<p align="center"><img src="img/shortcut1.png" with="200"></p>
+Then you can search seleted text not only in current site, but also the custom shortcut site which you just added.(if not see, refresh current page)
+<p align="center"><img src="img/shortcut3.png" with="200"></p>
+You can also delete some shortcut site in option page(if not see, refresh option page)
+<p align="center"><img src="img/shortcut2.png" with="200"></p>
+
+
 ## Download
 
 You can download and install from [Chrome Webstore](https://chrome.google.com/webstore/detail/google-enhancer/ikbcccnfbfobgioefgaodgmnnnbjbbfn).
@@ -85,8 +109,8 @@ You can download and install from [Chrome Webstore](https://chrome.google.com/we
 * **Q: Can I enable night mode and card-style ui together ?**
 * A: Yes, although I don't recommend to do so. Considering some user may want to enable them at same time,I made some changes to let them work together.
 
-* **Q: Why site search function not work ?**
-* A: First, you need select the text you want to search, then right click and site search item will show.
+* **Q: Why site search / my shortcut site function not work ?**
+* A: First, you need enable site search / my shortcut site function, then select the text you want to search, then right click and site search item will show.
 
 * **Q: Can I sync settings between different computers ?**
 * A: Yes. You just need to login your Chrome, and extension will sync settings automatically via your google account.

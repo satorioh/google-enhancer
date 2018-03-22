@@ -89,13 +89,13 @@ A function transplanted from [Google Card-Style UI][Google Card-Style UI] which 
 <p align="center"><img src="img/youtubecard.PNG" with="200"></p>
 
 14. ##### My Shortcut Site
-This function will allow you to add custom site in Site Search.  
+ This function will allow you to add custom site in Site Search.  
 After enabled, you can add any site into Site Search menu.(see image below)
 <p align="center"><img src="img/shortcut1.png" with="200"></p>
-Then you can search seleted text not only in current site, but also the custom shortcut site which you just added.(if not see, refresh current page)
+ Then you can search seleted text not only in current site, but also the custom shortcut site which you just added.(if not see, refresh current page)
 <p align="center"><img src="img/shortcut3.png" with="200"></p>
 You can also delete some shortcut site in option page(if not see, refresh option page)
-<p align="center"><img src="img/shortcut2.png" with="200"></p>
+<p align="center"><img src="img/shortcut2.PNG" with="200"></p>
 
 
 ## Download

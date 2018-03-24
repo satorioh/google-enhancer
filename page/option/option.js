@@ -68,21 +68,21 @@ const defaultSettings = {
 
 window.onload = function () {
 	const settingButtons = {
-		flipPage: document.querySelector(".flipPage"),
-		dblclickToTop: document.querySelector(".dblclickToTop"),
-		newTab: document.querySelector(".newTab"),
-		siteSearch: document.querySelector(".siteSearch"),
-		shortcut: document.querySelector(".shortcut"),
-		kwColor: document.querySelector(".kwColor"),
-		kwBgColor: document.querySelector(".kwBgColor"),
-		kwOpacity: document.querySelector(".kwOpacity"),
-		kwOpacityValue: document.getElementById("kwOpacityValue"),
-		filetypeSearch: document.querySelector(".filetypeSearch"),
-		timeRangeSearch: document.querySelector(".timeRangeSearch"),
-		nightMode: document.querySelector(".nightMode"),
-		cardStyle: document.querySelector(".cardStyle"),
-		sformPinned: document.querySelector(".sformPinned"),
-		endless: document.querySelector(".endless")
+		flipPage: document.querySelector(".js-flipPage"),
+		dblclickToTop: document.querySelector(".js-dblclickToTop"),
+		newTab: document.querySelector(".js-newTab"),
+		siteSearch: document.querySelector(".js-siteSearch"),
+		shortcut: document.querySelector(".js-shortcut"),
+		kwColor: document.querySelector(".js-kwColor"),
+		kwBgColor: document.querySelector(".js-kwBgColor"),
+		kwOpacity: document.querySelector(".js-kwOpacity"),
+		kwOpacityValue: document.querySelector(".js-kwOpacityValue"),
+		filetypeSearch: document.querySelector(".js-filetypeSearch"),
+		timeRangeSearch: document.querySelector(".js-timeRangeSearch"),
+		nightMode: document.querySelector(".js-nightMode"),
+		cardStyle: document.querySelector(".js-cardStyle"),
+		sformPinned: document.querySelector(".js-sformPinned"),
+		endless: document.querySelector(".js-endless")
 	};
 
 	function resetAll () {
@@ -149,8 +149,8 @@ window.onload = function () {
 	function i18n () {
 		let objects = document.getElementsByTagName('*');
 		for(let i = 0; i < objects.length; i++) {
-			if (objects[i].dataset && objects[i].dataset.message) {
-				objects[i].childNodes[0].textContent = chrome.i18n.getMessage(objects[i].dataset.message);
+			if (objects[i].dataset && objects[i].dataset.i18n) {
+				objects[i].childNodes[0].textContent = chrome.i18n.getMessage(objects[i].dataset.i18n);
 			}
 		}
 	}
@@ -161,10 +161,10 @@ window.onload = function () {
 		this.ele =	document.createElement("li");
 		this.ele.dataset.index = `${id}`;
 		this.ele.innerHTML = `
-                    <label class="item">
-                        <div class="item-content">${title}<div class="shortcut-site-url">${id}</div></div>
-                        <div class="item-secondary">
-                            <span class="close"></span>
+                    <label class="section__item">
+                        <div class="section__item-main">${title}<div class="section__item-tip">${id}</div></div>
+                        <div class="section__item-secondary">
+                            <span class="section__item-close"></span>
                         </div>
                     </label>`;
 		this.init();
@@ -179,7 +179,7 @@ window.onload = function () {
 		delItem: function (e) {
 			e.stopPropagation();
 			let parent = e.target;
-			if(e.target && e.target.className == "close"){
+			if(e.target && e.target.className == "section__item-close"){
 				while (parent = parent.parentElement || parent.parentNode){
 					if (parent.nodeName == "LI") break;
 				}

@@ -1,5 +1,6 @@
 "use strict";
-//associate event & method with storage items
+
+//storage items which need bind event & method
 const pairs = [
 	{
 		"keyValue": "dblclickToTop",
@@ -12,6 +13,36 @@ const pairs = [
 		"method": flipPageFun
 	}
 ];
+
+function bindEvent(key) {
+	let result = searchPair(key);
+	$("body").on(result.event, result.method);
+}
+
+// associate key with function
+const rules = {
+	"dblclickToTop": function (key,value) {
+		if (value) bindEvent(key);  //if value == 1,add event
+	},
+	"flipPage": function (key,value) {
+		if (value) bindEvent(key);
+	},
+	"newTab": function(key,value){
+		newTabFun(value);
+	},
+	"sformPinned": function (key,value) {
+		if (value) sformPinnedFun();
+	},
+	"endless": function (key,value) {
+		if (value) endlessFun();
+	},
+	"nightMode": function (key,value) {
+		if (value) nightModeFun();
+	},
+	"cardStyle": function (key,value) {
+		if (value) cardStyleFun();
+	}
+};
 
 //find the same keyvalue as input value
 function searchPair (key) {
@@ -27,64 +58,28 @@ function searchPair (key) {
 	return result;
 }
 
-//initial dom & event
-function initialEvent (key, value) {
-	switch (key) {
-		case "dblclickToTop":
-		case "flipPage": {
-			if (value) {//if value == 1,add event
-				let result = searchPair(key);
-				$("body").on(result.event, result.method);
-			}
-			break;
-		}
-		case "newTab": {
-			newTabFun(value);
-			break;
-		}
-		case "sformPinned": {
-			if (value) {
-				sformPinnedFun();
-			}
-			break;
-		}
-		case "endless": {
-			if (value) {
-				endlessFun();
-			}
-			break;
-		}
-		case "nightMode": {
-			if (value) {
-				nightModeFun();
-			}
-			break;
-		}
-		case "cardStyle": {
-			if (value) {
-				cardStyleFun();
-			}
-			break;
-		}
-	}
+//initial
+function initial (key, value) {
+	if (typeof rules[key] === "undefined") return;
+	rules[key](key,value);
 }
 
+//initial function when page load
 chrome.storage.sync.get(function (response) {
 	let keys = Object.keys(response);
 	for (let i = 0,len = keys.length; i < len; i++) {
 		let key = keys[i];
 		let value = response[key];
-		initialEvent(key, value);
+		initial(key, value);
 	}
 	kwColorAll(response);
 });
 
 //——————————————————————————————————Double click back to top——————————————————————————
 function dblclickToTopFun () {
-	window.getSelection().removeAllRanges();
+	window.getSelection().removeAllRanges(); //prevent conflict with dblclick select words
 	$("html, body").animate({scrollTop: 0}, 300);
 }
-
 //——————————————————————————————————Double click back to top——————————————————————————
 
 //——————————————————————————————————use arrow keys to flip pages——————————————————————
@@ -107,7 +102,6 @@ function flipPageFun (e) {
 		} else {
 			$("#pnnext")[0].click();
 		}
-
 	}
 }
 //——————————————————————————————————use arrow keys to flip pages——————————————————————
@@ -249,7 +243,6 @@ function kwColorAll (response) {
 	});
 }
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————
-
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	if(request.filetype.indexOf("timeRangeSearch") !== -1) timeRangeSearchFun(request);
 });

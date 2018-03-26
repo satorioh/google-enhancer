@@ -46,16 +46,7 @@ const rules = {
 
 //find the same keyvalue as input value
 function searchPair (key) {
-	let result = {};
-	for (let i = 0, len = pairs.length; i < len; i++) {
-		let obj = pairs[i];
-		if (obj.keyValue == key) {
-			result.event = obj.event;
-			result.method = obj.method;
-			break;
-		}
-	}
-	return result;
+	return pairs.find(ele => ele.keyValue == key);
 }
 
 //initial

@@ -10,7 +10,7 @@ storage.get(function (response) {
 //————————————————————————————————my shortcut sites———————————————————————————————————
 function GePopUp () {
 	this.ele =
-	  $(`
+		$(`
 		<div>
 			<div class="popup-title-container">
 				<div class="top-title">${chrome.i18n.getMessage("popUpTopTitle")}</div>
@@ -49,7 +49,7 @@ GePopUp.prototype = {
 	},
 	hidePopUp: function () {
 		$(this.mask).hide();
-		$('body').css("overflow","visible");
+		$("body").css("overflow","visible");
 	},
 	domClick: function (e) {
 		let $target = $(e.target);
@@ -68,7 +68,7 @@ GePopUp.prototype = {
 	onMessage: function () {
 		let that = this;
 		chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-			console.log(request);
+			// console.log(request);
 			if(request.filetype === "ge.shortcut"){
 				request.pageUrl.replace(/\/\/(.*?)\//, function (match, p1) {
 					shortcutUrl = p1;
@@ -76,9 +76,9 @@ GePopUp.prototype = {
 					that.setInputVal("#gePopUpLayer #shortcutId", p1);
 				});
 				$("#gePopUpLayerMask").css("display","flex");
-				$('body').css("overflow","hidden");
+				$("body").css("overflow","hidden");
 				$("#gePopUpLayer #shortcutId").focus();
-			};
+			}
 		});
 	},
 	addStorage: function () {
@@ -91,7 +91,6 @@ GePopUp.prototype = {
 			let check = that.storageCheck(obj,"shortcutSite",result);
 			if(check){
 				result.shortcutSite.push(JSON.stringify(obj));
-				console.log(result);
 				storage.set(result,function () {
 					if (chrome.runtime.lastError) {
 						alert("Got error: " + chrome.runtime.lastError.message);
@@ -102,7 +101,7 @@ GePopUp.prototype = {
 				});
 			}
 
-		})
+		});
 	},
 	storageCheck: function (obj,key,result) {
 		let check = true;

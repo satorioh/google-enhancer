@@ -116,7 +116,7 @@ function newTabFun (value) {
 function sformPinnedFun() {
 	let sformPinnedUrl = chrome.extension.getURL("css/sformpinned.css");
 	let link = $(`<link rel="stylesheet" href=${sformPinnedUrl} id="geSformPinned">`);
-	if (window.location.href.search('tbm=isch') == -1){
+	if (window.location.href.search("tbm=isch") == -1){
 		$("head").append(link);
 	}
 }
@@ -138,29 +138,22 @@ function endlessFun () {
 		return;
 
 	let request_pct = 0.05;
-	let on_page_refresh = 1;
-	let main = $("#main");
 	let rcnt = $("#rcnt");
-	let input = $("#lst-ib");
-	let input_value = input.val();
 	let old_scrollY = 0;
 	let scroll_events = 0;
 	let next_link = null;
 	let cols = [];
-	let request_offsetHeight = 0;
 	let stop_events = false;
 
 	$(window).on("scroll.ge",onScroll);
 	$(window).on("beforeunload.ge",function () {window.scrollTo(0, 0);});
 
 	function requestNextPage(link) {
-		console.log("request next");
-		console.log(link);
 		$.ajax({
 			method: "GET",
 			url: link,
 			success: function (response) {
-				let el = document.getElementById('navcnt');
+				let el = document.getElementById("navcnt");
 				el.parentNode.removeChild(el);
 
 				let holder = document.createElement("div");
@@ -179,7 +172,6 @@ function endlessFun () {
 				if (rel_ads) rel_ads.style.display = "none";
 
 				cols.push(next_col);
-				console.log("Page no: " + cols.length);
 				next_col.id = next_col.className + "_" + (cols.length - 1);
 
 				if (!rcnt || cols.length === 1) rcnt = document.getElementById("rcnt");
@@ -201,7 +193,6 @@ function endlessFun () {
 		let y = window.scrollY;
 		let delta = e.deltaY || y - old_scrollY;
 		if (delta > 0 && (window.innerHeight + y) >= (document.body.clientHeight - (window.innerHeight * request_pct))) {
-			console.log("scroll end");
 			$(window).off("scroll.ge",onScroll);
 
 			try {
@@ -262,7 +253,7 @@ function nightModeFun() {
 function cardStyleFun() {
 	let cardStyleUrl = chrome.extension.getURL("css/cardstyle.css");
 	let link = $(`<link rel="stylesheet" href=${cardStyleUrl} id="geCardStyle">`);
-	if (window.location.href.search('tbm=isch')==-1){
+	if (window.location.href.search("tbm=isch")==-1){
 		$("head").append(link);
 	}
 }

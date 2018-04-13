@@ -14,6 +14,25 @@ const pairs = [
 	}
 ];
 
+//ajax get via promise
+function getURL(url) {
+	return new Promise(function (resolve, reject) {
+		let xhr = new XMLHttpRequest();
+		xhr.open("GET", url);
+		xhr.onload = function () {
+			if (xhr.status === 200) {
+				resolve(xhr.responseText);
+			} else {
+				reject(new Error(xhr.statusText));
+			}
+		};
+		xhr.onerror = function () {
+			reject(new Error(xhr.statusText));
+		};
+		xhr.send();
+	});
+}
+
 function bindEvent(key) {
 	let result = searchPair(key);
 	$("body").on(result.event, result.method);
@@ -149,43 +168,41 @@ function endlessFun () {
 	$(window).on("beforeunload.ge",function () {window.scrollTo(0, 0);});
 
 	function requestNextPage(link) {
-		$.ajax({
-			method: "GET",
-			url: link,
-			success: function (response) {
-				let el = document.getElementById("navcnt");
-				el.parentNode.removeChild(el);
+		getURL(link).then(function (response) {
+			let el = document.getElementById("navcnt");
+			el.parentNode.removeChild(el);
 
-				let holder = document.createElement("div");
-				holder.innerHTML = response;
-				next_link = holder.querySelector("#pnnext").href;
+			let holder = document.createElement("div");
+			holder.innerHTML = response;
+			next_link = holder.querySelector("#pnnext").href;
 
-				let next_col = document.createElement("div");
-				next_col.className = "EG_col";
-				next_col.appendChild(holder.querySelector("#center_col"));
+			let next_col = document.createElement("div");
+			next_col.className = "EG_col";
+			next_col.appendChild(holder.querySelector("#center_col"));
 
-				let rel_search = next_col.querySelector("#extrares");
-				let rel_images = next_col.querySelector("#imagebox_bigimages");
-				let rel_ads = next_col.querySelector("#tads");
-				if (rel_search) rel_search.style.display = "none";
-				if (rel_images) rel_images.style.display = "none";
-				if (rel_ads) rel_ads.style.display = "none";
+			let rel_search = next_col.querySelector("#extrares");
+			let rel_images = next_col.querySelector("#imagebox_bigimages");
+			let rel_ads = next_col.querySelector("#tads");
+			if (rel_search) rel_search.style.display = "none";
+			if (rel_images) rel_images.style.display = "none";
+			if (rel_ads) rel_ads.style.display = "none";
 
-				cols.push(next_col);
-				next_col.id = next_col.className + "_" + (cols.length - 1);
+			cols.push(next_col);
+			next_col.id = next_col.className + "_" + (cols.length - 1);
 
-				if (!rcnt || cols.length === 1) rcnt = document.getElementById("rcnt");
-				rcnt.appendChild(next_col);
-				//highlight keywords
-				$("em").css({
-					"color" : _kwColor,
-					"backgroundColor" : `rgba(${_bgColor})`
-				});
-				//add target attribute for newtab function
-				$("#res a").attr("target", _newTabValue ? "_blank" : "");
-				stop_events = false;
-				$(window).on("scroll.ge",onScroll);
-			}
+			if (!rcnt || cols.length === 1) rcnt = document.getElementById("rcnt");
+			rcnt.appendChild(next_col);
+			//highlight keywords
+			$("em").css({
+				"color" : _kwColor,
+				"backgroundColor" : `rgba(${_bgColor})`
+			});
+			//add target attribute for newtab function
+			$("#res a").attr("target", _newTabValue ? "_blank" : "");
+			stop_events = false;
+			$(window).on("scroll.ge",onScroll);
+		}).catch(function (error) {
+			console.log(error);
 		});
 	}
 

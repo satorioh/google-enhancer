@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1. 新增：”我的快捷站点“功能，可以为站内搜索添加自定义站点\n2. 完善夜间模式",
+    "message": "移除浮动搜索框功能",
     "description": "extension update info message"
   },
   "optionTitle": {

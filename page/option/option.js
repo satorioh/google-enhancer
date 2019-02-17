@@ -62,7 +62,7 @@ const defaultSettings = {
 	"timeRangeSearch": 0,
 	"nightMode": 0,
 	"cardStyle": 0,
-	"sformPinned": 0,
+	//"sformPinned": 0,
 	"endless": 0
 };
 
@@ -81,7 +81,7 @@ window.onload = function () {
 		timeRangeSearch: document.querySelector(".js-timeRangeSearch"),
 		nightMode: document.querySelector(".js-nightMode"),
 		cardStyle: document.querySelector(".js-cardStyle"),
-		sformPinned: document.querySelector(".js-sformPinned"),
+		//sformPinned: document.querySelector(".js-sformPinned"),
 		endless: document.querySelector(".js-endless")
 	};
 

@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1. New: 'My Shortcut Site' function, now you can add custome site for Site Search.\n2. Improve Night mode",
+    "message": "Remove search form pinned on top function",
     "description": "extension update info message"
   },
   "optionTitle": {

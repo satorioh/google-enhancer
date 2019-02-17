@@ -28,7 +28,11 @@
 * **Sync settings via Chrome**
 
 ## Update
-
+> ### v1.1.1 (2019/02/17)
+>
+> #### Remove:
+>
+> - remove search form pinned on top function
 > ### v1.1.0 (2018/03/22)
 >
 > #### New:
@@ -50,8 +54,8 @@ When browsing to the page end, you can quickly go back to top via double click a
 3. **Open link in new tab**  
 If this enabled, search result links will always be opened in a new tab.
 
-4. **Search form pinned on top**  
-If this enabled, search form will always show on top when scrolling page, so you can easily start a new search.(temporarily unavailable for image search)
+4. ~~**Search form pinned on top**~~  
+~~If this enabled, search form will always show on top when scrolling page, so you can easily start a new search.(temporarily unavailable for image search)~~
 
 5. **Endless google**  
 A function transplanted from [Endless Google][Endless Google] which will load more results automatically when you scroll to the end of a page.

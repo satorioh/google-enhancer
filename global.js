@@ -145,8 +145,8 @@ function sformPinnedFun() {
 /*
 * refer to Endless Google
 * @author tumpio
-* @link: https://openuserjs.org/scripts/tumpio/tumpiosci.fi/Endless_Google
-* @version 0.0.4
+* @link: https://openuserjs.org/scripts/tumpio/Endless_Google
+* @version 0.0.6
 * and made some changes
 */
 
@@ -156,74 +156,129 @@ function endlessFun () {
 	if (window.top !== window.self)
 		return;
 
-	let request_pct = 0.05;
-	let rcnt = $("#rcnt");
-	let old_scrollY = 0;
-	let scroll_events = 0;
-	let next_link = null;
-	let cols = [];
-	let stop_events = false;
+    const centerElement = "#center_col";
+    const loadWindowSize = 1.6;
+    const filtersAll = ["#foot", "#bottomads"];
+    const filtersCol = filtersAll.concat(["#extrares", "#imagebox_bigimages"]);
+    let   msg = "";
 
-	$(window).on("scroll.ge",onScroll);
+    const css = `
+.page-number {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+	margin-bottom: 2em;
+	color: #808080;
+}
+.page-number::before {
+  content: "";
+  background-color: #ededed;
+  height: 1px;
+  width: 100%;
+  margin: 1em 3em;
+}
+.endless-msg {
+  position:fixed;
+  bottom:0;
+  left:0;
+  padding:5px 10px;
+  background: darkred;
+  color: white;
+  font-size: 11px;
+  display: none;
+}
+.endless-msg.shown {
+  display:block;
+}
+`;
+
 	$(window).on("beforeunload.ge",function () {window.scrollTo(0, 0);});
 
-	function requestNextPage(link) {
-		getURL(link).then(function (response) {
-			let el = document.getElementById("navcnt");
-			el.parentNode.removeChild(el);
+    let pageNumber = 1;
+    let prevScrollY = 0;
+    let nextPageLoading = false;
 
-			let holder = document.createElement("div");
-			holder.innerHTML = response;
-			next_link = holder.querySelector("#pnnext").href;
+    init();
 
-			let next_col = document.createElement("div");
-			next_col.className = "EG_col";
-			next_col.appendChild(holder.querySelector("#center_col"));
+    function requestNextPage() {
+        nextPageLoading = true;
+        let nextPage = new URL(location.href);
+        if (!nextPage.searchParams.has("q")) return;
 
-			let rel_search = next_col.querySelector("#extrares");
-			let rel_images = next_col.querySelector("#imagebox_bigimages");
-			let rel_ads = next_col.querySelector("#tads");
-			if (rel_search) rel_search.style.display = "none";
-			if (rel_images) rel_images.style.display = "none";
-			if (rel_ads) rel_ads.style.display = "none";
+        nextPage.searchParams.set("start", String(pageNumber * 10));
+        !msg.classList.contains("shown") && msg.classList.add("shown");
+        fetch(nextPage.href)
+            .then(response => response.text())
+            .then(text => {
+                let parser = new DOMParser();
+                let htmlDocument = parser.parseFromString(text, "text/html");
+                let content = htmlDocument.documentElement.querySelector(centerElement);
 
-			cols.push(next_col);
-			next_col.id = next_col.className + "_" + (cols.length - 1);
+                content.id = "col_" + pageNumber;
+                filter(content, filtersCol);
 
-			if (!rcnt || cols.length === 1) rcnt = document.getElementById("rcnt");
-			rcnt.appendChild(next_col);
-			//highlight keywords
-			$("em").css({
-				"color" : _kwColor,
-				"backgroundColor" : `rgba(${_bgColor})`
-			});
-			//add target attribute for newtab function
-			$("#res a").attr("target", _newTabValue ? "_blank" : "");
-			stop_events = false;
-			$(window).on("scroll.ge",onScroll);
-		}).catch(function (error) {
-			console.log(error);
-		});
-	}
+                let pageMarker = document.createElement("div");
+                pageMarker.textContent = String(pageNumber + 1);
+                pageMarker.className = "page-number";
 
-	function onScroll(e) {
-		let y = window.scrollY;
-		let delta = e.deltaY || y - old_scrollY;
-		if (delta > 0 && (window.innerHeight + y) >= (document.body.clientHeight - (window.innerHeight * request_pct))) {
-			$(window).off("scroll.ge",onScroll);
+                let col = document.createElement("div");
+                col.className = "next-col";
+                col.appendChild(pageMarker);
+                col.appendChild(content);
+                document.querySelector(centerElement).appendChild(col);
 
-			try {
-				if(!stop_events){
-					stop_events = true;
-					requestNextPage(next_link || $("#pnnext").attr("href"));
-				}
-			} catch (err) {
-				console.error(err.name + ": " + err.message);
-			}
-		}
-		old_scrollY = y;
-		scroll_events += 1;
-	}
+                if (!content.querySelector("#rso")) {
+                    // end of results
+                    window.removeEventListener("scroll", onScrollDocumentEnd);
+                    nextPageLoading = false;
+                    msg.classList.contains("shown") && msg.classList.remove("shown");
+                    return;
+                }
+
+                pageNumber++;
+                nextPageLoading = false;
+                msg.classList.contains("shown") && msg.classList.remove("shown");
+            });
+    }
+
+    function onScrollDocumentEnd() {
+        let y = window.scrollY;
+        let delta = y - prevScrollY;
+        if (!nextPageLoading && delta > 0 && isDocumentEnd(y)) {
+            requestNextPage();
+        }
+        prevScrollY = y;
+    }
+
+    function isDocumentEnd(y) {
+        return y + window.innerHeight * loadWindowSize >= document.body.clientHeight;
+    }
+
+    function filter(node, filters) {
+        for (let filter of filters) {
+            let child = node.querySelector(filter);
+            if (child) {
+                child.parentNode.removeChild(child);
+            }
+        }
+    }
+
+    function init() {
+        prevScrollY = window.scrollY;
+        window.addEventListener("scroll", onScrollDocumentEnd);
+        filter(document, filtersAll);
+        let style = document.createElement("style");
+        style.type = "text/css";
+        style.appendChild(document.createTextNode(css));
+        document.head.appendChild(style);
+        msg = document.createElement("div");
+        msg.setAttribute("class", "endless-msg");
+        msg.innerText = "Loading next page...";
+        document.body.appendChild(msg);
+    }
+
+
 }
 //——————————————————————————————————endless google————————————————————————————————————
 

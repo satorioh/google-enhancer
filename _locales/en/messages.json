@@ -62,6 +62,9 @@
   "kwOpacityName": {
     "message": "Keywords background color opacity"
   },
+  "vLinkColorName": {
+    "message": "Visited Link color"
+  },
   "siteSearchName": {
     "message": "Site search (context menu)"
   },

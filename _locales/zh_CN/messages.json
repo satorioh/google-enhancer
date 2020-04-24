@@ -62,6 +62,9 @@
   "kwOpacityName": {
     "message": "关键词背景色透明度"
   },
+  "vLinkColorName": {
+    "message": "已访问链接颜色"
+  },
   "siteSearchName": {
     "message": "站内搜索（右键菜单）"
   },

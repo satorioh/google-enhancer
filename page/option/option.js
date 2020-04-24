@@ -57,6 +57,7 @@ const defaultSettings = {
 	"shortcutSite": [],
 	"kwColor": "#dd4b39",
 	"kwBgColor": "#ffffff",
+	"vLinkColor": "#660099",
 	"kwOpacity": 0.4,
 	"filetypeSearch": 0,
 	"timeRangeSearch": 0,
@@ -77,6 +78,7 @@ window.onload = function () {
 		kwBgColor: document.querySelector(".js-kwBgColor"),
 		kwOpacity: document.querySelector(".js-kwOpacity"),
 		kwOpacityValue: document.querySelector(".js-kwOpacityValue"),
+		vLinkColor: document.querySelector(".js-vLinkColor"),
 		filetypeSearch: document.querySelector(".js-filetypeSearch"),
 		timeRangeSearch: document.querySelector(".js-timeRangeSearch"),
 		nightMode: document.querySelector(".js-nightMode"),
@@ -99,7 +101,8 @@ window.onload = function () {
 				let checked = true;
 				switch (name) {
 					case "kwColor":
-					case "kwBgColor": {
+					case "kwBgColor":
+					case "vLinkColor": {
 						button.value = value;
 						setItemByKey(name, value);
 						button.onchange = function (e) {
@@ -145,7 +148,7 @@ window.onload = function () {
 			}
 		});
 	}
-	
+
 	function i18n () {
 		let objects = document.getElementsByTagName('*');
 		for(let i = 0; i < objects.length; i++) {

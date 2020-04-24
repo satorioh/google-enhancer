@@ -83,6 +83,7 @@ chrome.storage.sync.get(function (response) {
 		initial(key, value);
 	}
 	kwColorAll(response);
+	setVLinkColor(response);
 });
 
 //——————————————————————————————————Double click back to top——————————————————————————
@@ -299,6 +300,16 @@ function kwColorAll (response) {
 	});
 }
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————
+
+//————————————————————————set visited link color——————————————————————
+function setVLinkColor (response) {
+    const cssString = `a:visited{color: ${response.vLinkColor}}`;
+    const styleTag = document.createElement("style");
+    styleTag.innerHTML = cssString;
+    document.head.insertAdjacentElement('beforeend', styleTag);
+}
+//————————————————————————set visited link color——————————————————————
+
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	if(request.filetype.indexOf("timeRangeSearch") !== -1) timeRangeSearchFun(request);
 });

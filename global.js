@@ -87,6 +87,8 @@ chrome.storage.sync.get(function (response) {
 
 //——————————————————————————————————Double click back to top——————————————————————————
 function dblclickToTopFun () {
+	let selObj = window.getSelection();
+	if(selObj.focusNode.className === 'a4bIc') return; // search input
 	window.getSelection().removeAllRanges(); //prevent conflict with dblclick select words
 	$("html, body").animate({scrollTop: 0}, 300);
 }

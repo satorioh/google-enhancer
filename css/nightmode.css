@@ -7,8 +7,8 @@
 */
 
 /**************************common style******************************/
-*:visited { color: #f2f2f2 !important; }
-a:link { color: #e6e6e6 !important; }
+*:visited { color: #f2f2f2; }
+a:link { color: #e6e6e6; }
 /**************************main page******************************/
 body,
 div#viewport {
@@ -146,8 +146,8 @@ div.sfbgg,
 .st { color: gray !important; }
 
 #res a:link,
-#extrares a:link { color: #f2f2f2 !important; }
-#res h3 { color: white !important; }
+#extrares a:link { color: #f2f2f2; }
+/*#res h3 { color: white; }*/
 ._Jvo ,
 ._VSv ,
 ._USv{ background: #6e6e6e !important; }
@@ -213,7 +213,7 @@ a.fl,
 
 #res a:visited,
 #extrares a:visited {
-    color: #999 !important;
+    color: #999;
 }
 
 /*top answer*/

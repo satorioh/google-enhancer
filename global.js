@@ -303,7 +303,7 @@ function kwColorAll (response) {
 
 //————————————————————————set visited link color——————————————————————
 function setVLinkColor (response) {
-    const cssString = `a:visited{color: ${response.vLinkColor}}`;
+    const cssString = `a:visited{color: ${response.vLinkColor} !important}`;
     const styleTag = document.createElement("style");
     styleTag.innerHTML = cssString;
     document.head.insertAdjacentElement('beforeend', styleTag);

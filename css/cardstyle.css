@@ -229,12 +229,12 @@ div#subform_ctrl {
 
 #res a:link,
 #extrares a:link {
-    color: #222 !important;
+    color: #222;
 }
 
 #res a:visited,
 #extrares a:visited {
-    color: #999 !important;
+    color: #999;
 }
 
 #res {

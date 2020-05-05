@@ -21,14 +21,12 @@ function saveChoice (e) {
 
 function setItem (obj) {
 	chrome.storage.sync.set(obj);
-	chrome.storage.local.set(obj);
 }
 
 function setItemByKey (key, value) {
 	let obj = {};
 	obj[key] = value;
 	chrome.storage.sync.set(obj);
-	chrome.storage.local.set(obj);
 }
 
 function getItem (obj, callback) {
@@ -95,8 +93,8 @@ window.onload = function () {
 	// Show saved settings
 	function restoreSetting () {
 		getItem(defaultSettings, (settings) => {
-			for (let name in settings) {
-				let value = settings[name];
+		    setItem(settings);
+			for (let [name, value] of Object.entries(settings)) {
 				let button = settingButtons[name];
 				let checked = true;
 				switch (name) {
@@ -104,7 +102,6 @@ window.onload = function () {
 					case "kwBgColor":
 					case "vLinkColor": {
 						button.value = value;
-						setItemByKey(name, value);
 						button.onchange = function (e) {
 							let hex = this.value.toLowerCase();
 							setItemByKey(name, hex);
@@ -115,7 +112,6 @@ window.onload = function () {
 					case "kwOpacity": {
 						button.value = value;
 						settingButtons["kwOpacityValue"].textContent = value;
-						setItemByKey(name, value);
 						button.onchange = function () {
 							settingButtons["kwOpacityValue"].textContent = this.value;
 							setItemByKey(name, this.value);
@@ -123,13 +119,11 @@ window.onload = function () {
 						button.disabled = false;
 						break;
 					}
-					case "shortcutSite": {
-						setItemByKey(name, value);
-						break;
-					}
+                    case "shortcutSite": {
+                        break;
+                    }
 					case "shortcut": {
 						checked = !!parseInt(value);
-						setItemByKey(name, parseInt(value));
 						button.checked = checked;
 						shortcutList.style.display = checked ? "block" : "none";
 						button.onchange = saveChoice;
@@ -138,7 +132,6 @@ window.onload = function () {
 					}
 					default: {
 						checked = !!parseInt(value);
-						setItemByKey(name, parseInt(value));
 						button.checked = checked;
 						button.onchange = saveChoice;
 						button.disabled = false;

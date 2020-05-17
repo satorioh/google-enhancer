@@ -601,10 +601,15 @@ function siteSearchClicked (response) {
 }
 
 function filetypeSearchClicked (response) {
-	let type = response.menuItemId.slice(-3);
-	response.pageUrl.replace(/[&?]q=(.+?)[&+]/, function (match, p1) {
-		window.open(`https://www.google.com/search?&q=${p1}+filetype:${type}`);
+	const type = response.menuItemId.slice(-3);
+    let url = response.pageUrl;
+    if(url.includes('filetype')) {
+       url = url.replace(/\+filetype:\w+/, '');
+    }
+	const newUrl = url.replace(/[&?]q=(.+?)[&?]/, function (match, p1) {
+		return `&q=${p1}+filetype:${type}&`;
 	});
+	window.open(newUrl);
 }
 
 function sendToFront (response) {

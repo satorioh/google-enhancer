@@ -1,0 +1,201 @@
+{
+  "extDesc": {
+    "message": "Macht die Google-Suche angenehmer und komfortabler",
+    "description": "extension description"
+  },
+  "extUpdateTitle": {
+    "message": "Google Enhancer aktualisiert",
+    "description": "extension update info title"
+  },
+  "extUpdateMsg": {
+    "message": "1. Behoben: Fehler im Endlosmodus\n2. Neu: Benutzerdefinierte Farbe des besuchten Links\n3. Behoben: Suchbegriff konnten nicht mit Doppelklick markiert werden",
+    "description": "extension update info message"
+  },
+  "optionTitle": {
+    "message": "Google Enhancer - Einstellungen",
+    "description": "option page title"
+  },
+  "optionHeader": {
+    "message": "Google Enhencer - Einstellungen",
+    "description": "option header-left h1"
+  },
+  "globalSectionTitle": {
+    "message": "Allgemein",
+    "description": "global section h2 title"
+  },
+  "flipPageName": {
+    "message": "Pfeiltasten verwenden, um Seiten umzublättern"
+  },
+  "flipPageTip": {
+    "message": "← / → (Zurück / Weiter)"
+  },
+  "dblclickToTopName": {
+    "message": "Mit Doppelklick zurück zum Anfang"
+  },
+  "newTabName": {
+    "message": "Links in den Suchergebnissen in neuem Tab öffnen"
+  },
+  "sformPinnedName": {
+    "message": "Suchformular oben anheften"
+  },
+  "sformPinnedTip": {
+    "message": "(Für die Bildsuche vorübergehend nicht verfügbar)"
+  },
+  "endlessName": {
+    "message": "Google - Endlosmodus"
+  },
+  "endlessTip": {
+    "message": "Lädt automatisch und endlos weitere Ergebnisse"
+  },
+  "searchSectionTitle": {
+    "message": "Suchen"
+  },
+  "kwColorName": {
+    "message": "Farbe der Suchbegriffe"
+  },
+  "kwColorTip": {
+    "message": "Hebt Suchbegriffe im Textbereich hervor"
+  },
+  "kwBgColorName": {
+    "message": "Hintergrundfarbe der Suchbegriffe"
+  },
+  "kwOpacityName": {
+    "message": "Deckkraft der Hintergrundfarbe der Suchbegriffe"
+  },
+  "vLinkColorName": {
+    "message": "Farbe der Links von besuchten Seite"
+  },
+  "siteSearchName": {
+    "message": "Innerhalb der Seite suchen (Kontextmenü)"
+  },
+  "siteSearchTip": {
+    "message": "Google verwenden, um ausgewählte Wörter innerhalb der aktuellen Website zu suchen"
+  },
+  "filetypeSearchName": {
+    "message": "Suchen nach Dateitypen (Kontextmenü)"
+  },
+  "filetypeSearchTip": {
+    "message": "Seiten im gewünschten Format finden"
+  },
+  "timeRangeSearchName": {
+    "message": "Zeitbereichssuche (Kontextmenü)"
+  },
+  "timeRangeSearchTip": {
+    "message": "Seiten finden, die innerhalb der von Ihnen angegebenen Zeit aktualisiert wurden"
+  },
+  "customSectionTitle": {
+    "message": "Benutzerdefiniert"
+  },
+  "shortcutName": {
+    "message": "Meine Website-Verknüpfungen (Kontextmenü)"
+  },
+  "shortcutTip": {
+    "message": "Benutzerdefinierte Website-Verknüpfungen für die Suche innerhalb der Website"
+  },
+  "appearanceSectionTitle": {
+    "message": "Erscheinungsbild"
+  },
+  "nightModeName": {
+    "message": "Dunkler Modus"
+  },
+  "nightModeTip": {
+    "message": "Ein dunkler Modus für Google"
+  },
+  "cardStyleName": {
+    "message": "Kartenähnliche Bnutzeroberfläche"
+  },
+  "cardStyleTip": {
+    "message": "Angepasste Google-Oberfläche"
+  },
+  "resetSectionTitle": {
+    "message": "Zurücksetzen"
+  },
+  "resetName": {
+    "message": "Einstellungen zurücksetzen"
+  },
+  "resetBtn": {
+    "message": "Zurücksetzen"
+  },
+  "helpSectionTitle": {
+    "message": "Hilfe"
+  },
+  "helpName": {
+    "message": "Hilfe"
+  },
+  "flipPageToFirst": {
+    "message": "Sie befinden sich bereits auf der ersten Seite.",
+    "description": "reach first page"
+  },
+  "flipPageToLast": {
+    "message": "Sie befinden sich bereits auf der letzten Seite.",
+    "description": "reach last page"
+  },
+  "timeAnyTime": {
+    "message": "Beliebige Zeit",
+    "description": "time range search item:any time"
+  },
+  "timePastHour": {
+    "message": "Letzte Stunde"
+  },
+  "timePastDay": {
+    "message": "Letzte 24 Stunden"
+  },
+  "timePastWeek": {
+    "message": "Letzte Woche"
+  },
+  "timePastMonth": {
+    "message": "Letzter MonatPast month"
+  },
+  "timePastYear": {
+    "message": "Letztes Jahr"
+  },
+  "timeCustom": {
+    "message": "Zeitraum festlegen"
+  },
+  "siteSearch": {
+    "message": "Website durchsuchen",
+    "description": "site search parent menu"
+  },
+  "siteSearchCurrent": {
+    "message": "„%s” auf der aktuellen Website suchen",
+    "description": "site search child menu first item"
+  },
+  "filetypeSearch": {
+    "message": "Nach Dateiformaten suchen",
+    "description": "filetype search parent menu"
+  },
+  "timeRangeSearch": {
+    "message": "Zeitbereich-Suche",
+    "description": "time range search parent menu"
+  },
+  "shortcut": {
+    "message": "Website-Verknüpfung hinzufügen",
+    "description": "shortcut site parent menu"
+  },
+  "popUpTopTitle": {
+    "message": "Website-Verknüpfung hinzufügen: <span></span> "
+  },
+  "popUpContentLabel": {
+    "message": "Name der Website",
+    "description": "popup content label"
+  },
+  "popUpCloseBtn": {
+    "message": "Abbrechen"
+  },
+  "popUpActionBtn": {
+    "message": "Hinzufügen",
+    "description": "popup action button"
+  },
+  "shortcutAddSuccess": {
+    "message": "Erfolgreich hinzugefügt!",
+    "description": "add shortcut site success"
+  },
+  "shortcutAddRepeat": {
+    "message": "Diese Website wurde bereits hinzugefügt: ",
+    "description": "add repeat site"
+  },
+  "storageShortcutFull": {
+    "message": "Speicher ist voll! Bitte löschen Sie einige Website-Verknüpfung in den Einstellungen und versuchen Sie es erneut.",
+    "description": "storage check for shortcut site"
+  }
+}

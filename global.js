@@ -277,7 +277,7 @@ function endlessFun () {
         document.head.appendChild(style);
         msg = document.createElement("div");
         msg.setAttribute("class", "endless-msg");
-        msg.innerText = "Loading next page...";
+        msg.innerText = chrome.i18n.getMessage('endlessLoadingHint');
         document.body.appendChild(msg);
     }
 

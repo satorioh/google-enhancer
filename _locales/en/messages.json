@@ -47,6 +47,9 @@
   "endlessTip": {
     "message": "Load more results automatically and endlessly"
   },
+  "endlessLoadingHint": {
+    "message": "Loading next page..."
+  },
   "searchSectionTitle": {
     "message": "Search"
   },

@@ -47,6 +47,9 @@
   "endlessTip": {
     "message": "自动加载下一页结果"
   },
+  "endlessLoadingHint": {
+    "message": "加载下一页..."
+  },
   "searchSectionTitle": {
     "message": "搜索"
   },

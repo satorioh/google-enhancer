@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1. Behoben: Fehler im Endlosmodus\n2. Neu: Benutzerdefinierte Farbe des besuchten Links\n3. Behoben: Suchbegriff konnten nicht mit Doppelklick markiert werden",
+    "message": "1.Deutsche Übersetzung\n2.Suche nach Dateitypen optimieren",
     "description": "extension update info message"
   },
   "optionTitle": {

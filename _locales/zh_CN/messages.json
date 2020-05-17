@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.修复无尽模式\n2.新增已访问链接颜色设置\n3.修复双击无法选中搜索词",
+    "message": "1.添加德语支持\n2.优化文件类型搜索",
     "description": "extension update info message"
   },
   "optionTitle": {

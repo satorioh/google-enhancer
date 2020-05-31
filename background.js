@@ -479,7 +479,19 @@ const fileTypeArr = [
 	{
 		title:"swf",
 		id:"swf"
-	}
+	},
+    {
+        title:"txt",
+        id:"txt"
+    },
+    {
+        title:"xml",
+        id:"xml"
+    },
+    {
+        title:"tex",
+        id:"tex"
+    }
 ];
 const timeRangeArr = [
 	{
@@ -604,10 +616,10 @@ function filetypeSearchClicked (response) {
 	const type = response.menuItemId.slice(-3);
     let url = response.pageUrl;
     if(url.includes('filetype')) {
-       url = url.replace(/\+filetype:\w+/, '');
+       url = url.replace(/\+filetype%3A\w+/, '');
     }
 	const newUrl = url.replace(/[&?]q=(.+?)[&?]/, function (match, p1) {
-		return `&q=${p1}+filetype:${type}&`;
+		return `&q=${p1}+filetype%3A${type}&`;
 	});
 	window.open(newUrl);
 }

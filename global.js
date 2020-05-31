@@ -49,9 +49,6 @@ const rules = {
 	"newTab": function(key,value){
 		newTabFun(value);
 	},
-	"sformPinned": function (key,value) {
-		if (value) sformPinnedFun();
-	},
 	"endless": function (key,value) {
 		if (value) endlessFun();
 	},
@@ -71,7 +68,13 @@ function searchPair (key) {
 //initial
 function initial (key, value) {
 	if (typeof rules[key] === "undefined") return;
-	rules[key](key,value);
+	if (['dblclickToTop', 'flipPage', 'newTab', 'endless'].includes(key)) {
+	    $(function () {
+            rules[key](key,value);
+        })
+    } else {
+        rules[key](key,value);
+    }
 }
 
 //initial function when page load
@@ -134,15 +137,6 @@ function newTabFun (value) {
 }
 //——————————————————————————————————open link in new tab——————————————————————————————
 
-//——————————————————————————————————search form pinned on top—————————————————————————
-function sformPinnedFun() {
-	let sformPinnedUrl = chrome.extension.getURL("css/sformpinned.css");
-	let link = $(`<link rel="stylesheet" href=${sformPinnedUrl} id="geSformPinned">`);
-	if (window.location.href.search("tbm=isch") == -1){
-		$("head").append(link);
-	}
-}
-//——————————————————————————————————search form pinned on top—————————————————————————
 
 //——————————————————————————————————endless google————————————————————————————————————
 /*
@@ -294,10 +288,12 @@ function kwColorAll (response) {
 	let b = parseInt((response.kwBgColor).substring(5,7),16);
 	_bgColor = `${r},${g},${b},${response.kwOpacity}`;
 	_kwColor = response.kwColor;
-	$("em").css({
-		"color" : _kwColor,
-		"backgroundColor" : `rgba(${_bgColor})`
-	});
+	$(function () {
+        $("em").css({
+            "color" : _kwColor,
+            "backgroundColor" : `rgba(${_bgColor})`
+        });
+    })
 }
 //————————————————————————set keywords color & bgcolor & opacity——————————————————————
 

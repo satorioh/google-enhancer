@@ -213,7 +213,8 @@
         "https://ipv6.google.com/*"
       ],
       "css": ["global.css"],
-      "js": ["libs/jquery-3.2.0.min.js","global.js"]
+      "js": ["libs/jquery-3.2.0.min.js","global.js"],
+      "run_at": "document_start"
     },
     {
       "matches": ["<all_urls>"],

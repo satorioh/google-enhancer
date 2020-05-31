@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.添加德语支持\n2.优化文件类型搜索",
+    "message": "1.修复样式闪现问题\n2.新增 txt/xml/tex 文件搜索类型",
     "description": "extension update info message"
   },
   "optionTitle": {

@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.Deutsche Übersetzung\n2.Suche nach Dateitypen optimieren",
+    "message": "1.Korrigieren Sie das Blinken des Stils\n2.Fügen Sie txt/xml/tex für die Suche nach Dateitypen",
     "description": "extension update info message"
   },
   "optionTitle": {

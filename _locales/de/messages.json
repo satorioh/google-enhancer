@@ -35,12 +35,6 @@
   "newTabName": {
     "message": "Links in den Suchergebnissen in neuem Tab öffnen"
   },
-  "sformPinnedName": {
-    "message": "Suchformular oben anheften"
-  },
-  "sformPinnedTip": {
-    "message": "(Für die Bildsuche vorübergehend nicht verfügbar)"
-  },
   "endlessName": {
     "message": "Google - Endlosmodus"
   },

@@ -35,12 +35,6 @@
   "newTabName": {
     "message": "在新标签页开启链接"
   },
-  "sformPinnedName": {
-    "message": "浮动搜索框"
-  },
-  "sformPinnedTip": {
-    "message": "搜索框随页面滚动(图片搜索下不可用)"
-  },
   "endlessName": {
     "message": "无尽模式"
   },

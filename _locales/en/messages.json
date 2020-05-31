@@ -35,12 +35,6 @@
   "newTabName": {
     "message": "Open link in new tab"
   },
-  "sformPinnedName": {
-    "message": "Search form pinned on top"
-  },
-  "sformPinnedTip": {
-    "message": "(Temporarily unavailable for image search)"
-  },
   "endlessName": {
     "message": "Endless google"
   },

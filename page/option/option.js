@@ -9,14 +9,23 @@
 
 let shortcutList = document.getElementById("shortcutList");//list frame for wrap list items
 
-function saveChoice (e) {
+function saveChoice (settingButtons, e) {
 	let name = e.target.name;
 	let checked = e.target.checked;
 	let value = checked ? 1 : 0;
-	setItemByKey(name, value);
-	if(name == "shortcut"){
-		shortcutList.style.display = checked ? "block" : "none";
+	// can't be enabled together
+	if(name === 'flipPage' && value === 1) {
+	    setItemByKey('endless', 0);
+	    settingButtons['endless'].checked = false;
 	}
+	if(name === 'endless' && value === 1) {
+	    setItemByKey('flipPage', 0);
+	    settingButtons['flipPage'].checked = false;
+	}
+    if(name === "shortcut"){
+        shortcutList.style.display = checked ? "block" : "none";
+    }
+	setItemByKey(name, value);
 }
 
 function setItem (obj) {
@@ -124,14 +133,14 @@ window.onload = function () {
 						checked = !!parseInt(value);
 						button.checked = checked;
 						shortcutList.style.display = checked ? "block" : "none";
-						button.onchange = saveChoice;
+						button.onchange = saveChoice.bind(this, settingButtons);
 						button.disabled = false;
 						break;
 					}
 					default: {
 						checked = !!parseInt(value);
 						button.checked = checked;
-						button.onchange = saveChoice;
+						button.onchange = saveChoice.bind(this, settingButtons);
 						button.disabled = false;
 					}
 

@@ -195,5 +195,14 @@
   "storageShortcutFull": {
     "message": "存储已满！\n请在设置页删除一些快捷站点，然后再试",
     "description": "storage check for shortcut site"
+  },
+  "experimentsTitle": {
+    "message": "实验性功能"
+  },
+  "areaClickName": {
+    "message": "区域点击"
+  },
+  "areaClickTip": {
+    "message": "使用鼠标中键点击区域来打开网页"
   }
 }

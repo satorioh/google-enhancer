@@ -1,218 +1,387 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title data-i18n="optionTitle">Google Enhencer Settings</title>
-    <link type="text/css" href="option.css" rel="stylesheet">
-</head>
+    <link type="text/css" href="option.css" rel="stylesheet" />
+  </head>
 
-<body>
-<header>
-    <div class="head head__logo">
+  <body>
+    <header>
+      <div class="head head__logo">
         <h1 data-i18n="optionHeader" class="head__logo-txt">Settings</h1>
-    </div>
-    <div class="head head__searchbar"></div>
-    <div class="head head__reserve"></div>
-</header>
-<section>
-    <!--------------global------------------>
-    <div class="section">
+      </div>
+      <div class="head head__searchbar"></div>
+      <div class="head head__reserve"></div>
+    </header>
+    <section>
+      <!--------------global------------------>
+      <div class="section">
         <h2 class="section__title" data-i18n="globalSectionTitle">Global</h2>
         <ul class="section__body">
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="flipPageName">Use arrow keys to flip pages<div class="section__item-tip" data-i18n="flipPageTip">Previous(&larr;) or next(&rarr;)</div></div>
-                    <div class="section__item-secondary">
-                        <span class="section__toggle">
-                            <input name="flipPage" class="section__toggle--hidden js-flipPage" disabled type="checkbox">
-                            <div></div>
-                        </span>
-                    </div>
-                </label>
-            </li>
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="dblclickToTopName">Double click back to top</div>
-                    <div class="section__item-secondary">
-                        <span class="section__toggle">
-                            <input disabled name="dblclickToTop" class="section__toggle--hidden js-dblclickToTop" type="checkbox">
-                            <div></div>
-                        </span>
-                    </div>
-                </label>
-            </li>
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="newTabName">Open link in new tab</div>
-                    <div class="section__item-secondary">
-                        <span class="section__toggle">
-                            <input disabled name="newTab" class="section__toggle--hidden js-newTab" type="checkbox">
-                            <div></div>
-                        </span>
-                    </div>
-                </label>
-            </li>
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="endlessName">Endless google<div class="section__item-tip" data-i18n="endlessTip">Load more results automatically and endlessly</div></div>
-                    <div class="section__item-secondary">
-                        <span class="section__toggle">
-                            <input disabled name="endless" class="section__toggle--hidden js-endless" type="checkbox">
-                            <div></div>
-                        </span>
-                    </div>
-                </label>
-            </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="flipPageName">
+                Use arrow keys to flip pages
+                <div class="section__item-tip" data-i18n="flipPageTip">
+                  Previous(&larr;) or next(&rarr;)
+                </div>
+              </div>
+              <div class="section__item-secondary">
+                <span class="section__toggle">
+                  <input
+                    name="flipPage"
+                    class="section__toggle--hidden js-flipPage"
+                    disabled
+                    type="checkbox"
+                  />
+                  <div></div>
+                </span>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="dblclickToTopName">
+                Double click back to top
+              </div>
+              <div class="section__item-secondary">
+                <span class="section__toggle">
+                  <input
+                    disabled
+                    name="dblclickToTop"
+                    class="section__toggle--hidden js-dblclickToTop"
+                    type="checkbox"
+                  />
+                  <div></div>
+                </span>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="newTabName">
+                Open link in new tab
+              </div>
+              <div class="section__item-secondary">
+                <span class="section__toggle">
+                  <input
+                    disabled
+                    name="newTab"
+                    class="section__toggle--hidden js-newTab"
+                    type="checkbox"
+                  />
+                  <div></div>
+                </span>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="endlessName">
+                Endless google
+                <div class="section__item-tip" data-i18n="endlessTip">
+                  Load more results automatically and endlessly
+                </div>
+              </div>
+              <div class="section__item-secondary">
+                <span class="section__toggle">
+                  <input
+                    disabled
+                    name="endless"
+                    class="section__toggle--hidden js-endless"
+                    type="checkbox"
+                  />
+                  <div></div>
+                </span>
+              </div>
+            </label>
+          </li>
         </ul>
-    </div>
-    <!--------------Search------------------>
-    <div class="section">
+      </div>
+      <!--------------Search------------------>
+      <div class="section">
         <h2 class="section__title" data-i18n="searchSectionTitle">Search</h2>
         <ul class="section__body">
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="kwColorName">Keywords color<div class="section__item-tip" data-i18n="kwColorTip">Highlight keywords</div></div>
-                    <div class="section__item-secondary">
-                        <input disabled name="kwColor" class="js-kwColor" type="color">
-                    </div>
-                </label>
-            </li>
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="kwBgColorName">Keywords background color</div>
-                    <div class="section__item-secondary">
-                        <input disabled name="kwBgColor" class="js-kwBgColor" type="color">
-                    </div>
-                </label>
-            </li>
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="kwOpacityName">Keywords background color opacity</div>
-                    <div class="section__item-secondary kw-opacity">
-                        <input disabled name="kwOpacity" class="js-kwOpacity" type="range" min="0.00" max="1.00" step="0.05">
-                        <span class="kw-opacity-value js-kwOpacityValue"></span>
-                    </div>
-                </label>
-            </li>
-						<li>
-							<label class="section__item">
-								<div class="section__item-main" data-i18n="vLinkColorName">Visited Link color</div>
-								<div class="section__item-secondary">
-									<input disabled name="vLinkColor" class="js-vLinkColor" type="color">
-								</div>
-							</label>
-						</li>
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="siteSearchName">Site search (context menu)<div class="section__item-tip" data-i18n="siteSearchTip">Use google to search selected words in current site</div></div>
-                    <div class="section__item-secondary">
-                        <span class="section__toggle">
-                            <input disabled name="siteSearch" class="section__toggle--hidden js-siteSearch" type="checkbox">
-                            <div></div>
-                        </span>
-                    </div>
-                </label>
-            </li>
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="filetypeSearchName">Filetype search (context menu)<div class="section__item-tip" data-i18n="filetypeSearchTip">Find pages in the format you prefer</div></div>
-                    <div class="section__item-secondary">
-                        <span class="section__toggle">
-                            <input disabled name="filetypeSearch" class="section__toggle--hidden js-filetypeSearch" type="checkbox">
-                            <div></div>
-                        </span>
-                    </div>
-                </label>
-            </li>
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="timeRangeSearchName">Time Range search (context menu)<div class="section__item-tip" data-i18n="timeRangeSearchTip">Find pages updated within the time you specify</div></div>
-                    <div class="section__item-secondary">
-                        <span class="section__toggle">
-                            <input disabled name="timeRangeSearch" class="section__toggle--hidden js-timeRangeSearch" type="checkbox">
-                            <div></div>
-                        </span>
-                    </div>
-                </label>
-            </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="kwColorName">
+                Keywords color
+                <div class="section__item-tip" data-i18n="kwColorTip">
+                  Highlight keywords
+                </div>
+              </div>
+              <div class="section__item-secondary">
+                <input
+                  disabled
+                  name="kwColor"
+                  class="js-kwColor"
+                  type="color"
+                />
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="kwBgColorName">
+                Keywords background color
+              </div>
+              <div class="section__item-secondary">
+                <input
+                  disabled
+                  name="kwBgColor"
+                  class="js-kwBgColor"
+                  type="color"
+                />
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="kwOpacityName">
+                Keywords background color opacity
+              </div>
+              <div class="section__item-secondary kw-opacity">
+                <input
+                  disabled
+                  name="kwOpacity"
+                  class="js-kwOpacity"
+                  type="range"
+                  min="0.00"
+                  max="1.00"
+                  step="0.05"
+                />
+                <span class="kw-opacity-value js-kwOpacityValue"></span>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="vLinkColorName">
+                Visited Link color
+              </div>
+              <div class="section__item-secondary">
+                <input
+                  disabled
+                  name="vLinkColor"
+                  class="js-vLinkColor"
+                  type="color"
+                />
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="siteSearchName">
+                Site search (context menu)
+                <div class="section__item-tip" data-i18n="siteSearchTip">
+                  Use google to search selected words in current site
+                </div>
+              </div>
+              <div class="section__item-secondary">
+                <span class="section__toggle">
+                  <input
+                    disabled
+                    name="siteSearch"
+                    class="section__toggle--hidden js-siteSearch"
+                    type="checkbox"
+                  />
+                  <div></div>
+                </span>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="filetypeSearchName">
+                Filetype search (context menu)
+                <div class="section__item-tip" data-i18n="filetypeSearchTip">
+                  Find pages in the format you prefer
+                </div>
+              </div>
+              <div class="section__item-secondary">
+                <span class="section__toggle">
+                  <input
+                    disabled
+                    name="filetypeSearch"
+                    class="section__toggle--hidden js-filetypeSearch"
+                    type="checkbox"
+                  />
+                  <div></div>
+                </span>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="timeRangeSearchName">
+                Time Range search (context menu)
+                <div class="section__item-tip" data-i18n="timeRangeSearchTip">
+                  Find pages updated within the time you specify
+                </div>
+              </div>
+              <div class="section__item-secondary">
+                <span class="section__toggle">
+                  <input
+                    disabled
+                    name="timeRangeSearch"
+                    class="section__toggle--hidden js-timeRangeSearch"
+                    type="checkbox"
+                  />
+                  <div></div>
+                </span>
+              </div>
+            </label>
+          </li>
         </ul>
-    </div>
-    <!--------------Custom------------------>
-    <div class="section">
+      </div>
+      <!--------------Custom------------------>
+      <div class="section">
         <h2 class="section__title" data-i18n="customSectionTitle">Custom</h2>
         <ul class="section__body">
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="shortcutName">Shortcut Site<div class="section__item-tip" data-i18n="shortcutTip">Custom shortcut site for site search</div></div>
-                    <div class="section__item-secondary">
-                        <span class="section__toggle">
-                            <input disabled name="shortcut" class="section__toggle--hidden js-shortcut" type="checkbox">
-                            <div></div>
-                        </span>
-                    </div>
-                </label>
-            </li>
-            <ul class="section__list-wrap" id="shortcutList"></ul>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="shortcutName">
+                Shortcut Site
+                <div class="section__item-tip" data-i18n="shortcutTip">
+                  Custom shortcut site for site search
+                </div>
+              </div>
+              <div class="section__item-secondary">
+                <span class="section__toggle">
+                  <input
+                    disabled
+                    name="shortcut"
+                    class="section__toggle--hidden js-shortcut"
+                    type="checkbox"
+                  />
+                  <div></div>
+                </span>
+              </div>
+            </label>
+          </li>
+          <ul class="section__list-wrap" id="shortcutList"></ul>
         </ul>
-    </div>
-    <!--------------Appearance-------------->
-    <div class="section">
-        <h2 class="section__title" data-i18n="appearanceSectionTitle">Appearance</h2>
+      </div>
+      <!--------------Appearance-------------->
+      <div class="section">
+        <h2 class="section__title" data-i18n="appearanceSectionTitle">
+          Appearance
+        </h2>
         <ul class="section__body">
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="nightModeName">Night mode<div class="section__item-tip" data-i18n="nightModeTip">A night mode for google</div></div>
-                    <div class="section__item-secondary">
-                        <span class="section__toggle">
-                            <input disabled name="nightMode" class="section__toggle--hidden js-nightMode" type="checkbox">
-                            <div></div>
-                        </span>
-                    </div>
-                </label>
-            </li>
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="cardStyleName">Card style UI<div class="section__item-tip" data-i18n="cardStyleTip">Greatly beautify google UI</div></div>
-                    <div class="section__item-secondary">
-                        <span class="section__toggle">
-                            <input disabled name="cardStyle" class="section__toggle--hidden js-cardStyle" type="checkbox">
-                            <div></div>
-                        </span>
-                    </div>
-                </label>
-            </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="nightModeName">
+                Night mode
+                <div class="section__item-tip" data-i18n="nightModeTip">
+                  A night mode for google
+                </div>
+              </div>
+              <div class="section__item-secondary">
+                <span class="section__toggle">
+                  <input
+                    disabled
+                    name="nightMode"
+                    class="section__toggle--hidden js-nightMode"
+                    type="checkbox"
+                  />
+                  <div></div>
+                </span>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="cardStyleName">
+                Card style UI
+                <div class="section__item-tip" data-i18n="cardStyleTip">
+                  Greatly beautify google UI
+                </div>
+              </div>
+              <div class="section__item-secondary">
+                <span class="section__toggle">
+                  <input
+                    disabled
+                    name="cardStyle"
+                    class="section__toggle--hidden js-cardStyle"
+                    type="checkbox"
+                  />
+                  <div></div>
+                </span>
+              </div>
+            </label>
+          </li>
         </ul>
-    </div>
-    <!--------------Reset------------------->
-    <div class="section">
+      </div>
+      <!--------------Experiments------------------->
+      <div class="section">
+        <h2 class="section__title" data-i18n="experimentsTitle">Experiments</h2>
+        <ul class="section__body">
+					<li>
+						<label class="section__item">
+							<div class="section__item-main" data-i18n="areaClickName">
+								Area Click
+								<div class="section__item-tip" data-i18n="areaClickTip">
+									Click the area instead of link to open page
+								</div>
+							</div>
+							<div class="section__item-secondary">
+                <span class="section__toggle">
+                  <input
+													disabled
+													name="areaClick"
+													class="section__toggle--hidden js-areaClick"
+													type="checkbox"
+									/>
+                  <div></div>
+                </span>
+							</div>
+						</label>
+					</li>
+        </ul>
+      </div>
+      <!--------------Reset------------------->
+      <div class="section">
         <h2 class="section__title" data-i18n="resetSectionTitle">Reset</h2>
         <ul class="section__body">
-            <li>
-                <label class="section__item">
-                    <div class="section__item-main" data-i18n="resetName">Reset settings</div>
-                    <button class="section__item-button section__item-button--reset" id="allDefault" data-i18n="resetBtn">Reset</button>
-                </label>
-            </li>
+          <li>
+            <label class="section__item">
+              <div class="section__item-main" data-i18n="resetName">
+                Reset settings
+              </div>
+              <button
+                class="section__item-button section__item-button--reset"
+                id="allDefault"
+                data-i18n="resetBtn"
+              >
+                Reset
+              </button>
+            </label>
+          </li>
         </ul>
-    </div>
-    <!--------------帮助--------------------->
-    <div class="section">
+      </div>
+      <!--------------帮助--------------------->
+      <div class="section">
         <h2 class="section__title" data-i18n="helpSectionTitle">Help</h2>
         <ul class="section__body">
-            <li>
-                <a class="section__item link" href="https://github.com/satorioh/google-enhancer" target="_blank">
-                    <div class="section__item-main" data-i18n="helpName">Help</div>
-                    <div class="section__item-next">
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <title>navigate_next</title>
-                            <path d="M 10 9 L 10 15 L13 12 Z" fill="#757575"></path>
-                        </svg>
-                    </div>
-                </a>
-            </li>
+          <li>
+            <a
+              class="section__item link"
+              href="https://github.com/satorioh/google-enhancer"
+              target="_blank"
+            >
+              <div class="section__item-main" data-i18n="helpName">Help</div>
+              <div class="section__item-next">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <title>navigate_next</title>
+                  <path d="M 10 9 L 10 15 L13 12 Z" fill="#757575"></path>
+                </svg>
+              </div>
+            </a>
+          </li>
         </ul>
-    </div>
-</section>
-<script src="option.js"></script>
-</body>
+      </div>
+    </section>
+    <script src="option.js"></script>
+  </body>
 </html>

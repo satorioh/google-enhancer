@@ -194,5 +194,17 @@
   "storageShortcutFull": {
     "message": "Speicher ist voll! Bitte löschen Sie einige Website-Verknüpfung in den Einstellungen und versuchen Sie es erneut.",
     "description": "storage check for shortcut site"
+  },
+  "experimentsTitle": {
+    "message": "Experimente",
+    "description": "Experiments"
+  },
+  "areaClickName": {
+    "message": "Bereich Klicken Sie auf",
+    "description": "Area Click"
+  },
+  "areaClickTip": {
+    "message": "Klicken Sie mit der mittleren Maustaste auf den Bereich, um die Seite zu öffnen",
+    "description": "Use middle mouse button click the area to open page"
   }
 }

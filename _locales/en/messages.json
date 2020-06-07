@@ -194,5 +194,14 @@
   "storageShortcutFull": {
     "message": "The storage is full !\nPlease delete some shortcut sites in option page, and try again",
     "description": "storage check for shortcut site"
+  },
+  "experimentsTitle": {
+    "message": "Experiments"
+  },
+  "areaClickName": {
+    "message": "Area Click"
+  },
+  "areaClickTip": {
+    "message": "Use middle mouse button click the area to open page"
   }
 }

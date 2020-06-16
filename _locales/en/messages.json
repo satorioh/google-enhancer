@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.fix style re-layout\n2.add txt/xml/tex for filetype search",
+    "message": "1.new:area click function\n2.change:flipPage and endless mode can't be enabled together",
     "description": "extension update info message"
   },
   "optionTitle": {

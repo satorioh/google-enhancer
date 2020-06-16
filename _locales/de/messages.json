@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.Korrigieren Sie das Blinken des Stils\n2.Fügen Sie txt/xml/tex für die Suche nach Dateitypen",
+    "message": "1.neu: Bereichsklickfunktion\n2.change: flipPage und endloser Modus können nicht zusammen aktiviert werden",
     "description": "extension update info message"
   },
   "optionTitle": {

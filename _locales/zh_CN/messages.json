@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.修复样式闪现问题\n2.新增 txt/xml/tex 文件搜索类型",
+    "message": "1.新增:区域点击功能\n2.修改:无尽模式与快捷键翻页不能同时启用",
     "description": "extension update info message"
   },
   "optionTitle": {

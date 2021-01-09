@@ -136,7 +136,8 @@ function newTabFun(value) {
 		#res a,
 		#rhs a,
 		#bottomads a,
-		#extrares a
+		#extrares a,
+        .card-section a
 `);
   $links.attr("target", value ? "_blank" : "");
 }
@@ -226,6 +227,18 @@ function endlessFun() {
         let col = document.createElement("div");
         col.className = "next-col";
         col.appendChild(pageMarker);
+
+        //if open in newTab enabled
+        chrome.storage.sync.get(["newTab"], function (result) {
+          const value = result["newTab"];
+          $(content)
+            .find(
+              `#tads a, #res a, #rhs a, #bottomads a, #extrares a, .card-section a
+`
+            )
+            .attr("target", value ? "_blank" : "");
+        });
+
         col.appendChild(content);
         document.querySelector(centerElement).appendChild(col);
 

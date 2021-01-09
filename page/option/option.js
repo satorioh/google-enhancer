@@ -69,7 +69,7 @@ const defaultSettings = {
   filetypeSearch: 0,
   timeRangeSearch: 0,
   nightMode: 0,
-  cardStyle: 0,
+  // cardStyle: 0,
   endless: 0,
   areaClick: 0,
 };
@@ -89,7 +89,7 @@ window.onload = function () {
     filetypeSearch: document.querySelector(".js-filetypeSearch"),
     timeRangeSearch: document.querySelector(".js-timeRangeSearch"),
     nightMode: document.querySelector(".js-nightMode"),
-    cardStyle: document.querySelector(".js-cardStyle"),
+    // cardStyle: document.querySelector(".js-cardStyle"),
     endless: document.querySelector(".js-endless"),
     areaClick: document.querySelector(".js-areaClick"),
   };

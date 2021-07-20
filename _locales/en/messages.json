@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.fix:links won't open in a new Tab with endless mode\n2.change:temporarily remove card style UI",
+    "message": "1.fix: there's extra left margin in endless mode",
     "description": "extension update info message"
   },
   "optionTitle": {

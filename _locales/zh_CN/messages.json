@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.修复:无尽模式下无法在新标签页打开链接\n2.修改:暂时移除卡片式 UI",
+    "message": "1.修复:无尽模式下有多余的左边距",
     "description": "extension update info message"
   },
   "optionTitle": {

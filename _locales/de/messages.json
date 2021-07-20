@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.Fix: Links werden in einem neuen Tab mit Endlosmodus nicht geöffnet\n2.change: Entfernen Sie vorübergehend die Benutzeroberfläche im Kartenstil",
+    "message": "1.Fix: im Endlosmodus gibt es einen zusätzlichen linken Rand",
     "description": "extension update info message"
   },
   "optionTitle": {

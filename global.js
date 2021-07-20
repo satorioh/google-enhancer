@@ -191,6 +191,9 @@ function endlessFun() {
 .endless-msg.shown {
   display:block;
 }
+.next-col .gXmnc {
+  margin-left: 0;
+}
 `;
 
   $(window).on("beforeunload.ge", function () {

@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.Fix: im Endlosmodus gibt es einen zusätzlichen linken Rand",
+    "message": "1.Ändern:Überflüssige Berechtigungen entfernen",
     "description": "extension update info message"
   },
   "optionTitle": {

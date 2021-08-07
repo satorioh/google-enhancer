@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.fix: there's extra left margin in endless mode",
+    "message": "1.Modify:Remove redundant permissions",
     "description": "extension update info message"
   },
   "optionTitle": {

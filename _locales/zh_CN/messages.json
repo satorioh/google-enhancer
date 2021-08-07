@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1.修复:无尽模式下有多余的左边距",
+    "message": "1.修改:移除多余的权限",
     "description": "extension update info message"
   },
   "optionTitle": {

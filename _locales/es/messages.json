@@ -1,0 +1,207 @@
+{
+  "extDesc": {
+    "message": "Haz la Búsqueda Web de Google más bonita y cómoda",
+    "description": "extension description"
+  },
+  "extUpdateTitle": {
+    "message": "Google Enhancer actualizada",
+    "description": "extension update info title"
+  },
+  "extUpdateMsg": {
+    "message": "1. Nuevo: función de clic en el área.\n2. Cambio: los modos \"voltear páginas\" y \"Google infinito\" no se pueden activar a la vez.",
+    "description": "extension update info message"
+  },
+  "optionTitle": {
+    "message": "Configuración de Google Enhancer",
+    "description": "option page title"
+  },
+  "optionHeader": {
+    "message": "Configuración de Google Enhancer",
+    "description": "option header-left h1"
+  },
+  "globalSectionTitle": {
+    "message": "Global",
+    "description": "global section h2 title"
+  },
+  "flipPageName": {
+    "message": "Usa las flechas del teclado para voltear páginas"
+  },
+  "flipPageTip": {
+    "message": "← / → (anterior / siguiente)"
+  },
+  "dblclickToTopName": {
+    "message": "Ir arriba del todo al hacer doble clic"
+  },
+  "newTabName": {
+    "message": "Abrir enlaces en una nueva pestaña"
+  },
+  "endlessName": {
+    "message": "Google infinito"
+  },
+  "endlessTip": {
+    "message": "Carga más resultados automáticamente y sin límite"
+  },
+  "endlessLoadingHint": {
+    "message": "Cargando la siguiente página..."
+  },
+  "searchSectionTitle": {
+    "message": "Búsqueda"
+  },
+  "kwColorName": {
+    "message": "Color de las palabras clave"
+  },
+  "kwColorTip": {
+    "message": "Destaca las palabras clave en el área de texto"
+  },
+  "kwBgColorName": {
+    "message": "Color de fondo de las palabras clave"
+  },
+  "kwOpacityName": {
+    "message": "Opacidad del color de fondo de las palabras clave"
+  },
+  "vLinkColorName": {
+    "message": "Color de los enlaces visitados"
+  },
+  "siteSearchName": {
+    "message": "Búsqueda en el sitio (menú contextual)"
+  },
+  "siteSearchTip": {
+    "message": "Usa Google para buscar palabras seleccionadas en el sitio actual"
+  },
+  "filetypeSearchName": {
+    "message": "Búsqueda por tipo de archivo (menú contextual)"
+  },
+  "filetypeSearchTip": {
+    "message": "Busca páginas en el formato que prefieras"
+  },
+  "timeRangeSearchName": {
+    "message": "Búsqueda por fecha (menú contextual)"
+  },
+  "timeRangeSearchTip": {
+    "message": "Busca páginas actualizadas dentro del intervalo de tiempo que especifiques"
+  },
+  "customSectionTitle": {
+    "message": "Personalizado"
+  },
+  "shortcutName": {
+    "message": "Mi atajo a un sitio (menú contextual)"
+  },
+  "shortcutTip": {
+    "message": "Añade un atajo a un sitio personalizado en la búsqueda en el sitio"
+  },
+  "appearanceSectionTitle": {
+    "message": "Apariencia"
+  },
+  "nightModeName": {
+    "message": "Modo noche"
+  },
+  "nightModeTip": {
+    "message": "Un modo noche para Google"
+  },
+  "cardStyleName": {
+    "message": "Estilo de la interfaz con tarjetas"
+  },
+  "cardStyleTip": {
+    "message": "Haz Google significativamente más bonito"
+  },
+  "resetSectionTitle": {
+    "message": "Restablecer"
+  },
+  "resetName": {
+    "message": "Restablecer configuración"
+  },
+  "resetBtn": {
+    "message": "Restablecer"
+  },
+  "helpSectionTitle": {
+    "message": "Ayuda"
+  },
+  "helpName": {
+    "message": "Ayuda"
+  },
+  "flipPageToFirst": {
+    "message": "Disculpa, ya estás en la primera página.",
+    "description": "reach first page"
+  },
+  "flipPageToLast": {
+    "message": "Disculpa, ya estás en la última página.",
+    "description": "reach last page"
+  },
+  "timeAnyTime": {
+    "message": "Cualquier fecha",
+    "description": "time range search item:any time"
+  },
+  "timePastHour": {
+    "message": "Última hora"
+  },
+  "timePastDay": {
+    "message": "Últimas 24 horas"
+  },
+  "timePastWeek": {
+    "message": "Última semana"
+  },
+  "timePastMonth": {
+    "message": "Último mes"
+  },
+  "timePastYear": {
+    "message": "Último año"
+  },
+  "timeCustom": {
+    "message": "Intervalo personalizado"
+  },
+  "siteSearch": {
+    "message": "Búsqueda en sitio",
+    "description": "site search parent menu"
+  },
+  "siteSearchCurrent": {
+    "message": "Busca '%s' en el sitio actual",
+    "description": "site search child menu first item"
+  },
+  "filetypeSearch": {
+    "message": "Búsqueda por tipo de archivo",
+    "description": "filetype search parent menu"
+  },
+  "timeRangeSearch": {
+    "message": "Búsqueda por fecha",
+    "description": "time range search parent menu"
+  },
+  "shortcut": {
+    "message": "Añadir atajo al sitio",
+    "description": "shortcut site parent menu"
+  },
+  "popUpTopTitle": {
+    "message": "Añadir atajo al sitio: <span></span> "
+  },
+  "popUpContentLabel": {
+    "message": "Nombre del sitio",
+    "description": "popup content label"
+  },
+  "popUpCloseBtn": {
+    "message": "CANCELAR"
+  },
+  "popUpActionBtn": {
+    "message": "AÑADIR",
+    "description": "popup action button"
+  },
+  "shortcutAddSuccess": {
+    "message": "¡Añadido correctamente!",
+    "description": "add shortcut site success"
+  },
+  "shortcutAddRepeat": {
+    "message": "Has añadido el mismo sitio: ",
+    "description": "add repeat site"
+  },
+  "storageShortcutFull": {
+    "message": "¡El almacenamiento está lleno!\nPor favor elimina algunos atajos de sitio en la página de configuración, y prueba de nuevo.",
+    "description": "storage check for shortcut site"
+  },
+  "experimentsTitle": {
+    "message": "Experimentos"
+  },
+  "areaClickName": {
+    "message": "Clic en el área"
+  },
+  "areaClickTip": {
+    "message": "Usa el botón del medio del ratón en el área para abrir la página"
+  }
+}

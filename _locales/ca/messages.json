@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1. Nou: funció de clic a l'àrea.\n2. Canvi: els modes \"voltejar pàgines\" i \"Google infinit\" no es poden activar a la vegada.",
+    "message": "1. Afegeix traduccions al castellà i al català",
     "description": "extension update info message"
   },
   "optionTitle": {

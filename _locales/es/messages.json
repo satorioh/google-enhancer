@@ -8,7 +8,7 @@
     "description": "extension update info title"
   },
   "extUpdateMsg": {
-    "message": "1. Nuevo: función de clic en el área.\n2. Cambio: los modos \"voltear páginas\" y \"Google infinito\" no se pueden activar a la vez.",
+    "message": "1.Añadir traducciones al español y al catalán",
     "description": "extension update info message"
   },
   "optionTitle": {

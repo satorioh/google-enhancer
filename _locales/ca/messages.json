@@ -1,0 +1,207 @@
+{
+  "extDesc": {
+    "message": "Fes la Cerca Web de Google més bonica i còmoda",
+    "description": "extension description"
+  },
+  "extUpdateTitle": {
+    "message": "Google Enhancer actualitzada",
+    "description": "extension update info title"
+  },
+  "extUpdateMsg": {
+    "message": "1. Nou: funció de clic a l'àrea.\n2. Canvi: els modes \"voltejar pàgines\" i \"Google infinit\" no es poden activar a la vegada.",
+    "description": "extension update info message"
+  },
+  "optionTitle": {
+    "message": "Configuració de Google Enhancer",
+    "description": "option page title"
+  },
+  "optionHeader": {
+    "message": "Configuració de Google Enhancer",
+    "description": "option header-left h1"
+  },
+  "globalSectionTitle": {
+    "message": "Global",
+    "description": "global section h2 title"
+  },
+  "flipPageName": {
+    "message": "Utilitza les fletxes del teclat per voltejar les págines"
+  },
+  "flipPageTip": {
+    "message": "← / → (anterior / següent)"
+  },
+  "dblclickToTopName": {
+    "message": "Ves a dalt del tot en fer doble clic"
+  },
+  "newTabName": {
+    "message": "Obrir enllaços en una nova pestaña"
+  },
+  "endlessName": {
+    "message": "Google infinit"
+  },
+  "endlessTip": {
+    "message": "Carrega més resultats automàticament i sense límit"
+  },
+  "endlessLoadingHint": {
+    "message": "Carregant la següent pàgina..."
+  },
+  "searchSectionTitle": {
+    "message": "Cerca"
+  },
+  "kwColorName": {
+    "message": "Color de les paraules clau"
+  },
+  "kwColorTip": {
+    "message": "Destaca les paraules clau a l'àrea de text"
+  },
+  "kwBgColorName": {
+    "message": "Color de fons de les paraules clau"
+  },
+  "kwOpacityName": {
+    "message": "Opacitat del color de fons de les paraules clau"
+  },
+  "vLinkColorName": {
+    "message": "Color dels enllaços visitats"
+  },
+  "siteSearchName": {
+    "message": "Cerca al lloc (menú contextual)"
+  },
+  "siteSearchTip": {
+    "message": "Utilitza Google per cercar les paraules seleccionades al lloc actual"
+  },
+  "filetypeSearchName": {
+    "message": "Cerca per tipus d'arxiu (menú contextual)"
+  },
+  "filetypeSearchTip": {
+    "message": "Cerca pàgines en el format que prefereixis"
+  },
+  "timeRangeSearchName": {
+    "message": "Cerca per data (menú contextual)"
+  },
+  "timeRangeSearchTip": {
+    "message": "Cerca pàgines actualitzades dins de l'interval de temps que especifiquis"
+  },
+  "customSectionTitle": {
+    "message": "Personalitzat"
+  },
+  "shortcutName": {
+    "message": "La meva drecera a un lloc web (menú contextual)"
+  },
+  "shortcutTip": {
+    "message": "Afegeix una drecera a un lloc personalitzat en la cerca en lloc web"
+  },
+  "appearanceSectionTitle": {
+    "message": "Apariència"
+  },
+  "nightModeName": {
+    "message": "Mode nit"
+  },
+  "nightModeTip": {
+    "message": "Un mode nit per Google"
+  },
+  "cardStyleName": {
+    "message": "Estil de la interfície amb targetes"
+  },
+  "cardStyleTip": {
+    "message": "Fes Google significativament més bonic"
+  },
+  "resetSectionTitle": {
+    "message": "Reestableix"
+  },
+  "resetName": {
+    "message": "Reestableix la configuració"
+  },
+  "resetBtn": {
+    "message": "Reestableix"
+  },
+  "helpSectionTitle": {
+    "message": "Ajuda"
+  },
+  "helpName": {
+    "message": "Ajuda"
+  },
+  "flipPageToFirst": {
+    "message": "Disculpes, ja estàs a la primera pàgina.",
+    "description": "reach first page"
+  },
+  "flipPageToLast": {
+    "message": "Disculpes, ja estàs a l'última pàgina.",
+    "description": "reach last page"
+  },
+  "timeAnyTime": {
+    "message": "Qualsevol moment",
+    "description": "time range search item:any time"
+  },
+  "timePastHour": {
+    "message": "La darrera hora"
+  },
+  "timePastDay": {
+    "message": "Les 24 darreres hores"
+  },
+  "timePastWeek": {
+    "message": "La setmana passada"
+  },
+  "timePastMonth": {
+    "message": "El darrer mes"
+  },
+  "timePastYear": {
+    "message": "El darrer any"
+  },
+  "timeCustom": {
+    "message": "Interval personalitzat"
+  },
+  "siteSearch": {
+    "message": "Cerca en lloc web",
+    "description": "site search parent menu"
+  },
+  "siteSearchCurrent": {
+    "message": "Cerca '%s' al lloc web actual",
+    "description": "site search child menu first item"
+  },
+  "filetypeSearch": {
+    "message": "Cerca per tipus d'arxiu",
+    "description": "filetype search parent menu"
+  },
+  "timeRangeSearch": {
+    "message": "Cerca per data",
+    "description": "time range search parent menu"
+  },
+  "shortcut": {
+    "message": "Afegeix drecera al lloc web",
+    "description": "shortcut site parent menu"
+  },
+  "popUpTopTitle": {
+    "message": "Afegeix drecera al lloc web: <span></span> "
+  },
+  "popUpContentLabel": {
+    "message": "Nom del lloc web",
+    "description": "popup content label"
+  },
+  "popUpCloseBtn": {
+    "message": "CANCEL·LAR"
+  },
+  "popUpActionBtn": {
+    "message": "AFEGIR",
+    "description": "popup action button"
+  },
+  "shortcutAddSuccess": {
+    "message": "¡Afegit correctament!",
+    "description": "add shortcut site success"
+  },
+  "shortcutAddRepeat": {
+    "message": "Has afegit el mateix lloc web: ",
+    "description": "add repeat site"
+  },
+  "storageShortcutFull": {
+    "message": "¡L'espai d'emmagatzematge està ple!\nSi us plau elimineu algunes dreceres de llocs web a la pàgina de configuració, i intenteu-ho de nou.",
+    "description": "storage check for shortcut site"
+  },
+  "experimentsTitle": {
+    "message": "Experiments"
+  },
+  "areaClickName": {
+    "message": "Clic a l'àrea"
+  },
+  "areaClickTip": {
+    "message": "Utilitza el botó del mig del ratolí a l'àrea per obrir la pàgina"
+  }
+}
